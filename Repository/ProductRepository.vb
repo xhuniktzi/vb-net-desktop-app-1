@@ -1,12 +1,8 @@
 ﻿Imports System.Net
 Imports System.IO
 Imports Newtonsoft.Json
-Imports vb_net_desktop_app_1
 
 Public Class ProductRepository
-
-
-
     Implements IProductRepository
     Public Function GetAllProducts() As IEnumerable(Of Product) Implements IProductRepository.GetAllProducts
         Dim req As WebRequest = WebRequest.Create("http://localhost:5000/products")
