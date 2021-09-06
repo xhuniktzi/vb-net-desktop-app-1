@@ -76,6 +76,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ProductForm.Designer.vb">
+      <DependentUpon>ProductForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewModel\ProductMainViewModel.vb" />
     <Compile Include="ViewModel\ProductViewModel.vb" />
     <Compile Include="ViewModel\ViewModelBase.vb" />
     <Content Include=".gitignore" />
@@ -99,6 +106,9 @@
     <Compile Include="Repository\ProductRepository.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ProductForm.resx">
+      <DependentUpon>ProductForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -122,9 +132,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -72,5 +72,8 @@ Public Class ProductViewModel
         End Set
     End Property
 
+    Public Sub Save()
+        ' Logica del Put
+    End Sub
 
 End Class
