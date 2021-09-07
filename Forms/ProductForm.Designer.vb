@@ -190,7 +190,7 @@ Partial Class ProductForm
         '
         Me.NumBoxProductPrice.DecimalPlaces = 2
         Me.NumBoxProductPrice.Location = New System.Drawing.Point(160, 109)
-        Me.NumBoxProductPrice.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.NumBoxProductPrice.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.NumBoxProductPrice.Name = "NumBoxProductPrice"
         Me.NumBoxProductPrice.Size = New System.Drawing.Size(120, 20)
         Me.NumBoxProductPrice.TabIndex = 8
@@ -198,6 +198,7 @@ Partial Class ProductForm
         'NumBoxProductMinQuantity
         '
         Me.NumBoxProductMinQuantity.Location = New System.Drawing.Point(160, 137)
+        Me.NumBoxProductMinQuantity.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.NumBoxProductMinQuantity.Name = "NumBoxProductMinQuantity"
         Me.NumBoxProductMinQuantity.Size = New System.Drawing.Size(120, 20)
         Me.NumBoxProductMinQuantity.TabIndex = 9
