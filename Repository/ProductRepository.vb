@@ -10,13 +10,6 @@ Public Class ProductRepository
     Public Sub DeleteProduct(code As String) Implements IProductRepository.DeleteProduct
         Dim req As WebRequest = WebRequest.Create($"http://localhost:5000/products/{code}")
         req.Method = "DELETE"
-        'Dim data As String = JsonConvert.SerializeObject(Product)
-        'Dim byteData As Byte() = Encoding.UTF8.GetBytes(data)
-        'req.ContentType = "application/json"
-        'req.ContentLength = byteData.Length
-        'Dim dataStream As Stream = req.GetRequestStream()
-        'dataStream.Write(byteData, 0, byteData.Length)
-        'dataStream.Close()
         req.GetResponse()
     End Sub
 
@@ -31,8 +24,27 @@ Public Class ProductRepository
         dataStream.Write(byteData, 0, byteData.Length)
         dataStream.Close()
 
-        req.GetResponse()
+        Dim res As WebResponse = req.GetResponse()
+        Dim resStream As Stream = res.GetResponseStream()
+        Dim reader As StreamReader = New StreamReader(resStream)
     End Sub
+
+    Public Function CreateProduct(product As Product) As Product Implements IProductRepository.CreateProduct
+        Dim req As WebRequest = WebRequest.Create($"http://localhost:5000/products")
+        req.Method = "POST"
+        Dim data As String = JsonConvert.SerializeObject(product)
+        Dim byteData As Byte() = Encoding.UTF8.GetBytes(data)
+        req.ContentType = "application/json"
+        req.ContentLength = byteData.Length
+        Dim dataStream As Stream = req.GetRequestStream()
+        dataStream.Write(byteData, 0, byteData.Length)
+        dataStream.Close()
+
+        Dim res As WebResponse = req.GetResponse()
+        Dim resStream As Stream = res.GetResponseStream()
+        Dim reader As StreamReader = New StreamReader(resStream)
+        Return JsonConvert.DeserializeObject(Of Product)(reader.ReadToEnd())
+    End Function
 
     Public Function GetAllProducts() As IEnumerable(Of Product) Implements IProductRepository.GetAllProducts
         Dim req As WebRequest = WebRequest.Create("http://localhost:5000/products")
@@ -41,12 +53,4 @@ Public Class ProductRepository
         Dim respuesta As String = reader.ReadToEnd()
         Return JsonConvert.DeserializeObject(Of List(Of Product))(respuesta)
     End Function
-
-    'Public Function GetProduct(code As String) As Product Implements IProductRepository.GetProduct
-    '    Dim req As WebRequest = WebRequest.Create($"http://localhost:5000/products/{code}")
-    '    Dim res As WebResponse = req.GetResponse()
-    '    Dim reader As StreamReader = New StreamReader(res.GetResponseStream())
-    '    Dim respuesta As String = reader.ReadToEnd()
-    '    Return JsonConvert.DeserializeObject(Of Product)(respuesta)
-    'End Function
 End Class

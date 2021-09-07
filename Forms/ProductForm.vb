@@ -29,19 +29,28 @@
     End Sub
 
     Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs) Handles BtnRefreshListProducts.Click
-
         LoadData()
     End Sub
 
     Private Sub BtnUpdateProduct_Click(sender As Object, e As EventArgs) Handles BtnUpdateProduct.Click
         Dim prodViewModel As ProductViewModel = BindingSourceProducts.Current
-        prodViewModel.Save()
+        Try
+            prodViewModel.Save()
+            MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
+        Catch ex As Exception
+            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
         LoadData()
     End Sub
 
     Private Sub BtnDeleteProduct_Click(sender As Object, e As EventArgs) Handles BtnDeleteProduct.Click
         Dim prodViewModel As ProductViewModel = BindingSourceProducts.Current
-        prodViewModel.Delete()
+        Try
+            prodViewModel.Delete()
+            MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
+        Catch ex As Exception
+            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
         LoadData()
     End Sub
 
@@ -51,5 +60,9 @@
         Else
             BtnUpdateProduct.Enabled = True
         End If
+    End Sub
+
+    Private Sub BtnCreateProduct_Click(sender As Object, e As EventArgs) Handles BtnCreateProduct.Click
+        CreateProductForm.ShowDialog()
     End Sub
 End Class

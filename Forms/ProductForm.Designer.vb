@@ -30,6 +30,8 @@ Partial Class ProductForm
         Me.PnlRefreshBtn = New System.Windows.Forms.Panel()
         Me.BtnRefreshListProducts = New System.Windows.Forms.Button()
         Me.PnlProduct = New System.Windows.Forms.Panel()
+        Me.BtnCreateProduct = New System.Windows.Forms.Button()
+        Me.BtnUpdateProduct = New System.Windows.Forms.Button()
         Me.BtnDeleteProduct = New System.Windows.Forms.Button()
         Me.TxtBoxProductCode = New System.Windows.Forms.TextBox()
         Me.TxtBoxProductName = New System.Windows.Forms.TextBox()
@@ -42,7 +44,6 @@ Partial Class ProductForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BindingSourceProducts = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BtnUpdateProduct = New System.Windows.Forms.Button()
         Me.PnlTitle.SuspendLayout()
         Me.PnlProductList.SuspendLayout()
         Me.PnlRefreshBtn.SuspendLayout()
@@ -115,6 +116,7 @@ Partial Class ProductForm
         '
         'PnlProduct
         '
+        Me.PnlProduct.Controls.Add(Me.BtnCreateProduct)
         Me.PnlProduct.Controls.Add(Me.BtnUpdateProduct)
         Me.PnlProduct.Controls.Add(Me.BtnDeleteProduct)
         Me.PnlProduct.Controls.Add(Me.TxtBoxProductCode)
@@ -133,6 +135,26 @@ Partial Class ProductForm
         Me.PnlProduct.Size = New System.Drawing.Size(448, 391)
         Me.PnlProduct.TabIndex = 2
         '
+        'BtnCreateProduct
+        '
+        Me.BtnCreateProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCreateProduct.Location = New System.Drawing.Point(10, 352)
+        Me.BtnCreateProduct.Name = "BtnCreateProduct"
+        Me.BtnCreateProduct.Size = New System.Drawing.Size(66, 27)
+        Me.BtnCreateProduct.TabIndex = 12
+        Me.BtnCreateProduct.Text = "Crear"
+        Me.BtnCreateProduct.UseVisualStyleBackColor = True
+        '
+        'BtnUpdateProduct
+        '
+        Me.BtnUpdateProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUpdateProduct.Location = New System.Drawing.Point(249, 352)
+        Me.BtnUpdateProduct.Name = "BtnUpdateProduct"
+        Me.BtnUpdateProduct.Size = New System.Drawing.Size(98, 27)
+        Me.BtnUpdateProduct.TabIndex = 11
+        Me.BtnUpdateProduct.Text = "Actualizar"
+        Me.BtnUpdateProduct.UseVisualStyleBackColor = True
+        '
         'BtnDeleteProduct
         '
         Me.BtnDeleteProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -148,14 +170,14 @@ Partial Class ProductForm
         Me.TxtBoxProductCode.Location = New System.Drawing.Point(160, 21)
         Me.TxtBoxProductCode.Name = "TxtBoxProductCode"
         Me.TxtBoxProductCode.Size = New System.Drawing.Size(120, 20)
-        Me.TxtBoxProductCode.TabIndex = 9
+        Me.TxtBoxProductCode.TabIndex = 5
         '
         'TxtBoxProductName
         '
         Me.TxtBoxProductName.Location = New System.Drawing.Point(160, 52)
         Me.TxtBoxProductName.Name = "TxtBoxProductName"
         Me.TxtBoxProductName.Size = New System.Drawing.Size(276, 20)
-        Me.TxtBoxProductName.TabIndex = 8
+        Me.TxtBoxProductName.TabIndex = 6
         '
         'TxtBoxProductDesc
         '
@@ -171,14 +193,14 @@ Partial Class ProductForm
         Me.NumBoxProductPrice.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumBoxProductPrice.Name = "NumBoxProductPrice"
         Me.NumBoxProductPrice.Size = New System.Drawing.Size(120, 20)
-        Me.NumBoxProductPrice.TabIndex = 6
+        Me.NumBoxProductPrice.TabIndex = 8
         '
         'NumBoxProductMinQuantity
         '
         Me.NumBoxProductMinQuantity.Location = New System.Drawing.Point(160, 137)
         Me.NumBoxProductMinQuantity.Name = "NumBoxProductMinQuantity"
         Me.NumBoxProductMinQuantity.Size = New System.Drawing.Size(120, 20)
-        Me.NumBoxProductMinQuantity.TabIndex = 5
+        Me.NumBoxProductMinQuantity.TabIndex = 9
         '
         'Label5
         '
@@ -230,16 +252,6 @@ Partial Class ProductForm
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Codigo:"
         '
-        'BtnUpdateProduct
-        '
-        Me.BtnUpdateProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnUpdateProduct.Location = New System.Drawing.Point(249, 352)
-        Me.BtnUpdateProduct.Name = "BtnUpdateProduct"
-        Me.BtnUpdateProduct.Size = New System.Drawing.Size(98, 27)
-        Me.BtnUpdateProduct.TabIndex = 11
-        Me.BtnUpdateProduct.Text = "Actualizar"
-        Me.BtnUpdateProduct.UseVisualStyleBackColor = True
-        '
         'ProductForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -284,4 +296,5 @@ Partial Class ProductForm
     Friend WithEvents BindingSourceProducts As BindingSource
     Friend WithEvents BtnDeleteProduct As Button
     Friend WithEvents BtnUpdateProduct As Button
+    Friend WithEvents BtnCreateProduct As Button
 End Class
