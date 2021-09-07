@@ -32,4 +32,24 @@
 
         LoadData()
     End Sub
+
+    Private Sub BtnUpdateProduct_Click(sender As Object, e As EventArgs) Handles BtnUpdateProduct.Click
+        Dim prodViewModel As ProductViewModel = BindingSourceProducts.Current
+        prodViewModel.Save()
+        LoadData()
+    End Sub
+
+    Private Sub BtnDeleteProduct_Click(sender As Object, e As EventArgs) Handles BtnDeleteProduct.Click
+        Dim prodViewModel As ProductViewModel = BindingSourceProducts.Current
+        prodViewModel.Delete()
+        LoadData()
+    End Sub
+
+    Private Sub TxtBoxProductCode_TextChanged(sender As Object, e As EventArgs) Handles TxtBoxProductCode.TextChanged
+        If String.IsNullOrEmpty(TxtBoxProductCode.Text) Or String.IsNullOrWhiteSpace(TxtBoxProductCode.Text) Then
+            BtnUpdateProduct.Enabled = False
+        Else
+            BtnUpdateProduct.Enabled = True
+        End If
+    End Sub
 End Class

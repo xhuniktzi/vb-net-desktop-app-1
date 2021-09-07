@@ -5,9 +5,11 @@ Public Class ProductViewModel
 
     Private ReadOnly _product As Product
     Private ReadOnly _productRepo As IProductRepository
+    Private ReadOnly _productCode As String
     Public Sub New(product As Product, productRepo As IProductRepository)
         _product = product
         _productRepo = productRepo
+        _productCode = product.Code
     End Sub
 
 
@@ -73,7 +75,11 @@ Public Class ProductViewModel
     End Property
 
     Public Sub Save()
-        ' Logica del Put
+        _productRepo.UpdateProduct(_productCode, _product)
+    End Sub
+
+    Public Sub Delete()
+        _productRepo.DeleteProduct(_productCode)
     End Sub
 
 End Class
