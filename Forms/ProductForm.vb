@@ -1,4 +1,7 @@
-﻿Public Class ProductForm
+﻿Imports System.IO
+Imports System.Net
+
+Public Class ProductForm
     Private ReadOnly _viewModel As ProductMainViewModel
     Public Sub New()
 
@@ -37,8 +40,9 @@
         Try
             prodViewModel.Save()
             MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As WebException
+            Dim reader As StreamReader = New StreamReader(ex.Response.GetResponseStream())
+            MessageBox.Show($"Error: {reader.ReadToEnd}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         LoadData()
     End Sub
@@ -48,8 +52,9 @@
         Try
             prodViewModel.Delete()
             MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As WebException
+            Dim reader As StreamReader = New StreamReader(ex.Response.GetResponseStream())
+            MessageBox.Show($"Error: {reader.ReadToEnd()}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         LoadData()
     End Sub

@@ -45,15 +45,17 @@ Partial Class CreateProductForm
         Me.PnlTitle.Controls.Add(Me.LblTitle)
         Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
+        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PnlTitle.Name = "PnlTitle"
-        Me.PnlTitle.Size = New System.Drawing.Size(496, 53)
+        Me.PnlTitle.Size = New System.Drawing.Size(590, 66)
         Me.PnlTitle.TabIndex = 0
         '
         'LblTitle
         '
         Me.LblTitle.AutoSize = True
         Me.LblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitle.Location = New System.Drawing.Point(12, 9)
+        Me.LblTitle.Location = New System.Drawing.Point(153, 19)
+        Me.LblTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblTitle.Name = "LblTitle"
         Me.LblTitle.Size = New System.Drawing.Size(324, 33)
         Me.LblTitle.TabIndex = 0
@@ -61,47 +63,53 @@ Partial Class CreateProductForm
         '
         'TxtBoxProductCode
         '
-        Me.TxtBoxProductCode.Location = New System.Drawing.Point(187, 68)
+        Me.TxtBoxProductCode.Location = New System.Drawing.Point(168, 74)
+        Me.TxtBoxProductCode.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtBoxProductCode.Name = "TxtBoxProductCode"
-        Me.TxtBoxProductCode.Size = New System.Drawing.Size(120, 20)
+        Me.TxtBoxProductCode.Size = New System.Drawing.Size(169, 26)
         Me.TxtBoxProductCode.TabIndex = 16
         '
         'TxtBoxProductName
         '
-        Me.TxtBoxProductName.Location = New System.Drawing.Point(187, 99)
+        Me.TxtBoxProductName.Location = New System.Drawing.Point(168, 121)
+        Me.TxtBoxProductName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtBoxProductName.Name = "TxtBoxProductName"
-        Me.TxtBoxProductName.Size = New System.Drawing.Size(276, 20)
+        Me.TxtBoxProductName.Size = New System.Drawing.Size(403, 26)
         Me.TxtBoxProductName.TabIndex = 17
         '
         'TxtBoxProductDesc
         '
-        Me.TxtBoxProductDesc.Location = New System.Drawing.Point(187, 128)
+        Me.TxtBoxProductDesc.Location = New System.Drawing.Point(168, 166)
+        Me.TxtBoxProductDesc.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtBoxProductDesc.Name = "TxtBoxProductDesc"
-        Me.TxtBoxProductDesc.Size = New System.Drawing.Size(276, 20)
+        Me.TxtBoxProductDesc.Size = New System.Drawing.Size(403, 26)
         Me.TxtBoxProductDesc.TabIndex = 18
         '
         'NumBoxProductPrice
         '
         Me.NumBoxProductPrice.DecimalPlaces = 2
-        Me.NumBoxProductPrice.Location = New System.Drawing.Point(187, 156)
+        Me.NumBoxProductPrice.Location = New System.Drawing.Point(168, 209)
+        Me.NumBoxProductPrice.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NumBoxProductPrice.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.NumBoxProductPrice.Name = "NumBoxProductPrice"
-        Me.NumBoxProductPrice.Size = New System.Drawing.Size(120, 20)
+        Me.NumBoxProductPrice.Size = New System.Drawing.Size(171, 26)
         Me.NumBoxProductPrice.TabIndex = 19
         '
         'NumBoxProductMinQuantity
         '
-        Me.NumBoxProductMinQuantity.Location = New System.Drawing.Point(187, 184)
+        Me.NumBoxProductMinQuantity.Location = New System.Drawing.Point(168, 252)
+        Me.NumBoxProductMinQuantity.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NumBoxProductMinQuantity.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.NumBoxProductMinQuantity.Name = "NumBoxProductMinQuantity"
-        Me.NumBoxProductMinQuantity.Size = New System.Drawing.Size(120, 20)
+        Me.NumBoxProductMinQuantity.Size = New System.Drawing.Size(171, 26)
         Me.NumBoxProductMinQuantity.TabIndex = 20
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(33, 185)
+        Me.Label5.Location = New System.Drawing.Point(13, 254)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(147, 20)
         Me.Label5.TabIndex = 15
@@ -111,7 +119,8 @@ Partial Class CreateProductForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(33, 156)
+        Me.Label4.Location = New System.Drawing.Point(13, 209)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(64, 20)
         Me.Label4.TabIndex = 14
@@ -121,7 +130,8 @@ Partial Class CreateProductForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(33, 126)
+        Me.Label3.Location = New System.Drawing.Point(13, 163)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(108, 20)
         Me.Label3.TabIndex = 13
@@ -131,7 +141,8 @@ Partial Class CreateProductForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(33, 97)
+        Me.Label2.Location = New System.Drawing.Point(13, 118)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 20)
         Me.Label2.TabIndex = 12
@@ -141,7 +152,8 @@ Partial Class CreateProductForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(33, 66)
+        Me.Label1.Location = New System.Drawing.Point(13, 71)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 20)
         Me.Label1.TabIndex = 11
@@ -151,18 +163,19 @@ Partial Class CreateProductForm
         '
         Me.BtnCreateProduct.Enabled = False
         Me.BtnCreateProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCreateProduct.Location = New System.Drawing.Point(409, 221)
+        Me.BtnCreateProduct.Location = New System.Drawing.Point(459, 243)
+        Me.BtnCreateProduct.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnCreateProduct.Name = "BtnCreateProduct"
-        Me.BtnCreateProduct.Size = New System.Drawing.Size(75, 28)
+        Me.BtnCreateProduct.Size = New System.Drawing.Size(112, 43)
         Me.BtnCreateProduct.TabIndex = 21
         Me.BtnCreateProduct.Text = "Crear"
         Me.BtnCreateProduct.UseVisualStyleBackColor = True
         '
         'CreateProductForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(496, 261)
+        Me.ClientSize = New System.Drawing.Size(590, 303)
         Me.Controls.Add(Me.BtnCreateProduct)
         Me.Controls.Add(Me.TxtBoxProductCode)
         Me.Controls.Add(Me.TxtBoxProductName)
@@ -175,6 +188,8 @@ Partial Class CreateProductForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PnlTitle)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "CreateProductForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CreateProductForm"

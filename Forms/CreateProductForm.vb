@@ -1,4 +1,7 @@
-﻿Public Class CreateProductForm
+﻿Imports System.IO
+Imports System.Net
+
+Public Class CreateProductForm
     Private Sub BtnCreateProduct_Click(sender As Object, e As EventArgs) Handles BtnCreateProduct.Click
         Dim repo As IProductRepository = New ProductRepository()
         Dim product As Product = New Product()
@@ -13,8 +16,9 @@
             If res = DialogResult.OK Then
                 Close()
             End If
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As WebException
+            Dim reader As StreamReader = New StreamReader(ex.Response.GetResponseStream())
+            MessageBox.Show($"Error: {reader.ReadToEnd()}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
 

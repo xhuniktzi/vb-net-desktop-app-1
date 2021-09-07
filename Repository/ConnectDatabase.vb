@@ -14,8 +14,7 @@ Public Class ConnectDatabase
         dataStream.Close()
 
         Dim res As WebResponse = req.GetResponse()
-        Dim resStream As Stream = res.GetResponseStream()
-        Dim reader As StreamReader = New StreamReader(resStream)
+        Dim reader As StreamReader = New StreamReader(res.GetResponseStream())
         Return reader.ReadToEnd()
     End Function
     Public Shared Function ExecGet(Url As String) As String

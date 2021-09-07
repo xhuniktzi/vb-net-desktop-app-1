@@ -30,26 +30,29 @@ Partial Class ProductForm
         Me.PnlRefreshBtn = New System.Windows.Forms.Panel()
         Me.BtnRefreshListProducts = New System.Windows.Forms.Button()
         Me.PnlProduct = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxtBoxProductCode = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtBoxProductName = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtBoxProductDesc = New System.Windows.Forms.TextBox()
+        Me.NumBoxProductMinQuantity = New System.Windows.Forms.NumericUpDown()
+        Me.NumBoxProductPrice = New System.Windows.Forms.NumericUpDown()
         Me.BtnCreateProduct = New System.Windows.Forms.Button()
         Me.BtnUpdateProduct = New System.Windows.Forms.Button()
         Me.BtnDeleteProduct = New System.Windows.Forms.Button()
-        Me.TxtBoxProductCode = New System.Windows.Forms.TextBox()
-        Me.TxtBoxProductName = New System.Windows.Forms.TextBox()
-        Me.TxtBoxProductDesc = New System.Windows.Forms.TextBox()
-        Me.NumBoxProductPrice = New System.Windows.Forms.NumericUpDown()
-        Me.NumBoxProductMinQuantity = New System.Windows.Forms.NumericUpDown()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.BindingSourceProducts = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.PnlTitle.SuspendLayout()
         Me.PnlProductList.SuspendLayout()
         Me.PnlRefreshBtn.SuspendLayout()
         Me.PnlProduct.SuspendLayout()
-        CType(Me.NumBoxProductPrice, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.NumBoxProductMinQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumBoxProductPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,9 +67,11 @@ Partial Class ProductForm
         '
         'LblTitleProduct
         '
+        Me.LblTitleProduct.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblTitleProduct.AutoSize = True
         Me.LblTitleProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitleProduct.Location = New System.Drawing.Point(12, 9)
+        Me.LblTitleProduct.Location = New System.Drawing.Point(189, 9)
         Me.LblTitleProduct.Name = "LblTitleProduct"
         Me.LblTitleProduct.Size = New System.Drawing.Size(308, 33)
         Me.LblTitleProduct.TabIndex = 0
@@ -116,24 +121,124 @@ Partial Class ProductForm
         '
         'PnlProduct
         '
+        Me.PnlProduct.Controls.Add(Me.GroupBox1)
         Me.PnlProduct.Controls.Add(Me.BtnCreateProduct)
         Me.PnlProduct.Controls.Add(Me.BtnUpdateProduct)
         Me.PnlProduct.Controls.Add(Me.BtnDeleteProduct)
-        Me.PnlProduct.Controls.Add(Me.TxtBoxProductCode)
-        Me.PnlProduct.Controls.Add(Me.TxtBoxProductName)
-        Me.PnlProduct.Controls.Add(Me.TxtBoxProductDesc)
-        Me.PnlProduct.Controls.Add(Me.NumBoxProductPrice)
-        Me.PnlProduct.Controls.Add(Me.NumBoxProductMinQuantity)
-        Me.PnlProduct.Controls.Add(Me.Label5)
-        Me.PnlProduct.Controls.Add(Me.Label4)
-        Me.PnlProduct.Controls.Add(Me.Label3)
-        Me.PnlProduct.Controls.Add(Me.Label2)
-        Me.PnlProduct.Controls.Add(Me.Label1)
         Me.PnlProduct.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PnlProduct.Location = New System.Drawing.Point(256, 50)
         Me.PnlProduct.Name = "PnlProduct"
         Me.PnlProduct.Size = New System.Drawing.Size(448, 391)
         Me.PnlProduct.TabIndex = 2
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TxtBoxProductCode)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.TxtBoxProductName)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.TxtBoxProductDesc)
+        Me.GroupBox1.Controls.Add(Me.NumBoxProductMinQuantity)
+        Me.GroupBox1.Controls.Add(Me.NumBoxProductPrice)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(448, 346)
+        Me.GroupBox1.TabIndex = 13
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Información del producto"
+        '
+        'TxtBoxProductCode
+        '
+        Me.TxtBoxProductCode.Location = New System.Drawing.Point(160, 31)
+        Me.TxtBoxProductCode.Name = "TxtBoxProductCode"
+        Me.TxtBoxProductCode.Size = New System.Drawing.Size(120, 26)
+        Me.TxtBoxProductCode.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 20)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Codigo:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(6, 65)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(76, 20)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Nombre:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 101)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(108, 20)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Descripción:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 139)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 20)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Precio:"
+        '
+        'TxtBoxProductName
+        '
+        Me.TxtBoxProductName.Location = New System.Drawing.Point(160, 67)
+        Me.TxtBoxProductName.Name = "TxtBoxProductName"
+        Me.TxtBoxProductName.Size = New System.Drawing.Size(276, 26)
+        Me.TxtBoxProductName.TabIndex = 6
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 175)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(147, 20)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Cantidad Minima:"
+        '
+        'TxtBoxProductDesc
+        '
+        Me.TxtBoxProductDesc.Location = New System.Drawing.Point(160, 103)
+        Me.TxtBoxProductDesc.Name = "TxtBoxProductDesc"
+        Me.TxtBoxProductDesc.Size = New System.Drawing.Size(276, 26)
+        Me.TxtBoxProductDesc.TabIndex = 7
+        '
+        'NumBoxProductMinQuantity
+        '
+        Me.NumBoxProductMinQuantity.Location = New System.Drawing.Point(160, 174)
+        Me.NumBoxProductMinQuantity.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        Me.NumBoxProductMinQuantity.Name = "NumBoxProductMinQuantity"
+        Me.NumBoxProductMinQuantity.Size = New System.Drawing.Size(120, 26)
+        Me.NumBoxProductMinQuantity.TabIndex = 9
+        '
+        'NumBoxProductPrice
+        '
+        Me.NumBoxProductPrice.DecimalPlaces = 2
+        Me.NumBoxProductPrice.Location = New System.Drawing.Point(160, 139)
+        Me.NumBoxProductPrice.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        Me.NumBoxProductPrice.Name = "NumBoxProductPrice"
+        Me.NumBoxProductPrice.Size = New System.Drawing.Size(120, 26)
+        Me.NumBoxProductPrice.TabIndex = 8
         '
         'BtnCreateProduct
         '
@@ -165,94 +270,6 @@ Partial Class ProductForm
         Me.BtnDeleteProduct.Text = "Eliminar"
         Me.BtnDeleteProduct.UseVisualStyleBackColor = True
         '
-        'TxtBoxProductCode
-        '
-        Me.TxtBoxProductCode.Location = New System.Drawing.Point(160, 21)
-        Me.TxtBoxProductCode.Name = "TxtBoxProductCode"
-        Me.TxtBoxProductCode.Size = New System.Drawing.Size(120, 20)
-        Me.TxtBoxProductCode.TabIndex = 5
-        '
-        'TxtBoxProductName
-        '
-        Me.TxtBoxProductName.Location = New System.Drawing.Point(160, 52)
-        Me.TxtBoxProductName.Name = "TxtBoxProductName"
-        Me.TxtBoxProductName.Size = New System.Drawing.Size(276, 20)
-        Me.TxtBoxProductName.TabIndex = 6
-        '
-        'TxtBoxProductDesc
-        '
-        Me.TxtBoxProductDesc.Location = New System.Drawing.Point(160, 81)
-        Me.TxtBoxProductDesc.Name = "TxtBoxProductDesc"
-        Me.TxtBoxProductDesc.Size = New System.Drawing.Size(276, 20)
-        Me.TxtBoxProductDesc.TabIndex = 7
-        '
-        'NumBoxProductPrice
-        '
-        Me.NumBoxProductPrice.DecimalPlaces = 2
-        Me.NumBoxProductPrice.Location = New System.Drawing.Point(160, 109)
-        Me.NumBoxProductPrice.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
-        Me.NumBoxProductPrice.Name = "NumBoxProductPrice"
-        Me.NumBoxProductPrice.Size = New System.Drawing.Size(120, 20)
-        Me.NumBoxProductPrice.TabIndex = 8
-        '
-        'NumBoxProductMinQuantity
-        '
-        Me.NumBoxProductMinQuantity.Location = New System.Drawing.Point(160, 137)
-        Me.NumBoxProductMinQuantity.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
-        Me.NumBoxProductMinQuantity.Name = "NumBoxProductMinQuantity"
-        Me.NumBoxProductMinQuantity.Size = New System.Drawing.Size(120, 20)
-        Me.NumBoxProductMinQuantity.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 138)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(147, 20)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Cantidad Minima:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 109)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 20)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Precio:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 79)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(108, 20)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Descripción:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 50)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 20)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nombre:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Codigo:"
-        '
         'ProductForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -269,9 +286,10 @@ Partial Class ProductForm
         Me.PnlProductList.ResumeLayout(False)
         Me.PnlRefreshBtn.ResumeLayout(False)
         Me.PnlProduct.ResumeLayout(False)
-        Me.PnlProduct.PerformLayout()
-        CType(Me.NumBoxProductPrice, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.NumBoxProductMinQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumBoxProductPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceProducts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -298,4 +316,6 @@ Partial Class ProductForm
     Friend WithEvents BtnDeleteProduct As Button
     Friend WithEvents BtnUpdateProduct As Button
     Friend WithEvents BtnCreateProduct As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class
