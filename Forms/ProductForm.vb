@@ -65,4 +65,8 @@
     Private Sub BtnCreateProduct_Click(sender As Object, e As EventArgs) Handles BtnCreateProduct.Click
         CreateProductForm.ShowDialog()
     End Sub
+
+    Private Sub ProductForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainForm.Show()
+    End Sub
 End Class

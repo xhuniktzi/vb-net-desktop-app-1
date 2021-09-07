@@ -27,5 +27,4 @@
             BtnCreateProduct.Enabled = True
         End If
     End Sub
-
 End Class

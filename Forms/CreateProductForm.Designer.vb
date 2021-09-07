@@ -176,6 +176,7 @@ Partial Class CreateProductForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PnlTitle)
         Me.Name = "CreateProductForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CreateProductForm"
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
