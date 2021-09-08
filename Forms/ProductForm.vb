@@ -29,6 +29,7 @@ Public Class ProductForm
             NumBoxProductPrice.DataBindings.Add("Value", BindingSourceProducts, "ProductPrice")
             NumBoxProductMinQuantity.DataBindings.Add("Value", BindingSourceProducts, "ProductMinQuantity")
         End If
+        BtnUpdateProduct.Enabled = ValidateForm()
     End Sub
 
     Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -58,12 +59,17 @@ Public Class ProductForm
     End Sub
 
     Private Sub TxtBoxProductCode_TextChanged(sender As Object, e As EventArgs) Handles TxtBoxProductCode.TextChanged
-        If String.IsNullOrEmpty(TxtBoxProductCode.Text) Or String.IsNullOrWhiteSpace(TxtBoxProductCode.Text) Then
-            BtnUpdateProduct.Enabled = False
-        Else
-            BtnUpdateProduct.Enabled = True
-        End If
+        BtnUpdateProduct.Enabled = ValidateForm()
     End Sub
+
+    Private Function ValidateForm() As Boolean
+        Dim ValidationCode As Boolean = Not (String.IsNullOrEmpty(TxtBoxProductCode.Text) Or String.IsNullOrWhiteSpace(TxtBoxProductCode.Text))
+        Dim ValidationName As Boolean = Not (String.IsNullOrEmpty(TxtBoxProductName.Text) Or String.IsNullOrWhiteSpace(TxtBoxProductName.Text))
+        Dim ValidationDesc As Boolean = Not (String.IsNullOrEmpty(TxtBoxProductDesc.Text) Or String.IsNullOrWhiteSpace(TxtBoxProductDesc.Text))
+        Dim ValidationPrice As Boolean = NumBoxProductPrice.Value > 0
+        Dim ValidationMinQuantity As Boolean = NumBoxProductMinQuantity.Value > 0
+        Return ValidationCode And ValidationName And ValidationDesc And ValidationPrice And ValidationMinQuantity
+    End Function
 
     Private Sub BtnCreateProduct_Click(sender As Object, e As EventArgs) Handles BtnCreateProduct.Click
         CreateProductForm.cargar = New CreateProductForm.operar(AddressOf LoadData)
@@ -72,5 +78,25 @@ Public Class ProductForm
 
     Private Sub ProductForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         MainForm.Show()
+    End Sub
+
+    Private Sub TxtBoxProductName_TextChanged(sender As Object, e As EventArgs) Handles TxtBoxProductName.TextChanged
+        BtnUpdateProduct.Enabled = ValidateForm()
+    End Sub
+
+    Private Sub TxtBoxProductDesc_TextChanged(sender As Object, e As EventArgs) Handles TxtBoxProductDesc.TextChanged
+        BtnUpdateProduct.Enabled = ValidateForm()
+    End Sub
+
+    Private Sub NumBoxProductPrice_ValueChanged(sender As Object, e As EventArgs) Handles NumBoxProductPrice.ValueChanged
+        BtnUpdateProduct.Enabled = ValidateForm()
+    End Sub
+
+    Private Sub NumBoxProductMinQuantity_ValueChanged(sender As Object, e As EventArgs) Handles NumBoxProductMinQuantity.ValueChanged
+        BtnUpdateProduct.Enabled = ValidateForm()
+    End Sub
+
+    Private Sub LstBoxListProducts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstBoxListProducts.SelectedIndexChanged
+        BtnUpdateProduct.Enabled = ValidateForm()
     End Sub
 End Class
