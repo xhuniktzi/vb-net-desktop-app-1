@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CreateProductForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class CreateProductForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.LblTitle = New System.Windows.Forms.Label()
@@ -42,28 +42,29 @@ Partial Class CreateProductForm
         '
         'PnlTitle
         '
+        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
         Me.PnlTitle.Controls.Add(Me.LblTitle)
         Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
         Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PnlTitle.Name = "PnlTitle"
-        Me.PnlTitle.Size = New System.Drawing.Size(590, 66)
+        Me.PnlTitle.Size = New System.Drawing.Size(544, 66)
         Me.PnlTitle.TabIndex = 0
         '
         'LblTitle
         '
         Me.LblTitle.AutoSize = True
-        Me.LblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitle.Location = New System.Drawing.Point(153, 19)
+        Me.LblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTitle.Location = New System.Drawing.Point(41, 9)
         Me.LblTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblTitle.Name = "LblTitle"
-        Me.LblTitle.Size = New System.Drawing.Size(324, 33)
+        Me.LblTitle.Size = New System.Drawing.Size(410, 42)
         Me.LblTitle.TabIndex = 0
         Me.LblTitle.Text = "Crear Nuevo Producto"
         '
         'TxtBoxProductCode
         '
-        Me.TxtBoxProductCode.Location = New System.Drawing.Point(168, 74)
+        Me.TxtBoxProductCode.Location = New System.Drawing.Point(168, 78)
         Me.TxtBoxProductCode.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtBoxProductCode.Name = "TxtBoxProductCode"
         Me.TxtBoxProductCode.Size = New System.Drawing.Size(169, 26)
@@ -74,7 +75,7 @@ Partial Class CreateProductForm
         Me.TxtBoxProductName.Location = New System.Drawing.Point(168, 121)
         Me.TxtBoxProductName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtBoxProductName.Name = "TxtBoxProductName"
-        Me.TxtBoxProductName.Size = New System.Drawing.Size(403, 26)
+        Me.TxtBoxProductName.Size = New System.Drawing.Size(366, 26)
         Me.TxtBoxProductName.TabIndex = 17
         '
         'TxtBoxProductDesc
@@ -82,7 +83,7 @@ Partial Class CreateProductForm
         Me.TxtBoxProductDesc.Location = New System.Drawing.Point(168, 166)
         Me.TxtBoxProductDesc.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtBoxProductDesc.Name = "TxtBoxProductDesc"
-        Me.TxtBoxProductDesc.Size = New System.Drawing.Size(403, 26)
+        Me.TxtBoxProductDesc.Size = New System.Drawing.Size(366, 26)
         Me.TxtBoxProductDesc.TabIndex = 18
         '
         'NumBoxProductPrice
@@ -152,7 +153,7 @@ Partial Class CreateProductForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(13, 71)
+        Me.Label1.Location = New System.Drawing.Point(13, 75)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 20)
@@ -161,21 +162,27 @@ Partial Class CreateProductForm
         '
         'BtnCreateProduct
         '
+        Me.BtnCreateProduct.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnCreateProduct.Enabled = False
+        Me.BtnCreateProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnCreateProduct.FlatAppearance.BorderSize = 0
+        Me.BtnCreateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCreateProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCreateProduct.Location = New System.Drawing.Point(459, 243)
+        Me.BtnCreateProduct.ForeColor = System.Drawing.Color.White
+        Me.BtnCreateProduct.Location = New System.Drawing.Point(466, 243)
         Me.BtnCreateProduct.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnCreateProduct.Name = "BtnCreateProduct"
-        Me.BtnCreateProduct.Size = New System.Drawing.Size(112, 43)
+        Me.BtnCreateProduct.Size = New System.Drawing.Size(68, 35)
         Me.BtnCreateProduct.TabIndex = 21
         Me.BtnCreateProduct.Text = "Crear"
-        Me.BtnCreateProduct.UseVisualStyleBackColor = True
+        Me.BtnCreateProduct.UseVisualStyleBackColor = False
         '
         'CreateProductForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(590, 303)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(544, 293)
         Me.Controls.Add(Me.BtnCreateProduct)
         Me.Controls.Add(Me.TxtBoxProductCode)
         Me.Controls.Add(Me.TxtBoxProductName)

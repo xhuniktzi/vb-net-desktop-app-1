@@ -16,12 +16,9 @@ Public Class CreateProductForm
             If res = DialogResult.OK Then
                 Close()
             End If
-        Catch ex As WebException
-            Dim reader As StreamReader = New StreamReader(ex.Response.GetResponseStream())
-            MessageBox.Show($"Error: {reader.ReadToEnd()}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-
     End Sub
 
     Private Sub TxtBoxProductCode_TextChanged(sender As Object, e As EventArgs) Handles TxtBoxProductCode.TextChanged
@@ -30,5 +27,9 @@ Public Class CreateProductForm
         Else
             BtnCreateProduct.Enabled = True
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+
     End Sub
 End Class

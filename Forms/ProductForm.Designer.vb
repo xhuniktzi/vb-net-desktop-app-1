@@ -46,6 +46,7 @@ Partial Class ProductForm
         Me.BtnDeleteProduct = New System.Windows.Forms.Button()
         Me.BindingSourceProducts = New System.Windows.Forms.BindingSource(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.PnlTitle.SuspendLayout()
         Me.PnlProductList.SuspendLayout()
         Me.PnlRefreshBtn.SuspendLayout()
@@ -58,11 +59,12 @@ Partial Class ProductForm
         '
         'PnlTitle
         '
+        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
         Me.PnlTitle.Controls.Add(Me.LblTitleProduct)
         Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
         Me.PnlTitle.Name = "PnlTitle"
-        Me.PnlTitle.Size = New System.Drawing.Size(704, 50)
+        Me.PnlTitle.Size = New System.Drawing.Size(680, 80)
         Me.PnlTitle.TabIndex = 0
         '
         'LblTitleProduct
@@ -70,10 +72,10 @@ Partial Class ProductForm
         Me.LblTitleProduct.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblTitleProduct.AutoSize = True
-        Me.LblTitleProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitleProduct.Location = New System.Drawing.Point(189, 9)
+        Me.LblTitleProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTitleProduct.Location = New System.Drawing.Point(79, 9)
         Me.LblTitleProduct.Name = "LblTitleProduct"
-        Me.LblTitleProduct.Size = New System.Drawing.Size(308, 33)
+        Me.LblTitleProduct.Size = New System.Drawing.Size(496, 55)
         Me.LblTitleProduct.TabIndex = 0
         Me.LblTitleProduct.Text = "Control de Productos"
         '
@@ -82,20 +84,21 @@ Partial Class ProductForm
         Me.PnlProductList.Controls.Add(Me.LstBoxListProducts)
         Me.PnlProductList.Controls.Add(Me.PnlRefreshBtn)
         Me.PnlProductList.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PnlProductList.Location = New System.Drawing.Point(0, 50)
+        Me.PnlProductList.Location = New System.Drawing.Point(0, 80)
         Me.PnlProductList.Name = "PnlProductList"
-        Me.PnlProductList.Size = New System.Drawing.Size(256, 391)
+        Me.PnlProductList.Size = New System.Drawing.Size(228, 359)
         Me.PnlProductList.TabIndex = 1
         '
         'LstBoxListProducts
         '
+        Me.LstBoxListProducts.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.LstBoxListProducts.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LstBoxListProducts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LstBoxListProducts.FormattingEnabled = True
         Me.LstBoxListProducts.ItemHeight = 20
         Me.LstBoxListProducts.Location = New System.Drawing.Point(0, 50)
         Me.LstBoxListProducts.Name = "LstBoxListProducts"
-        Me.LstBoxListProducts.Size = New System.Drawing.Size(256, 341)
+        Me.LstBoxListProducts.Size = New System.Drawing.Size(228, 309)
         Me.LstBoxListProducts.TabIndex = 1
         '
         'PnlRefreshBtn
@@ -104,31 +107,37 @@ Partial Class ProductForm
         Me.PnlRefreshBtn.Dock = System.Windows.Forms.DockStyle.Top
         Me.PnlRefreshBtn.Location = New System.Drawing.Point(0, 0)
         Me.PnlRefreshBtn.Name = "PnlRefreshBtn"
-        Me.PnlRefreshBtn.Size = New System.Drawing.Size(256, 50)
+        Me.PnlRefreshBtn.Size = New System.Drawing.Size(228, 50)
         Me.PnlRefreshBtn.TabIndex = 0
         '
         'BtnRefreshListProducts
         '
         Me.BtnRefreshListProducts.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnRefreshListProducts.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnRefreshListProducts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnRefreshListProducts.FlatAppearance.BorderSize = 0
+        Me.BtnRefreshListProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRefreshListProducts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRefreshListProducts.Location = New System.Drawing.Point(50, 11)
+        Me.BtnRefreshListProducts.ForeColor = System.Drawing.Color.White
+        Me.BtnRefreshListProducts.Location = New System.Drawing.Point(37, 11)
         Me.BtnRefreshListProducts.Name = "BtnRefreshListProducts"
-        Me.BtnRefreshListProducts.Size = New System.Drawing.Size(157, 28)
+        Me.BtnRefreshListProducts.Size = New System.Drawing.Size(147, 28)
         Me.BtnRefreshListProducts.TabIndex = 0
         Me.BtnRefreshListProducts.Text = "Refrescar datos"
-        Me.BtnRefreshListProducts.UseVisualStyleBackColor = True
+        Me.BtnRefreshListProducts.UseVisualStyleBackColor = False
         '
         'PnlProduct
         '
+        Me.PnlProduct.Controls.Add(Me.Button1)
         Me.PnlProduct.Controls.Add(Me.GroupBox1)
         Me.PnlProduct.Controls.Add(Me.BtnCreateProduct)
         Me.PnlProduct.Controls.Add(Me.BtnUpdateProduct)
         Me.PnlProduct.Controls.Add(Me.BtnDeleteProduct)
         Me.PnlProduct.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PnlProduct.Location = New System.Drawing.Point(256, 50)
+        Me.PnlProduct.Location = New System.Drawing.Point(228, 80)
         Me.PnlProduct.Name = "PnlProduct"
-        Me.PnlProduct.Size = New System.Drawing.Size(448, 391)
+        Me.PnlProduct.Size = New System.Drawing.Size(452, 359)
         Me.PnlProduct.TabIndex = 2
         '
         'GroupBox1
@@ -147,7 +156,7 @@ Partial Class ProductForm
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(448, 346)
+        Me.GroupBox1.Size = New System.Drawing.Size(452, 310)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información del producto"
@@ -242,39 +251,72 @@ Partial Class ProductForm
         '
         'BtnCreateProduct
         '
+        Me.BtnCreateProduct.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnCreateProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnCreateProduct.FlatAppearance.BorderSize = 0
+        Me.BtnCreateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCreateProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCreateProduct.Location = New System.Drawing.Point(10, 352)
+        Me.BtnCreateProduct.ForeColor = System.Drawing.Color.White
+        Me.BtnCreateProduct.Location = New System.Drawing.Point(6, 316)
         Me.BtnCreateProduct.Name = "BtnCreateProduct"
         Me.BtnCreateProduct.Size = New System.Drawing.Size(66, 27)
         Me.BtnCreateProduct.TabIndex = 12
         Me.BtnCreateProduct.Text = "Crear"
-        Me.BtnCreateProduct.UseVisualStyleBackColor = True
+        Me.BtnCreateProduct.UseVisualStyleBackColor = False
         '
         'BtnUpdateProduct
         '
+        Me.BtnUpdateProduct.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnUpdateProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnUpdateProduct.FlatAppearance.BorderSize = 0
+        Me.BtnUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUpdateProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnUpdateProduct.Location = New System.Drawing.Point(249, 352)
+        Me.BtnUpdateProduct.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateProduct.Location = New System.Drawing.Point(249, 316)
         Me.BtnUpdateProduct.Name = "BtnUpdateProduct"
         Me.BtnUpdateProduct.Size = New System.Drawing.Size(98, 27)
         Me.BtnUpdateProduct.TabIndex = 11
         Me.BtnUpdateProduct.Text = "Actualizar"
-        Me.BtnUpdateProduct.UseVisualStyleBackColor = True
+        Me.BtnUpdateProduct.UseVisualStyleBackColor = False
         '
         'BtnDeleteProduct
         '
+        Me.BtnDeleteProduct.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnDeleteProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnDeleteProduct.FlatAppearance.BorderSize = 0
+        Me.BtnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDeleteProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDeleteProduct.Location = New System.Drawing.Point(353, 352)
+        Me.BtnDeleteProduct.ForeColor = System.Drawing.Color.White
+        Me.BtnDeleteProduct.Location = New System.Drawing.Point(353, 316)
         Me.BtnDeleteProduct.Name = "BtnDeleteProduct"
         Me.BtnDeleteProduct.Size = New System.Drawing.Size(83, 27)
         Me.BtnDeleteProduct.TabIndex = 10
         Me.BtnDeleteProduct.Text = "Eliminar"
-        Me.BtnDeleteProduct.UseVisualStyleBackColor = True
+        Me.BtnDeleteProduct.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(-206, 16)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(161, 28)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Refrescar datos"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'ProductForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(704, 441)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(680, 439)
         Me.Controls.Add(Me.PnlProduct)
         Me.Controls.Add(Me.PnlProductList)
         Me.Controls.Add(Me.PnlTitle)
@@ -318,4 +360,5 @@ Partial Class ProductForm
     Friend WithEvents BtnCreateProduct As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Button1 As Button
 End Class

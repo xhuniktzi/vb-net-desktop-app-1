@@ -31,7 +31,7 @@ Public Class ProductForm
         End If
     End Sub
 
-    Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs) Handles BtnRefreshListProducts.Click
+    Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs) Handles BtnRefreshListProducts.Click, Button1.Click
         LoadData()
     End Sub
 
@@ -40,9 +40,8 @@ Public Class ProductForm
         Try
             prodViewModel.Save()
             MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
-        Catch ex As WebException
-            Dim reader As StreamReader = New StreamReader(ex.Response.GetResponseStream())
-            MessageBox.Show($"Error: {reader.ReadToEnd}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         LoadData()
     End Sub
@@ -52,10 +51,10 @@ Public Class ProductForm
         Try
             prodViewModel.Delete()
             MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
-        Catch ex As WebException
-            Dim reader As StreamReader = New StreamReader(ex.Response.GetResponseStream())
-            MessageBox.Show($"Error: {reader.ReadToEnd()}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
         LoadData()
     End Sub
 
@@ -74,4 +73,5 @@ Public Class ProductForm
     Private Sub ProductForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         MainForm.Show()
     End Sub
+
 End Class

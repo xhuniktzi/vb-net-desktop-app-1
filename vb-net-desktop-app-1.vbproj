@@ -76,6 +76,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorHandling\ApiConnectException.vb" />
     <Compile Include="Forms\CreateProductForm.Designer.vb">
       <DependentUpon>CreateProductForm.vb</DependentUpon>
     </Compile>
@@ -147,9 +148,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
