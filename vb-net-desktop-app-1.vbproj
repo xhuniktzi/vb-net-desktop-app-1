@@ -76,7 +76,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Client.vb" />
+    <Compile Include="Contracts\IClientRepository.vb" />
     <Compile Include="ErrorHandling\ApiConnectException.vb" />
+    <Compile Include="Forms\ClientForm.Designer.vb">
+      <DependentUpon>ClientForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\CreateProductForm.Designer.vb">
       <DependentUpon>CreateProductForm.vb</DependentUpon>
     </Compile>
@@ -95,7 +103,10 @@
     <Compile Include="Forms\ProductForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Repository\ClientRepository.vb" />
     <Compile Include="Repository\ConnectDatabase.vb" />
+    <Compile Include="ViewModel\ClientViewModel.vb" />
+    <Compile Include="ViewModel\ClientMainViewModel.vb" />
     <Compile Include="ViewModel\ProductMainViewModel.vb" />
     <Compile Include="ViewModel\ProductViewModel.vb" />
     <Compile Include="ViewModel\ViewModelBase.vb" />
@@ -120,6 +131,9 @@
     <Compile Include="Repository\ProductRepository.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ClientForm.resx">
+      <DependentUpon>ClientForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateProductForm.resx">
       <DependentUpon>CreateProductForm.vb</DependentUpon>
     </EmbeddedResource>
