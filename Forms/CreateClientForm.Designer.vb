@@ -63,6 +63,7 @@ Partial Class CreateClientForm
         'BtnCreateClient
         '
         Me.BtnCreateClient.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnCreateClient.Enabled = False
         Me.BtnCreateClient.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnCreateClient.FlatAppearance.BorderSize = 0
         Me.BtnCreateClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
