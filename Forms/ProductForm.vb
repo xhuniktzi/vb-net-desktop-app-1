@@ -24,7 +24,7 @@ Public Class ProductForm
             BindingSourceProducts.ResetBindings(False)
         Else
             TxtBoxProductCode.DataBindings.Add("Text", BindingSourceProducts, "ProductCode")
-            TxtBoxProductName.DataBindings.Add("Text", BindingSourceProducts, "ProductName", False, DataSourceUpdateMode.OnPropertyChanged)
+            TxtBoxProductName.DataBindings.Add("Text", BindingSourceProducts, "ProductName")
             TxtBoxProductDesc.DataBindings.Add("Text", BindingSourceProducts, "ProductDescription")
             NumBoxProductPrice.DataBindings.Add("Value", BindingSourceProducts, "ProductPrice")
             NumBoxProductMinQuantity.DataBindings.Add("Value", BindingSourceProducts, "ProductMinQuantity")
@@ -41,7 +41,7 @@ Public Class ProductForm
             prodViewModel.Save()
             MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
         Catch ex As Exception
-            MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Se ha producido un error al actualizar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         LoadData()
     End Sub
@@ -54,7 +54,6 @@ Public Class ProductForm
         Catch ex As Exception
             MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
         LoadData()
     End Sub
 

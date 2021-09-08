@@ -96,6 +96,7 @@ Partial Class ClientForm
         '
         'PnlClient
         '
+        Me.PnlClient.BackColor = System.Drawing.Color.White
         Me.PnlClient.Controls.Add(Me.Button1)
         Me.PnlClient.Controls.Add(Me.GroupBox1)
         Me.PnlClient.Controls.Add(Me.BtnCreateClient)

@@ -55,7 +55,7 @@
             clViewModel.Delete()
             MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
         Catch ex As Exception
-            MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Se ha producido un error al eliminar el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         LoadData()
     End Sub
