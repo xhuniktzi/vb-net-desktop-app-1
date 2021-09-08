@@ -27,8 +27,6 @@ Partial Class ClientForm
         Me.LblTitleClient = New System.Windows.Forms.Label()
         Me.PnlProductList = New System.Windows.Forms.Panel()
         Me.LstBoxListClients = New System.Windows.Forms.ListBox()
-        Me.PnlRefreshBtn = New System.Windows.Forms.Panel()
-        Me.BtnRefreshListProducts = New System.Windows.Forms.Button()
         Me.PnlClient = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -48,7 +46,6 @@ Partial Class ClientForm
         Me.BindingSourceClients = New System.Windows.Forms.BindingSource(Me.components)
         Me.PnlTitle.SuspendLayout()
         Me.PnlProductList.SuspendLayout()
-        Me.PnlRefreshBtn.SuspendLayout()
         Me.PnlClient.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.BindingSourceClients, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,7 +76,6 @@ Partial Class ClientForm
         'PnlProductList
         '
         Me.PnlProductList.Controls.Add(Me.LstBoxListClients)
-        Me.PnlProductList.Controls.Add(Me.PnlRefreshBtn)
         Me.PnlProductList.Dock = System.Windows.Forms.DockStyle.Left
         Me.PnlProductList.Location = New System.Drawing.Point(0, 80)
         Me.PnlProductList.Name = "PnlProductList"
@@ -93,36 +89,10 @@ Partial Class ClientForm
         Me.LstBoxListClients.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LstBoxListClients.FormattingEnabled = True
         Me.LstBoxListClients.ItemHeight = 20
-        Me.LstBoxListClients.Location = New System.Drawing.Point(0, 50)
+        Me.LstBoxListClients.Location = New System.Drawing.Point(0, 0)
         Me.LstBoxListClients.Name = "LstBoxListClients"
-        Me.LstBoxListClients.Size = New System.Drawing.Size(228, 307)
+        Me.LstBoxListClients.Size = New System.Drawing.Size(228, 357)
         Me.LstBoxListClients.TabIndex = 1
-        '
-        'PnlRefreshBtn
-        '
-        Me.PnlRefreshBtn.Controls.Add(Me.BtnRefreshListProducts)
-        Me.PnlRefreshBtn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlRefreshBtn.Location = New System.Drawing.Point(0, 0)
-        Me.PnlRefreshBtn.Name = "PnlRefreshBtn"
-        Me.PnlRefreshBtn.Size = New System.Drawing.Size(228, 50)
-        Me.PnlRefreshBtn.TabIndex = 0
-        '
-        'BtnRefreshListProducts
-        '
-        Me.BtnRefreshListProducts.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnRefreshListProducts.BackColor = System.Drawing.Color.MidnightBlue
-        Me.BtnRefreshListProducts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnRefreshListProducts.FlatAppearance.BorderSize = 0
-        Me.BtnRefreshListProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRefreshListProducts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRefreshListProducts.ForeColor = System.Drawing.Color.White
-        Me.BtnRefreshListProducts.Location = New System.Drawing.Point(37, 11)
-        Me.BtnRefreshListProducts.Name = "BtnRefreshListProducts"
-        Me.BtnRefreshListProducts.Size = New System.Drawing.Size(147, 28)
-        Me.BtnRefreshListProducts.TabIndex = 0
-        Me.BtnRefreshListProducts.Text = "Refrescar datos"
-        Me.BtnRefreshListProducts.UseVisualStyleBackColor = False
         '
         'PnlClient
         '
@@ -319,7 +289,6 @@ Partial Class ClientForm
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         Me.PnlProductList.ResumeLayout(False)
-        Me.PnlRefreshBtn.ResumeLayout(False)
         Me.PnlClient.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -331,8 +300,6 @@ Partial Class ClientForm
     Friend WithEvents PnlTitle As Panel
     Friend WithEvents PnlProductList As Panel
     Friend WithEvents LstBoxListClients As ListBox
-    Friend WithEvents PnlRefreshBtn As Panel
-    Friend WithEvents BtnRefreshListProducts As Button
     Friend WithEvents PnlClient As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents GroupBox1 As GroupBox

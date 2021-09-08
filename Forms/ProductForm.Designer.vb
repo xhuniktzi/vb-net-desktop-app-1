@@ -27,9 +27,8 @@ Partial Class ProductForm
         Me.LblTitleProduct = New System.Windows.Forms.Label()
         Me.PnlProductList = New System.Windows.Forms.Panel()
         Me.LstBoxListProducts = New System.Windows.Forms.ListBox()
-        Me.PnlRefreshBtn = New System.Windows.Forms.Panel()
-        Me.BtnRefreshListProducts = New System.Windows.Forms.Button()
         Me.PnlProduct = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxtBoxProductCode = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -45,11 +44,8 @@ Partial Class ProductForm
         Me.BtnUpdateProduct = New System.Windows.Forms.Button()
         Me.BtnDeleteProduct = New System.Windows.Forms.Button()
         Me.BindingSourceProducts = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PnlTitle.SuspendLayout()
         Me.PnlProductList.SuspendLayout()
-        Me.PnlRefreshBtn.SuspendLayout()
         Me.PnlProduct.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumBoxProductMinQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +78,6 @@ Partial Class ProductForm
         'PnlProductList
         '
         Me.PnlProductList.Controls.Add(Me.LstBoxListProducts)
-        Me.PnlProductList.Controls.Add(Me.PnlRefreshBtn)
         Me.PnlProductList.Dock = System.Windows.Forms.DockStyle.Left
         Me.PnlProductList.Location = New System.Drawing.Point(0, 80)
         Me.PnlProductList.Name = "PnlProductList"
@@ -96,36 +91,10 @@ Partial Class ProductForm
         Me.LstBoxListProducts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LstBoxListProducts.FormattingEnabled = True
         Me.LstBoxListProducts.ItemHeight = 20
-        Me.LstBoxListProducts.Location = New System.Drawing.Point(0, 50)
+        Me.LstBoxListProducts.Location = New System.Drawing.Point(0, 0)
         Me.LstBoxListProducts.Name = "LstBoxListProducts"
-        Me.LstBoxListProducts.Size = New System.Drawing.Size(228, 309)
+        Me.LstBoxListProducts.Size = New System.Drawing.Size(228, 359)
         Me.LstBoxListProducts.TabIndex = 1
-        '
-        'PnlRefreshBtn
-        '
-        Me.PnlRefreshBtn.Controls.Add(Me.BtnRefreshListProducts)
-        Me.PnlRefreshBtn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlRefreshBtn.Location = New System.Drawing.Point(0, 0)
-        Me.PnlRefreshBtn.Name = "PnlRefreshBtn"
-        Me.PnlRefreshBtn.Size = New System.Drawing.Size(228, 50)
-        Me.PnlRefreshBtn.TabIndex = 0
-        '
-        'BtnRefreshListProducts
-        '
-        Me.BtnRefreshListProducts.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnRefreshListProducts.BackColor = System.Drawing.Color.MidnightBlue
-        Me.BtnRefreshListProducts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnRefreshListProducts.FlatAppearance.BorderSize = 0
-        Me.BtnRefreshListProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRefreshListProducts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRefreshListProducts.ForeColor = System.Drawing.Color.White
-        Me.BtnRefreshListProducts.Location = New System.Drawing.Point(37, 11)
-        Me.BtnRefreshListProducts.Name = "BtnRefreshListProducts"
-        Me.BtnRefreshListProducts.Size = New System.Drawing.Size(147, 28)
-        Me.BtnRefreshListProducts.TabIndex = 0
-        Me.BtnRefreshListProducts.Text = "Refrescar datos"
-        Me.BtnRefreshListProducts.UseVisualStyleBackColor = False
         '
         'PnlProduct
         '
@@ -139,6 +108,23 @@ Partial Class ProductForm
         Me.PnlProduct.Name = "PnlProduct"
         Me.PnlProduct.Size = New System.Drawing.Size(452, 359)
         Me.PnlProduct.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(-206, 16)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(161, 28)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Refrescar datos"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -294,23 +280,6 @@ Partial Class ProductForm
         Me.BtnDeleteProduct.Text = "Eliminar"
         Me.BtnDeleteProduct.UseVisualStyleBackColor = False
         '
-        'Button1
-        '
-        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(-206, 16)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(161, 28)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Refrescar datos"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'ProductForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -326,7 +295,6 @@ Partial Class ProductForm
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         Me.PnlProductList.ResumeLayout(False)
-        Me.PnlRefreshBtn.ResumeLayout(False)
         Me.PnlProduct.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -341,8 +309,6 @@ Partial Class ProductForm
     Friend WithEvents LblTitleProduct As Label
     Friend WithEvents PnlProductList As Panel
     Friend WithEvents LstBoxListProducts As ListBox
-    Friend WithEvents PnlRefreshBtn As Panel
-    Friend WithEvents BtnRefreshListProducts As Button
     Friend WithEvents PnlProduct As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -359,6 +325,5 @@ Partial Class ProductForm
     Friend WithEvents BtnUpdateProduct As Button
     Friend WithEvents BtnCreateProduct As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Button1 As Button
 End Class

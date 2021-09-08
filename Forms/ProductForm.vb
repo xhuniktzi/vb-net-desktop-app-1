@@ -31,7 +31,7 @@ Public Class ProductForm
         End If
     End Sub
 
-    Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs) Handles BtnRefreshListProducts.Click, Button1.Click
+    Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs) Handles Button1.Click
         LoadData()
     End Sub
 
@@ -67,11 +67,11 @@ Public Class ProductForm
     End Sub
 
     Private Sub BtnCreateProduct_Click(sender As Object, e As EventArgs) Handles BtnCreateProduct.Click
+        CreateProductForm.cargar = New CreateProductForm.operar(AddressOf LoadData)
         CreateProductForm.ShowDialog()
     End Sub
 
     Private Sub ProductForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         MainForm.Show()
     End Sub
-
 End Class

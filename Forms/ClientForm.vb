@@ -34,7 +34,7 @@
         MainForm.Show()
     End Sub
 
-    Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs) Handles BtnRefreshListProducts.Click
+    Private Sub BtnRefreshListProducts_Click(sender As Object, e As EventArgs)
         LoadData()
     End Sub
 
@@ -58,5 +58,10 @@
             MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         LoadData()
+    End Sub
+
+    Private Sub BtnCreateClient_Click(sender As Object, e As EventArgs) Handles BtnCreateClient.Click
+        CreateClientForm.cargar = New CreateClientForm.operar(AddressOf LoadData)
+        CreateClientForm.ShowDialog()
     End Sub
 End Class

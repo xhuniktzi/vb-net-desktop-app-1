@@ -2,6 +2,8 @@
 Imports System.Net
 
 Public Class CreateProductForm
+    Public Delegate Sub operar()
+    Public cargar As operar
     Private Sub BtnCreateProduct_Click(sender As Object, e As EventArgs) Handles BtnCreateProduct.Click
         Dim repo As IProductRepository = New ProductRepository()
         Dim product As Product = New Product()
@@ -14,6 +16,7 @@ Public Class CreateProductForm
             repo.CreateProduct(product)
             Dim res As DialogResult = MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
             If res = DialogResult.OK Then
+                cargar.Invoke()
                 Close()
             End If
         Catch ex As Exception
@@ -27,9 +30,5 @@ Public Class CreateProductForm
         Else
             BtnCreateProduct.Enabled = True
         End If
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
-
     End Sub
 End Class
