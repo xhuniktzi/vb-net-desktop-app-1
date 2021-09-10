@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Net
 Imports System.Text
+Imports Newtonsoft.Json
 
 Public Class ConnectDatabase
     Public Shared Function ExecPost(Url As String, Content As String, ContentType As String) As String

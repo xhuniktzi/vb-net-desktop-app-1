@@ -79,6 +79,7 @@
     <Compile Include="Common\Client.vb" />
     <Compile Include="Contracts\IClientRepository.vb" />
     <Compile Include="ErrorHandling\ApiConnectException.vb" />
+    <Compile Include="ErrorHandling\Respuesta.vb" />
     <Compile Include="Forms\ClientForm.Designer.vb">
       <DependentUpon>ClientForm.vb</DependentUpon>
     </Compile>
@@ -89,6 +90,12 @@
       <DependentUpon>CreateClientForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\CreateClientForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateInvoice.Designer.vb">
+      <DependentUpon>CreateInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CreateProductForm.Designer.vb">
@@ -142,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateClientForm.resx">
       <DependentUpon>CreateClientForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateInvoice.resx">
+      <DependentUpon>CreateInvoice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateProductForm.resx">
       <DependentUpon>CreateProductForm.vb</DependentUpon>

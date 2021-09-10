@@ -12,4 +12,9 @@
         ClientForm.Show()
         Me.Hide()
     End Sub
+
+    Private Sub BtnInvoice_Click(sender As Object, e As EventArgs) Handles BtnInvoice.Click
+        CreateInvoice.Show()
+        Me.Hide()
+    End Sub
 End Class

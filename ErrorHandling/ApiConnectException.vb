@@ -6,7 +6,7 @@
     End Sub
     Public Overrides ReadOnly Property Message As String
         Get
-            Return $"Error de la API: {MyBase.Message}"
+            Return $"{MyBase.Message}"
         End Get
     End Property
 End Class
