@@ -62,6 +62,7 @@ Partial Class CreateInvoice
         '
         'DataGridProductDetail
         '
+        Me.DataGridProductDetail.AllowUserToAddRows = False
         Me.DataGridProductDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridProductDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridProductDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColProductCode, Me.ColProductName, Me.ColProductQuantity, Me.ColProductPrice, Me.ColProductTotal})

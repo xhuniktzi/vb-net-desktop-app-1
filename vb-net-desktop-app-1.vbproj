@@ -76,11 +76,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dto\ClientDto.vb" />
     <Compile Include="Common\Client.vb" />
     <Compile Include="Contracts\IClientRepository.vb" />
     <Compile Include="ErrorHandling\ApiConnectException.vb" />
     <Compile Include="ErrorHandling\Respuesta.vb" />
+    <Compile Include="Extensions\Extensions.vb" />
     <Compile Include="Forms\ClientForm.Designer.vb">
       <DependentUpon>ClientForm.vb</DependentUpon>
     </Compile>
@@ -129,7 +129,6 @@
     <Compile Include="ViewModel\ClientMainViewModel.vb" />
     <Compile Include="ViewModel\ProductMainViewModel.vb" />
     <Compile Include="ViewModel\ProductViewModel.vb" />
-    <Compile Include="ViewModel\SelectClientViewModel.vb" />
     <Compile Include="ViewModel\ViewModelBase.vb" />
     <Content Include=".gitignore" />
     <Compile Include="Common\Product.vb" />
@@ -181,6 +180,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Client.datasource" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -19,6 +19,11 @@ Public Class ClientRepository
         Return JsonConvert.DeserializeObject(Of Client)(res)
     End Function
 
+    Public Function FindClientById(id As Integer) As Client Implements IClientRepository.FindClientById
+        Dim res As String = ConnectDatabase.ExecGet($"{My.Settings.API}/clients/{id}")
+        Return JsonConvert.DeserializeObject(Of Client)(res)
+    End Function
+
     Public Function GetAllClients() As IEnumerable(Of Client) Implements IClientRepository.GetAllClients
         Dim res As String = ConnectDatabase.ExecGet($"{My.Settings.API}/clients")
         Return JsonConvert.DeserializeObject(Of List(Of Client))(res)
