@@ -78,9 +78,11 @@
   <ItemGroup>
     <Compile Include="Common\Branch.vb" />
     <Compile Include="Common\Client.vb" />
+    <Compile Include="Common\Invoice.vb" />
     <Compile Include="Common\ProductDetailInvoice.vb" />
     <Compile Include="Contracts\IBranchRepository.vb" />
     <Compile Include="Contracts\IClientRepository.vb" />
+    <Compile Include="Contracts\IInvoiceRepository.vb" />
     <Compile Include="ErrorHandling\ApiConnectException.vb" />
     <Compile Include="ErrorHandling\Respuesta.vb" />
     <Compile Include="Extensions\Extensions.vb" />
@@ -141,6 +143,7 @@
     <Compile Include="Repository\BranchRepository.vb" />
     <Compile Include="Repository\ClientRepository.vb" />
     <Compile Include="Repository\ConnectDatabase.vb" />
+    <Compile Include="Repository\InvoiceRepository.vb" />
     <Compile Include="ViewModel\ClientViewModel.vb" />
     <Compile Include="ViewModel\ClientMainViewModel.vb" />
     <Compile Include="ViewModel\ProductMainViewModel.vb" />

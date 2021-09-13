@@ -42,10 +42,39 @@
         CurrentBranch = Nothing
         TxtBoxBranchName.Text = ""
         TxtBoxBranchDirection.Text = ""
+
+        TxtBoxInvoiceSerial.Text = ""
+        NumBoxInvoiceNumber.Value = Nothing
+
+        ProductDetailInvoiceBindingSource.Clear()
     End Sub
 
     Public Sub AddProductToDetail(product As ProductDetailInvoice)
-        ProductDetailInvoiceBindingSource.Add(product)
+        Dim duplicate = From e In ProductDetailInvoiceBindingSource
+                        Where e.Product_Id = product.Product_Id
+                        Select e.Product_Id
+
+        If duplicate.Count > 0 Then
+            MessageBox.Show($"Producto: {product.Name} Duplicado en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ProductDetailInvoiceBindingSource.Add(product)
+        End If
     End Sub
 
+    Private Sub BtnCreateInvoice_Click(sender As Object, e As EventArgs) Handles BtnCreateInvoice.Click
+        Try
+            Dim invoiceRepo As IInvoiceRepository = New InvoiceRepository()
+            Dim invoice As Invoice = New Invoice()
+            invoice.Serial_Number = TxtBoxInvoiceSerial.Text
+            invoice.Invoice_Number = NumBoxInvoiceNumber.Value
+            invoice.Client_Id = CurrentClient.Client_Id
+            invoice.Branch_Id = CurrentBranch.Branch_Id
+            invoice.Order_Date = Today.ToString("yyyy-MM-dd")
+            invoice.Product_Detail = ProductDetailInvoiceBindingSource.List
+            invoiceRepo.CreateInvoice(invoice)
+        Catch ex As ApiConnectException
+            MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
 End Class
