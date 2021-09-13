@@ -14,20 +14,26 @@ Public Class AddProductsForm
     End Sub
 
     Private Sub BtnSearchProduct_Click(sender As Object, e As EventArgs) Handles BtnSearchProduct.Click
-        ProductBindingSource.Clear()
-        If TxtBoxProductCode.Text.IsNotNullOrEmptyOrWhiteSpace() Then
-            For Each product In _productRepo.GetAllProducts()
+        Try
+            ProductBindingSource.Clear()
+            If TxtBoxProductCode.Text.IsNotNullOrEmptyOrWhiteSpace() Then
+                For Each product In _productRepo.GetAllProducts()
+                    ProductBindingSource.Add(product)
+                Next
+            Else
+                Dim code As String = TxtBoxProductCode.Text
+                Dim product As Product = _productRepo.FindProductByCode(code)
                 ProductBindingSource.Add(product)
-            Next
-        Else
-            Dim code As String = TxtBoxProductCode.Text
-            Dim product As Product = _productRepo.FindProductByCode(code)
-            ProductBindingSource.Add(product)
-        End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub BtnSelectProduct_Click(sender As Object, e As EventArgs) Handles BtnSelectProduct.Click
-        If Not NumBoxProductQuantity.Value > 0 Then
+        If ProductBindingSource.Current Is Nothing Then
+            MessageBox.Show("Debe seleccionar un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf Not NumBoxProductQuantity.Value > 0 Then
             MessageBox.Show("Debe ingresar una cantidad mayor a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim frm As CreateInvoice = CType(Owner, CreateInvoice)
