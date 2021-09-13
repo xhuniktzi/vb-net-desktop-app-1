@@ -27,18 +27,22 @@ Public Class AddProductsForm
     End Sub
 
     Private Sub BtnSelectProduct_Click(sender As Object, e As EventArgs) Handles BtnSelectProduct.Click
-        Dim frm As CreateInvoice = CType(Owner, CreateInvoice)
-        Dim currentProduct As Product = ProductBindingSource.Current
+        If Not NumBoxProductQuantity.Value > 0 Then
+            MessageBox.Show("Debe ingresar una cantidad mayor a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim frm As CreateInvoice = CType(Owner, CreateInvoice)
+            Dim currentProduct As Product = ProductBindingSource.Current
 
-        Dim pd As ProductDetailInvoice = New ProductDetailInvoice()
-        pd.Product_Id = currentProduct.Product_Id
-        pd.Code = currentProduct.Code
-        pd.Name = currentProduct.Name
-        pd.Quantity = NumBoxProductQuantity.Value
-        pd.Price = currentProduct.Price
-        pd.Total = pd.Quantity * pd.Price
-        frm.AddProductToDetail(pd)
-        'AddProduct.Invoke()
-        Me.Close()
+            Dim pd As ProductDetailInvoice = New ProductDetailInvoice()
+            pd.Product_Id = currentProduct.Product_Id
+            pd.Code = currentProduct.Code
+            pd.Name = currentProduct.Name
+            pd.Quantity = NumBoxProductQuantity.Value
+            pd.Price = currentProduct.Price
+            pd.Total = pd.Quantity * pd.Price
+            frm.AddProductToDetail(pd)
+            'AddProduct.Invoke()
+            Me.Close()
+        End If
     End Sub
 End Class
