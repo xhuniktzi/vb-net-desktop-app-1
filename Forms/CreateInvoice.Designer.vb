@@ -48,12 +48,12 @@ Partial Class CreateInvoice
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BtnDeleteProduct = New System.Windows.Forms.Button()
         Me.BtnAddProduct = New System.Windows.Forms.Button()
-        Me.ProductDetailInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductDetailInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataGridProductDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpInvoiceClient.SuspendLayout()
         Me.PnlTitle.SuspendLayout()
@@ -372,10 +372,6 @@ Partial Class CreateInvoice
         Me.BtnAddProduct.Text = "Agregar Producto"
         Me.BtnAddProduct.UseVisualStyleBackColor = False
         '
-        'ProductDetailInvoiceBindingSource
-        '
-        Me.ProductDetailInvoiceBindingSource.DataSource = GetType(vb_net_desktop_app_1.ProductDetailInvoice)
-        '
         'CodeDataGridViewTextBoxColumn
         '
         Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -419,6 +415,10 @@ Partial Class CreateInvoice
         Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
         Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
         Me.TotalDataGridViewTextBoxColumn.Width = 66
+        '
+        'ProductDetailInvoiceBindingSource
+        '
+        Me.ProductDetailInvoiceBindingSource.DataSource = GetType(vb_net_desktop_app_1.ProductDetailInvoice)
         '
         'CreateInvoice
         '

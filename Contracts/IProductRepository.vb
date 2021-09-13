@@ -4,4 +4,5 @@ Public Interface IProductRepository
     Function CreateProduct(product As Product) As Product
     Sub UpdateProduct(code As String, product As Product)
     Sub DeleteProduct(code As String)
+    Function FindProductByCode(code As String) As Product
 End Interface

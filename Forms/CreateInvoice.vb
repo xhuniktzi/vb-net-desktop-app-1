@@ -27,14 +27,25 @@
     End Sub
 
     Private Sub BtnAddProduct_Click(sender As Object, e As EventArgs) Handles BtnAddProduct.Click
-        'Dim pd As ProductDetailInvoice = New ProductDetailInvoice()
-        'pd.Product_Id = 1
-        'pd.Name = "Producto 1"
-        'pd.Code = "AA"
-        'pd.Quantity = 300
-        'pd.Price = 30.0
-        'pd.Total = pd.Quantity * pd.Price
-        'ProductDetailInvoiceBindingSource.Add(pd)
+        Dim frm As AddProductsForm = New AddProductsForm()
+        'AddProductsForm.AddProduct = New AddProductsForm.AddProductDelegate(AddressOf AddProductToDetail)
+        'AddProductsForm.ShowDialog()
+        AddOwnedForm(frm)
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub BtnClearInvoice_Click(sender As Object, e As EventArgs) Handles BtnClearInvoice.Click
+        CurrentClient = Nothing
+        TxtBoxClientName.Text = ""
+        TxtBoxClientNit.Text = ""
+
+        CurrentBranch = Nothing
+        TxtBoxBranchName.Text = ""
+        TxtBoxBranchDirection.Text = ""
+    End Sub
+
+    Public Sub AddProductToDetail(product As ProductDetailInvoice)
+        ProductDetailInvoiceBindingSource.Add(product)
     End Sub
 
 End Class

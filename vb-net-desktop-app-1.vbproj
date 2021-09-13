@@ -84,6 +84,12 @@
     <Compile Include="ErrorHandling\ApiConnectException.vb" />
     <Compile Include="ErrorHandling\Respuesta.vb" />
     <Compile Include="Extensions\Extensions.vb" />
+    <Compile Include="Forms\AddProductsForm.Designer.vb">
+      <DependentUpon>AddProductsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddProductsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ClientForm.Designer.vb">
       <DependentUpon>ClientForm.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     <Compile Include="Repository\ProductRepository.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\AddProductsForm.resx">
+      <DependentUpon>AddProductsForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientForm.resx">
       <DependentUpon>ClientForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +215,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Product.datasource" />
     <None Include="ProductDetailInvoice.datasource" />
   </ItemGroup>
   <ItemGroup />
