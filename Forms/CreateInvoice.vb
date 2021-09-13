@@ -1,6 +1,6 @@
 ﻿Public Class CreateInvoice
-    Public Property IdCurrentClient As Integer
-    Public Property IdCurrentBranch As Integer
+    Public Property CurrentClient As Client
+    Public Property CurrentBranch As Branch
     Private Property _lstProductDetail As List(Of ProductDetailInvoice)
     Public Sub New()
 
@@ -24,6 +24,17 @@
         Dim frm As SelectBranchForm = New SelectBranchForm()
         AddOwnedForm(frm)
         frm.ShowDialog()
+    End Sub
+
+    Private Sub BtnAddProduct_Click(sender As Object, e As EventArgs) Handles BtnAddProduct.Click
+        'Dim pd As ProductDetailInvoice = New ProductDetailInvoice()
+        'pd.Product_Id = 1
+        'pd.Name = "Producto 1"
+        'pd.Code = "AA"
+        'pd.Quantity = 300
+        'pd.Price = 30.0
+        'pd.Total = pd.Quantity * pd.Price
+        'ProductDetailInvoiceBindingSource.Add(pd)
     End Sub
 
 End Class

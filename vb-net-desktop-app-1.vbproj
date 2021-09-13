@@ -137,7 +137,6 @@
     <Compile Include="Repository\ConnectDatabase.vb" />
     <Compile Include="ViewModel\ClientViewModel.vb" />
     <Compile Include="ViewModel\ClientMainViewModel.vb" />
-    <Compile Include="ViewModel\CreateInvoiceViewModel.vb" />
     <Compile Include="ViewModel\ProductMainViewModel.vb" />
     <Compile Include="ViewModel\ProductViewModel.vb" />
     <Compile Include="ViewModel\ViewModelBase.vb" />

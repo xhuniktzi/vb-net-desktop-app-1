@@ -12,21 +12,23 @@ Public Class SelectClientForm
     End Sub
 
     Private Sub BtnSearchClient_Click(sender As Object, e As EventArgs) Handles BtnSearchClient.Click
+        ClientBindingSource.Clear()
         If TxtBoxClientID.Text.IsNotNullOrEmptyOrWhiteSpace() Then
-            DataGridClients.DataSource = _clientRepo.GetAllClients()
+            For Each client In _clientRepo.GetAllClients()
+                ClientBindingSource.Add(client)
+            Next
         Else
             Dim id As Integer = TxtBoxClientID.Text
-            Dim res As List(Of Client) = New List(Of Client)
-            res.Add(_clientRepo.FindClientById(id))
-            DataGridClients.DataSource = res
+            Dim client As Client = _clientRepo.FindClientById(id)
+            ClientBindingSource.Add(client)
         End If
     End Sub
 
     Private Sub BtnSelectClient_Click(sender As Object, e As EventArgs) Handles BtnSelectClient.Click
         Dim frm As CreateInvoice = CType(Owner, CreateInvoice)
-        frm.IdCurrentClient = DataGridClients.CurrentRow.Cells(0).Value
-        frm.TxtBoxClientName.Text = DataGridClients.CurrentRow.Cells(1).Value
-        frm.TxtBoxClientNit.Text = DataGridClients.CurrentRow.Cells(2).Value
+        frm.CurrentClient = ClientBindingSource.Current
+        frm.TxtBoxClientName.Text = ClientBindingSource.Current.Name
+        frm.TxtBoxClientNit.Text = ClientBindingSource.Current.Nit
         Me.Close()
     End Sub
 End Class
