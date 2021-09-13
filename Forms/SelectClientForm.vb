@@ -12,7 +12,7 @@ Public Class SelectClientForm
     End Sub
 
     Private Sub BtnSearchClient_Click(sender As Object, e As EventArgs) Handles BtnSearchClient.Click
-        If TxtBoxClientID.Text.IsNotNullOrEmptyOrWhiteSpace Then
+        If TxtBoxClientID.Text.IsNotNullOrEmptyOrWhiteSpace() Then
             DataGridClients.DataSource = _clientRepo.GetAllClients()
         Else
             Dim id As Integer = TxtBoxClientID.Text
