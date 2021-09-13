@@ -1,8 +1,15 @@
 ﻿Public Class CreateInvoice
     Public Property IdCurrentClient As Integer
     Public Property IdCurrentBranch As Integer
+    Private Property _lstProductDetail As List(Of ProductDetailInvoice)
+    Public Sub New()
 
-    Private Property lstProductDetail As List(Of Product) = New List(Of Product)
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        _lstProductDetail = New List(Of ProductDetailInvoice)
+    End Sub
     Private Sub CreateInvoice_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         MainForm.Show()
     End Sub
@@ -19,7 +26,4 @@
         frm.ShowDialog()
     End Sub
 
-    Private Sub BtnAddProduct_Click(sender As Object, e As EventArgs) Handles BtnAddProduct.Click
-
-    End Sub
 End Class

@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Common\Branch.vb" />
     <Compile Include="Common\Client.vb" />
+    <Compile Include="Common\ProductDetailInvoice.vb" />
     <Compile Include="Contracts\IBranchRepository.vb" />
     <Compile Include="Contracts\IClientRepository.vb" />
     <Compile Include="ErrorHandling\ApiConnectException.vb" />
@@ -136,6 +137,7 @@
     <Compile Include="Repository\ConnectDatabase.vb" />
     <Compile Include="ViewModel\ClientViewModel.vb" />
     <Compile Include="ViewModel\ClientMainViewModel.vb" />
+    <Compile Include="ViewModel\CreateInvoiceViewModel.vb" />
     <Compile Include="ViewModel\ProductMainViewModel.vb" />
     <Compile Include="ViewModel\ProductViewModel.vb" />
     <Compile Include="ViewModel\ViewModelBase.vb" />
@@ -205,6 +207,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="ProductDetailInvoice.datasource" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

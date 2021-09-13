@@ -22,12 +22,14 @@ Partial Class CreateInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataGridProductDetail = New System.Windows.Forms.DataGridView()
-        Me.ColProductCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColProductName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColProductQuantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColProductPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColProductTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductDetailInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BtnCreateInvoice = New System.Windows.Forms.Button()
         Me.BtnClearInvoice = New System.Windows.Forms.Button()
         Me.BtnViewInvoice = New System.Windows.Forms.Button()
@@ -53,6 +55,7 @@ Partial Class CreateInvoice
         Me.BtnDeleteProduct = New System.Windows.Forms.Button()
         Me.BtnAddProduct = New System.Windows.Forms.Button()
         CType(Me.DataGridProductDetail, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductDetailInvoiceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpInvoiceClient.SuspendLayout()
         Me.PnlTitle.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -63,9 +66,11 @@ Partial Class CreateInvoice
         'DataGridProductDetail
         '
         Me.DataGridProductDetail.AllowUserToAddRows = False
+        Me.DataGridProductDetail.AutoGenerateColumns = False
         Me.DataGridProductDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridProductDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridProductDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColProductCode, Me.ColProductName, Me.ColProductQuantity, Me.ColProductPrice, Me.ColProductTotal})
+        Me.DataGridProductDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodeDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
+        Me.DataGridProductDetail.DataSource = Me.ProductDetailInvoiceBindingSource
         Me.DataGridProductDetail.Location = New System.Drawing.Point(16, 338)
         Me.DataGridProductDetail.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridProductDetail.Name = "DataGridProductDetail"
@@ -73,40 +78,53 @@ Partial Class CreateInvoice
         Me.DataGridProductDetail.Size = New System.Drawing.Size(868, 208)
         Me.DataGridProductDetail.TabIndex = 0
         '
-        'ColProductCode
+        'CodeDataGridViewTextBoxColumn
         '
-        Me.ColProductCode.FillWeight = 17.13198!
-        Me.ColProductCode.HeaderText = "Codigo"
-        Me.ColProductCode.Name = "ColProductCode"
-        Me.ColProductCode.ReadOnly = True
+        Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.CodeDataGridViewTextBoxColumn.DataPropertyName = "Code"
+        Me.CodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
+        Me.CodeDataGridViewTextBoxColumn.Name = "CodeDataGridViewTextBoxColumn"
+        Me.CodeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CodeDataGridViewTextBoxColumn.Width = 81
         '
-        'ColProductName
+        'NameDataGridViewTextBoxColumn
         '
-        Me.ColProductName.FillWeight = 50.0!
-        Me.ColProductName.HeaderText = "Nombre del producto"
-        Me.ColProductName.Name = "ColProductName"
-        Me.ColProductName.ReadOnly = True
+        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'ColProductQuantity
+        'QuantityDataGridViewTextBoxColumn
         '
-        Me.ColProductQuantity.FillWeight = 17.13198!
-        Me.ColProductQuantity.HeaderText = "Cantidad"
-        Me.ColProductQuantity.Name = "ColProductQuantity"
-        Me.ColProductQuantity.ReadOnly = True
+        Me.QuantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.QuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity"
+        Me.QuantityDataGridViewTextBoxColumn.HeaderText = "Cantidad"
+        Me.QuantityDataGridViewTextBoxColumn.Name = "QuantityDataGridViewTextBoxColumn"
+        Me.QuantityDataGridViewTextBoxColumn.ReadOnly = True
+        Me.QuantityDataGridViewTextBoxColumn.Width = 91
         '
-        'ColProductPrice
+        'PriceDataGridViewTextBoxColumn
         '
-        Me.ColProductPrice.FillWeight = 17.13198!
-        Me.ColProductPrice.HeaderText = "Precio"
-        Me.ColProductPrice.Name = "ColProductPrice"
-        Me.ColProductPrice.ReadOnly = True
+        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PriceDataGridViewTextBoxColumn.Width = 76
         '
-        'ColProductTotal
+        'TotalDataGridViewTextBoxColumn
         '
-        Me.ColProductTotal.FillWeight = 17.13198!
-        Me.ColProductTotal.HeaderText = "Total"
-        Me.ColProductTotal.Name = "ColProductTotal"
-        Me.ColProductTotal.ReadOnly = True
+        Me.TotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
+        Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
+        Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
+        Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TotalDataGridViewTextBoxColumn.Width = 66
+        '
+        'ProductDetailInvoiceBindingSource
+        '
+        Me.ProductDetailInvoiceBindingSource.DataSource = GetType(vb_net_desktop_app_1.ProductDetailInvoice)
         '
         'BtnCreateInvoice
         '
@@ -422,6 +440,7 @@ Partial Class CreateInvoice
         Me.Name = "CreateInvoice"
         Me.Text = "CreateInvoice"
         CType(Me.DataGridProductDetail, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductDetailInvoiceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpInvoiceClient.ResumeLayout(False)
         Me.GrpInvoiceClient.PerformLayout()
         Me.PnlTitle.ResumeLayout(False)
@@ -460,9 +479,10 @@ Partial Class CreateInvoice
     Friend WithEvents Label6 As Label
     Friend WithEvents BtnDeleteProduct As Button
     Friend WithEvents BtnAddProduct As Button
-    Friend WithEvents ColProductCode As DataGridViewTextBoxColumn
-    Friend WithEvents ColProductName As DataGridViewTextBoxColumn
-    Friend WithEvents ColProductQuantity As DataGridViewTextBoxColumn
-    Friend WithEvents ColProductPrice As DataGridViewTextBoxColumn
-    Friend WithEvents ColProductTotal As DataGridViewTextBoxColumn
+    Friend WithEvents CodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductDetailInvoiceBindingSource As BindingSource
 End Class
