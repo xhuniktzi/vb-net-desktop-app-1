@@ -80,6 +80,7 @@
     <Compile Include="Common\Client.vb" />
     <Compile Include="Common\Invoice.vb" />
     <Compile Include="Common\InvoiceDetail.vb" />
+    <Compile Include="Common\InvoiceQuery.vb" />
     <Compile Include="Common\ProductDetailInvoice.vb" />
     <Compile Include="Contracts\IBranchRepository.vb" />
     <Compile Include="Contracts\IClientRepository.vb" />

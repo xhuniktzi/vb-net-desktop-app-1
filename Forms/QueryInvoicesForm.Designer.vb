@@ -26,24 +26,24 @@ Partial Class QueryInvoicesForm
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpInvoiceQueryInfo = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TxtBoxSerialNumber = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BtnSelectBranch = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TxtBoxBranch = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BtnSelectProduct = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TxtBoxProduct = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnSelectClient = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtBoxClient = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimeEnd = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimeStart = New System.Windows.Forms.DateTimePicker()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BtnQuery = New System.Windows.Forms.Button()
         Me.OrderIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SerialNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,10 +62,9 @@ Partial Class QueryInvoicesForm
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BtnQuery = New System.Windows.Forms.Button()
+        Me.TxtBoxInvoiceNumber = New System.Windows.Forms.TextBox()
         Me.PnlTitle.SuspendLayout()
         Me.GrpInvoiceQueryInfo.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InvoiceDetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -94,18 +93,18 @@ Partial Class QueryInvoicesForm
         '
         'GrpInvoiceQueryInfo
         '
-        Me.GrpInvoiceQueryInfo.Controls.Add(Me.NumericUpDown1)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TxtBoxInvoiceNumber)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label8)
-        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox4)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TxtBoxSerialNumber)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label7)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.BtnSelectBranch)
-        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox3)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TxtBoxBranch)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label6)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.BtnSelectProduct)
-        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox2)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TxtBoxProduct)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label5)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.BtnSelectClient)
-        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox1)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TxtBoxClient)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label4)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label2)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.DateTimeEnd)
@@ -118,13 +117,6 @@ Partial Class QueryInvoicesForm
         Me.GrpInvoiceQueryInfo.TabStop = False
         Me.GrpInvoiceQueryInfo.Text = "Información de la Consulta"
         '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(639, 202)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(242, 24)
-        Me.NumericUpDown1.TabIndex = 21
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -135,12 +127,12 @@ Partial Class QueryInvoicesForm
         Me.Label8.TabIndex = 20
         Me.Label8.Text = "Numero de Factura:"
         '
-        'TextBox4
+        'TxtBoxSerialNumber
         '
-        Me.TextBox4.Location = New System.Drawing.Point(202, 199)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(221, 24)
-        Me.TextBox4.TabIndex = 19
+        Me.TxtBoxSerialNumber.Location = New System.Drawing.Point(202, 199)
+        Me.TxtBoxSerialNumber.Name = "TxtBoxSerialNumber"
+        Me.TxtBoxSerialNumber.Size = New System.Drawing.Size(221, 24)
+        Me.TxtBoxSerialNumber.TabIndex = 19
         '
         'Label7
         '
@@ -167,13 +159,13 @@ Partial Class QueryInvoicesForm
         Me.BtnSelectBranch.Text = "Seleccionar Sucursal"
         Me.BtnSelectBranch.UseVisualStyleBackColor = False
         '
-        'TextBox3
+        'TxtBoxBranch
         '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(202, 161)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(485, 24)
-        Me.TextBox3.TabIndex = 16
+        Me.TxtBoxBranch.Enabled = False
+        Me.TxtBoxBranch.Location = New System.Drawing.Point(202, 161)
+        Me.TxtBoxBranch.Name = "TxtBoxBranch"
+        Me.TxtBoxBranch.Size = New System.Drawing.Size(485, 24)
+        Me.TxtBoxBranch.TabIndex = 16
         '
         'Label6
         '
@@ -200,13 +192,13 @@ Partial Class QueryInvoicesForm
         Me.BtnSelectProduct.Text = "Seleccionar Producto"
         Me.BtnSelectProduct.UseVisualStyleBackColor = False
         '
-        'TextBox2
+        'TxtBoxProduct
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(202, 125)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(485, 24)
-        Me.TextBox2.TabIndex = 13
+        Me.TxtBoxProduct.Enabled = False
+        Me.TxtBoxProduct.Location = New System.Drawing.Point(202, 125)
+        Me.TxtBoxProduct.Name = "TxtBoxProduct"
+        Me.TxtBoxProduct.Size = New System.Drawing.Size(485, 24)
+        Me.TxtBoxProduct.TabIndex = 13
         '
         'Label5
         '
@@ -233,13 +225,13 @@ Partial Class QueryInvoicesForm
         Me.BtnSelectClient.Text = "Seleccionar Cliente"
         Me.BtnSelectClient.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'TxtBoxClient
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(202, 89)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(485, 24)
-        Me.TextBox1.TabIndex = 5
+        Me.TxtBoxClient.Enabled = False
+        Me.TxtBoxClient.Location = New System.Drawing.Point(202, 89)
+        Me.TxtBoxClient.Name = "TxtBoxClient"
+        Me.TxtBoxClient.Size = New System.Drawing.Size(485, 24)
+        Me.TxtBoxClient.TabIndex = 5
         '
         'Label4
         '
@@ -298,6 +290,21 @@ Partial Class QueryInvoicesForm
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(887, 150)
         Me.DataGridView1.TabIndex = 13
+        '
+        'BtnQuery
+        '
+        Me.BtnQuery.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnQuery.FlatAppearance.BorderSize = 0
+        Me.BtnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnQuery.ForeColor = System.Drawing.Color.White
+        Me.BtnQuery.Location = New System.Drawing.Point(825, 488)
+        Me.BtnQuery.Name = "BtnQuery"
+        Me.BtnQuery.Size = New System.Drawing.Size(75, 27)
+        Me.BtnQuery.TabIndex = 22
+        Me.BtnQuery.Text = "Buscar"
+        Me.BtnQuery.UseVisualStyleBackColor = False
         '
         'OrderIdDataGridViewTextBoxColumn
         '
@@ -455,20 +462,12 @@ Partial Class QueryInvoicesForm
         '
         Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
         '
-        'BtnQuery
+        'TxtBoxInvoiceNumber
         '
-        Me.BtnQuery.BackColor = System.Drawing.Color.MidnightBlue
-        Me.BtnQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnQuery.FlatAppearance.BorderSize = 0
-        Me.BtnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnQuery.ForeColor = System.Drawing.Color.White
-        Me.BtnQuery.Location = New System.Drawing.Point(825, 488)
-        Me.BtnQuery.Name = "BtnQuery"
-        Me.BtnQuery.Size = New System.Drawing.Size(75, 27)
-        Me.BtnQuery.TabIndex = 22
-        Me.BtnQuery.Text = "Buscar"
-        Me.BtnQuery.UseVisualStyleBackColor = False
+        Me.TxtBoxInvoiceNumber.Location = New System.Drawing.Point(638, 199)
+        Me.TxtBoxInvoiceNumber.Name = "TxtBoxInvoiceNumber"
+        Me.TxtBoxInvoiceNumber.Size = New System.Drawing.Size(243, 24)
+        Me.TxtBoxInvoiceNumber.TabIndex = 21
         '
         'QueryInvoicesForm
         '
@@ -489,7 +488,6 @@ Partial Class QueryInvoicesForm
         Me.PnlTitle.PerformLayout()
         Me.GrpInvoiceQueryInfo.ResumeLayout(False)
         Me.GrpInvoiceQueryInfo.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InvoiceDetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -504,18 +502,17 @@ Partial Class QueryInvoicesForm
     Friend WithEvents Label2 As Label
     Friend WithEvents DateTimeEnd As DateTimePicker
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtBoxClient As TextBox
     Friend WithEvents BtnSelectClient As Button
     Friend WithEvents BtnSelectProduct As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtBoxProduct As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents BtnSelectBranch As Button
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TxtBoxBranch As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TxtBoxSerialNumber As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents OrderIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SerialNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -536,4 +533,5 @@ Partial Class QueryInvoicesForm
     Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InvoiceDetailBindingSource As BindingSource
     Friend WithEvents BtnQuery As Button
+    Friend WithEvents TxtBoxInvoiceNumber As TextBox
 End Class
