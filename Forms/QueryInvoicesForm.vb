@@ -1,6 +1,7 @@
 ﻿Imports vb_net_desktop_app_1.Extensions
 Public Class QueryInvoicesForm
     Private Property _invoiceRepo As IInvoiceRepository
+    Public Property CurrentClient As Client
     Public Sub New()
 
         ' This call is required by the designer.
@@ -21,9 +22,9 @@ Public Class QueryInvoicesForm
             If Not TxtBoxInvoiceNumber.Text.IsNotNullOrEmptyOrWhiteSpace() Then
                 query.Invoice_Number = CType(TxtBoxInvoiceNumber.Text, Integer)
             End If
-            'If Not NumBoxInvoiceNumber.Value = Nothing Then
-            '    query.Invoice_Number = NumBoxInvoiceNumber.Value
-            'End If
+            If Not CurrentClient Is Nothing Then
+                query.Client_Id = CurrentClient.Client_Id
+            End If
 
             Dim res = _invoiceRepo.FilterInvoice(query)
             InvoiceDetailBindingSource.Clear()
@@ -33,5 +34,11 @@ Public Class QueryInvoicesForm
         Catch ex As InvalidCastException
             MessageBox.Show("Numero de Factura invalido: ingrese un numero entero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub BtnSelectClient_Click(sender As Object, e As EventArgs) Handles BtnSelectClient.Click
+        Dim frm As QuerySelectClient = New QuerySelectClient()
+        AddOwnedForm(frm)
+        frm.ShowDialog()
     End Sub
 End Class
