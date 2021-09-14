@@ -26,4 +26,17 @@ Public Class QuerySelectProduct
             MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub BtnSelectProduct_Click(sender As Object, e As EventArgs) Handles BtnSelectProduct.Click
+        If ProductBindingSource.Current Is Nothing Then
+            MessageBox.Show("Debe seleccionar un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim frm As QueryInvoicesForm = CType(Owner, QueryInvoicesForm)
+            frm.CurrentProduct = ProductBindingSource.Current
+            frm.TxtBoxProduct.Text = $"{ProductBindingSource.Current.Code} - {ProductBindingSource.Current.Name}"
+            'frm.TxtBoxBranchName.Text = ProductBindingSource.Current.Name
+            'frm.TxtBoxBranchDirection.Text = ProductBindingSource.Current.Direction
+            Me.Close()
+        End If
+    End Sub
 End Class

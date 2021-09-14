@@ -3,6 +3,7 @@ Public Class QueryInvoicesForm
     Private Property _invoiceRepo As IInvoiceRepository
     Public Property CurrentClient As Client
     Public Property CurrentBranch As Branch
+    Public Property CurrentProduct As Product
     Public Sub New()
 
         ' This call is required by the designer.
@@ -25,6 +26,10 @@ Public Class QueryInvoicesForm
             End If
             If Not CurrentClient Is Nothing Then
                 query.Client_Id = CurrentClient.Client_Id
+            End If
+
+            If Not CurrentProduct Is Nothing Then
+                query.Product_Id = CurrentProduct.Product_Id
             End If
 
             If Not CurrentBranch Is Nothing Then
@@ -57,5 +62,17 @@ Public Class QueryInvoicesForm
         Dim frm As QuerySelectProduct = New QuerySelectProduct()
         AddOwnedForm(frm)
         frm.ShowDialog()
+    End Sub
+
+    Private Sub BtnClearQuery_Click(sender As Object, e As EventArgs) Handles BtnClearQuery.Click
+        InvoiceDetailBindingSource.Clear()
+        CurrentClient = Nothing
+        TxtBoxClient.Text = Nothing
+        CurrentProduct = Nothing
+        TxtBoxProduct.Text = Nothing
+        CurrentBranch = Nothing
+        TxtBoxBranch.Text = Nothing
+        TxtBoxSerialNumber.Text = Nothing
+        TxtBoxInvoiceNumber.Text = Nothing
     End Sub
 End Class

@@ -31,11 +31,11 @@ Partial Class QuerySelectProduct
         Me.DataGridProducts = New System.Windows.Forms.DataGridView()
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlTitle.SuspendLayout()
@@ -139,10 +139,6 @@ Partial Class QuerySelectProduct
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Seleccionar Producto"
         '
-        'ProductBindingSource
-        '
-        Me.ProductBindingSource.DataSource = GetType(vb_net_desktop_app_1.Product)
-        '
         'ProductIdDataGridViewTextBoxColumn
         '
         Me.ProductIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -177,6 +173,10 @@ Partial Class QuerySelectProduct
         Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
         Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
         Me.PriceDataGridViewTextBoxColumn.Width = 76
+        '
+        'ProductBindingSource
+        '
+        Me.ProductBindingSource.DataSource = GetType(vb_net_desktop_app_1.Product)
         '
         'QuerySelectProduct
         '
