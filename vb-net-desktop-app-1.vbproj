@@ -136,10 +136,22 @@
     <Compile Include="Forms\QueryInvoicesForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\QuerySelectBranch.Designer.vb">
+      <DependentUpon>QuerySelectBranch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuerySelectBranch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\QuerySelectClient.Designer.vb">
       <DependentUpon>QuerySelectClient.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\QuerySelectClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuerySelectProduct.Designer.vb">
+      <DependentUpon>QuerySelectProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuerySelectProduct.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SelectBranchForm.Designer.vb">
@@ -208,8 +220,14 @@
     <EmbeddedResource Include="Forms\QueryInvoicesForm.resx">
       <DependentUpon>QueryInvoicesForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuerySelectBranch.resx">
+      <DependentUpon>QuerySelectBranch.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuerySelectClient.resx">
       <DependentUpon>QuerySelectClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuerySelectProduct.resx">
+      <DependentUpon>QuerySelectProduct.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectBranchForm.resx">
       <DependentUpon>SelectBranchForm.vb</DependentUpon>

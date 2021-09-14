@@ -2,6 +2,7 @@
 Public Class QueryInvoicesForm
     Private Property _invoiceRepo As IInvoiceRepository
     Public Property CurrentClient As Client
+    Public Property CurrentBranch As Branch
     Public Sub New()
 
         ' This call is required by the designer.
@@ -26,6 +27,10 @@ Public Class QueryInvoicesForm
                 query.Client_Id = CurrentClient.Client_Id
             End If
 
+            If Not CurrentBranch Is Nothing Then
+                query.Branch_Id = CurrentBranch.Branch_Id
+            End If
+
             Dim res = _invoiceRepo.FilterInvoice(query)
             InvoiceDetailBindingSource.Clear()
             For Each detail In res
@@ -38,6 +43,18 @@ Public Class QueryInvoicesForm
 
     Private Sub BtnSelectClient_Click(sender As Object, e As EventArgs) Handles BtnSelectClient.Click
         Dim frm As QuerySelectClient = New QuerySelectClient()
+        AddOwnedForm(frm)
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub BtnSelectBranch_Click(sender As Object, e As EventArgs) Handles BtnSelectBranch.Click
+        Dim frm As QuerySelectBranch = New QuerySelectBranch()
+        AddOwnedForm(frm)
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub BtnSelectProduct_Click(sender As Object, e As EventArgs) Handles BtnSelectProduct.Click
+        Dim frm As QuerySelectProduct = New QuerySelectProduct()
         AddOwnedForm(frm)
         frm.ShowDialog()
     End Sub
