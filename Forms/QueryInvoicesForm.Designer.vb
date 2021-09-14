@@ -44,7 +44,9 @@ Partial Class QueryInvoicesForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimeStart = New System.Windows.Forms.DateTimePicker()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BtnQuery = New System.Windows.Forms.Button()
+        Me.BtnClearQuery = New System.Windows.Forms.Button()
         Me.OrderIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SerialNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,8 +64,6 @@ Partial Class QueryInvoicesForm
         Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BtnClearQuery = New System.Windows.Forms.Button()
         Me.PnlTitle.SuspendLayout()
         Me.GrpInvoiceQueryInfo.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -299,6 +299,10 @@ Partial Class QueryInvoicesForm
         Me.DataGridView1.Size = New System.Drawing.Size(887, 150)
         Me.DataGridView1.TabIndex = 13
         '
+        'InvoiceDetailBindingSource
+        '
+        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
+        '
         'BtnQuery
         '
         Me.BtnQuery.BackColor = System.Drawing.Color.MidnightBlue
@@ -314,162 +318,6 @@ Partial Class QueryInvoicesForm
         Me.BtnQuery.Text = "Buscar"
         Me.BtnQuery.UseVisualStyleBackColor = False
         '
-        'OrderIdDataGridViewTextBoxColumn
-        '
-        Me.OrderIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.OrderIdDataGridViewTextBoxColumn.DataPropertyName = "Order_Id"
-        Me.OrderIdDataGridViewTextBoxColumn.HeaderText = "ID Pedido"
-        Me.OrderIdDataGridViewTextBoxColumn.Name = "OrderIdDataGridViewTextBoxColumn"
-        Me.OrderIdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OrderIdDataGridViewTextBoxColumn.Width = 89
-        '
-        'SerialNumberDataGridViewTextBoxColumn
-        '
-        Me.SerialNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.SerialNumberDataGridViewTextBoxColumn.DataPropertyName = "Serial_Number"
-        Me.SerialNumberDataGridViewTextBoxColumn.HeaderText = "Numero de Serie"
-        Me.SerialNumberDataGridViewTextBoxColumn.Name = "SerialNumberDataGridViewTextBoxColumn"
-        Me.SerialNumberDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SerialNumberDataGridViewTextBoxColumn.Width = 102
-        '
-        'InvoiceNumberDataGridViewTextBoxColumn
-        '
-        Me.InvoiceNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.InvoiceNumberDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Number"
-        Me.InvoiceNumberDataGridViewTextBoxColumn.HeaderText = "Numero de Factura"
-        Me.InvoiceNumberDataGridViewTextBoxColumn.Name = "InvoiceNumberDataGridViewTextBoxColumn"
-        Me.InvoiceNumberDataGridViewTextBoxColumn.ReadOnly = True
-        Me.InvoiceNumberDataGridViewTextBoxColumn.Width = 147
-        '
-        'ClientNameDataGridViewTextBoxColumn
-        '
-        Me.ClientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ClientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name"
-        Me.ClientNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Cliente"
-        Me.ClientNameDataGridViewTextBoxColumn.Name = "ClientNameDataGridViewTextBoxColumn"
-        Me.ClientNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ClientNameDataGridViewTextBoxColumn.Width = 105
-        '
-        'ClientDirectionDataGridViewTextBoxColumn
-        '
-        Me.ClientDirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ClientDirectionDataGridViewTextBoxColumn.DataPropertyName = "Client_Direction"
-        Me.ClientDirectionDataGridViewTextBoxColumn.HeaderText = "Descripción del Cliente"
-        Me.ClientDirectionDataGridViewTextBoxColumn.Name = "ClientDirectionDataGridViewTextBoxColumn"
-        Me.ClientDirectionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ClientDirectionDataGridViewTextBoxColumn.Width = 127
-        '
-        'ClientNitDataGridViewTextBoxColumn
-        '
-        Me.ClientNitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ClientNitDataGridViewTextBoxColumn.DataPropertyName = "Client_Nit"
-        Me.ClientNitDataGridViewTextBoxColumn.HeaderText = "Nit"
-        Me.ClientNitDataGridViewTextBoxColumn.Name = "ClientNitDataGridViewTextBoxColumn"
-        Me.ClientNitDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ClientNitDataGridViewTextBoxColumn.Width = 51
-        '
-        'BranchIdDataGridViewTextBoxColumn
-        '
-        Me.BranchIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.BranchIdDataGridViewTextBoxColumn.DataPropertyName = "Branch_Id"
-        Me.BranchIdDataGridViewTextBoxColumn.HeaderText = "ID Sucursal"
-        Me.BranchIdDataGridViewTextBoxColumn.Name = "BranchIdDataGridViewTextBoxColumn"
-        Me.BranchIdDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BranchNameDataGridViewTextBoxColumn
-        '
-        Me.BranchNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.BranchNameDataGridViewTextBoxColumn.DataPropertyName = "Branch_Name"
-        Me.BranchNameDataGridViewTextBoxColumn.HeaderText = "Sucursal"
-        Me.BranchNameDataGridViewTextBoxColumn.Name = "BranchNameDataGridViewTextBoxColumn"
-        Me.BranchNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.BranchNameDataGridViewTextBoxColumn.Width = 91
-        '
-        'BranchDirectionDataGridViewTextBoxColumn
-        '
-        Me.BranchDirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.BranchDirectionDataGridViewTextBoxColumn.DataPropertyName = "Branch_Direction"
-        Me.BranchDirectionDataGridViewTextBoxColumn.HeaderText = "Dirección de la Sucursal"
-        Me.BranchDirectionDataGridViewTextBoxColumn.Name = "BranchDirectionDataGridViewTextBoxColumn"
-        Me.BranchDirectionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.BranchDirectionDataGridViewTextBoxColumn.Width = 123
-        '
-        'OrderDateDataGridViewTextBoxColumn
-        '
-        Me.OrderDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.OrderDateDataGridViewTextBoxColumn.DataPropertyName = "Order_Date"
-        Me.OrderDateDataGridViewTextBoxColumn.HeaderText = "Fecha"
-        Me.OrderDateDataGridViewTextBoxColumn.Name = "OrderDateDataGridViewTextBoxColumn"
-        Me.OrderDateDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OrderDateDataGridViewTextBoxColumn.Width = 74
-        '
-        'ProductIdDataGridViewTextBoxColumn
-        '
-        Me.ProductIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ProductIdDataGridViewTextBoxColumn.DataPropertyName = "Product_Id"
-        Me.ProductIdDataGridViewTextBoxColumn.HeaderText = "ID Producto"
-        Me.ProductIdDataGridViewTextBoxColumn.Name = "ProductIdDataGridViewTextBoxColumn"
-        Me.ProductIdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProductIdDataGridViewTextBoxColumn.Width = 103
-        '
-        'ProductCodeDataGridViewTextBoxColumn
-        '
-        Me.ProductCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ProductCodeDataGridViewTextBoxColumn.DataPropertyName = "Product_Code"
-        Me.ProductCodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
-        Me.ProductCodeDataGridViewTextBoxColumn.Name = "ProductCodeDataGridViewTextBoxColumn"
-        Me.ProductCodeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProductCodeDataGridViewTextBoxColumn.Width = 81
-        '
-        'ProductNameDataGridViewTextBoxColumn
-        '
-        Me.ProductNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name"
-        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Producto"
-        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
-        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProductNameDataGridViewTextBoxColumn.Width = 94
-        '
-        'ProductDescriptionDataGridViewTextBoxColumn
-        '
-        Me.ProductDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Descripción del Producto"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProductDescriptionDataGridViewTextBoxColumn.Width = 127
-        '
-        'QuantityDataGridViewTextBoxColumn
-        '
-        Me.QuantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.QuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity"
-        Me.QuantityDataGridViewTextBoxColumn.HeaderText = "Cantidad"
-        Me.QuantityDataGridViewTextBoxColumn.Name = "QuantityDataGridViewTextBoxColumn"
-        Me.QuantityDataGridViewTextBoxColumn.ReadOnly = True
-        Me.QuantityDataGridViewTextBoxColumn.Width = 91
-        '
-        'PriceDataGridViewTextBoxColumn
-        '
-        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
-        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
-        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
-        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PriceDataGridViewTextBoxColumn.Width = 76
-        '
-        'TotalDataGridViewTextBoxColumn
-        '
-        Me.TotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
-        Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
-        Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
-        Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TotalDataGridViewTextBoxColumn.Width = 66
-        '
-        'InvoiceDetailBindingSource
-        '
-        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
-        '
         'BtnClearQuery
         '
         Me.BtnClearQuery.BackColor = System.Drawing.Color.MidnightBlue
@@ -484,6 +332,158 @@ Partial Class QueryInvoicesForm
         Me.BtnClearQuery.TabIndex = 23
         Me.BtnClearQuery.Text = "Limpiar Consulta"
         Me.BtnClearQuery.UseVisualStyleBackColor = False
+        '
+        'OrderIdDataGridViewTextBoxColumn
+        '
+        Me.OrderIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.OrderIdDataGridViewTextBoxColumn.DataPropertyName = "Order_Id"
+        Me.OrderIdDataGridViewTextBoxColumn.HeaderText = "ID Pedido"
+        Me.OrderIdDataGridViewTextBoxColumn.Name = "OrderIdDataGridViewTextBoxColumn"
+        Me.OrderIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.OrderIdDataGridViewTextBoxColumn.Width = 97
+        '
+        'SerialNumberDataGridViewTextBoxColumn
+        '
+        Me.SerialNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.SerialNumberDataGridViewTextBoxColumn.DataPropertyName = "Serial_Number"
+        Me.SerialNumberDataGridViewTextBoxColumn.HeaderText = "Numero de Serie"
+        Me.SerialNumberDataGridViewTextBoxColumn.Name = "SerialNumberDataGridViewTextBoxColumn"
+        Me.SerialNumberDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SerialNumberDataGridViewTextBoxColumn.Width = 102
+        '
+        'InvoiceNumberDataGridViewTextBoxColumn
+        '
+        Me.InvoiceNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.InvoiceNumberDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Number"
+        Me.InvoiceNumberDataGridViewTextBoxColumn.HeaderText = "Numero de Factura"
+        Me.InvoiceNumberDataGridViewTextBoxColumn.Name = "InvoiceNumberDataGridViewTextBoxColumn"
+        Me.InvoiceNumberDataGridViewTextBoxColumn.ReadOnly = True
+        Me.InvoiceNumberDataGridViewTextBoxColumn.Width = 147
+        '
+        'ClientNameDataGridViewTextBoxColumn
+        '
+        Me.ClientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ClientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name"
+        Me.ClientNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Cliente"
+        Me.ClientNameDataGridViewTextBoxColumn.Name = "ClientNameDataGridViewTextBoxColumn"
+        Me.ClientNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClientNameDataGridViewTextBoxColumn.Width = 105
+        '
+        'ClientDirectionDataGridViewTextBoxColumn
+        '
+        Me.ClientDirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ClientDirectionDataGridViewTextBoxColumn.DataPropertyName = "Client_Direction"
+        Me.ClientDirectionDataGridViewTextBoxColumn.HeaderText = "Descripción del Cliente"
+        Me.ClientDirectionDataGridViewTextBoxColumn.Name = "ClientDirectionDataGridViewTextBoxColumn"
+        Me.ClientDirectionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClientDirectionDataGridViewTextBoxColumn.Width = 127
+        '
+        'ClientNitDataGridViewTextBoxColumn
+        '
+        Me.ClientNitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ClientNitDataGridViewTextBoxColumn.DataPropertyName = "Client_Nit"
+        Me.ClientNitDataGridViewTextBoxColumn.HeaderText = "Nit"
+        Me.ClientNitDataGridViewTextBoxColumn.Name = "ClientNitDataGridViewTextBoxColumn"
+        Me.ClientNitDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClientNitDataGridViewTextBoxColumn.Width = 51
+        '
+        'BranchIdDataGridViewTextBoxColumn
+        '
+        Me.BranchIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.BranchIdDataGridViewTextBoxColumn.DataPropertyName = "Branch_Id"
+        Me.BranchIdDataGridViewTextBoxColumn.HeaderText = "ID Sucursal"
+        Me.BranchIdDataGridViewTextBoxColumn.Name = "BranchIdDataGridViewTextBoxColumn"
+        Me.BranchIdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BranchNameDataGridViewTextBoxColumn
+        '
+        Me.BranchNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.BranchNameDataGridViewTextBoxColumn.DataPropertyName = "Branch_Name"
+        Me.BranchNameDataGridViewTextBoxColumn.HeaderText = "Sucursal"
+        Me.BranchNameDataGridViewTextBoxColumn.Name = "BranchNameDataGridViewTextBoxColumn"
+        Me.BranchNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.BranchNameDataGridViewTextBoxColumn.Width = 91
+        '
+        'BranchDirectionDataGridViewTextBoxColumn
+        '
+        Me.BranchDirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.BranchDirectionDataGridViewTextBoxColumn.DataPropertyName = "Branch_Direction"
+        Me.BranchDirectionDataGridViewTextBoxColumn.HeaderText = "Dirección de la Sucursal"
+        Me.BranchDirectionDataGridViewTextBoxColumn.Name = "BranchDirectionDataGridViewTextBoxColumn"
+        Me.BranchDirectionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.BranchDirectionDataGridViewTextBoxColumn.Width = 123
+        '
+        'OrderDateDataGridViewTextBoxColumn
+        '
+        Me.OrderDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.OrderDateDataGridViewTextBoxColumn.DataPropertyName = "Order_Date"
+        Me.OrderDateDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.OrderDateDataGridViewTextBoxColumn.Name = "OrderDateDataGridViewTextBoxColumn"
+        Me.OrderDateDataGridViewTextBoxColumn.ReadOnly = True
+        Me.OrderDateDataGridViewTextBoxColumn.Width = 74
+        '
+        'ProductIdDataGridViewTextBoxColumn
+        '
+        Me.ProductIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ProductIdDataGridViewTextBoxColumn.DataPropertyName = "Product_Id"
+        Me.ProductIdDataGridViewTextBoxColumn.HeaderText = "ID Producto"
+        Me.ProductIdDataGridViewTextBoxColumn.Name = "ProductIdDataGridViewTextBoxColumn"
+        Me.ProductIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductIdDataGridViewTextBoxColumn.Width = 103
+        '
+        'ProductCodeDataGridViewTextBoxColumn
+        '
+        Me.ProductCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ProductCodeDataGridViewTextBoxColumn.DataPropertyName = "Product_Code"
+        Me.ProductCodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
+        Me.ProductCodeDataGridViewTextBoxColumn.Name = "ProductCodeDataGridViewTextBoxColumn"
+        Me.ProductCodeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductCodeDataGridViewTextBoxColumn.Width = 81
+        '
+        'ProductNameDataGridViewTextBoxColumn
+        '
+        Me.ProductNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name"
+        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Producto"
+        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
+        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductNameDataGridViewTextBoxColumn.Width = 94
+        '
+        'ProductDescriptionDataGridViewTextBoxColumn
+        '
+        Me.ProductDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Descripción del Producto"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Width = 127
+        '
+        'QuantityDataGridViewTextBoxColumn
+        '
+        Me.QuantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.QuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity"
+        Me.QuantityDataGridViewTextBoxColumn.HeaderText = "Cantidad"
+        Me.QuantityDataGridViewTextBoxColumn.Name = "QuantityDataGridViewTextBoxColumn"
+        Me.QuantityDataGridViewTextBoxColumn.ReadOnly = True
+        Me.QuantityDataGridViewTextBoxColumn.Width = 91
+        '
+        'PriceDataGridViewTextBoxColumn
+        '
+        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PriceDataGridViewTextBoxColumn.Width = 76
+        '
+        'TotalDataGridViewTextBoxColumn
+        '
+        Me.TotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
+        Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
+        Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
+        Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TotalDataGridViewTextBoxColumn.Width = 66
         '
         'QueryInvoicesForm
         '
@@ -531,6 +531,10 @@ Partial Class QueryInvoicesForm
     Friend WithEvents TxtBoxSerialNumber As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents InvoiceDetailBindingSource As BindingSource
+    Friend WithEvents BtnQuery As Button
+    Friend WithEvents TxtBoxInvoiceNumber As TextBox
+    Friend WithEvents BtnClearQuery As Button
     Friend WithEvents OrderIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SerialNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InvoiceNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -548,8 +552,4 @@ Partial Class QueryInvoicesForm
     Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents InvoiceDetailBindingSource As BindingSource
-    Friend WithEvents BtnQuery As Button
-    Friend WithEvents TxtBoxInvoiceNumber As TextBox
-    Friend WithEvents BtnClearQuery As Button
 End Class

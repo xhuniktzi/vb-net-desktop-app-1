@@ -37,6 +37,10 @@ Public Class CreateInvoice
     End Sub
 
     Private Sub BtnClearInvoice_Click(sender As Object, e As EventArgs) Handles BtnClearInvoice.Click
+        ClearInvoice()
+    End Sub
+
+    Private Sub ClearInvoice()
         CurrentClient = Nothing
         TxtBoxClientName.Text = ""
         TxtBoxClientNit.Text = ""
@@ -88,6 +92,10 @@ Public Class CreateInvoice
                 invoice.Order_Date = Today.ToString("yyyy-MM-dd")
                 invoice.Product_Detail = ProductDetailInvoiceBindingSource.List
                 invoiceRepo.CreateInvoice(invoice)
+                Dim res As DialogResult = MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
+                If res = DialogResult.OK Then
+                    ClearInvoice()
+                End If
             Catch ex As ApiConnectException
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try

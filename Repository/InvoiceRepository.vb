@@ -11,7 +11,7 @@ Public Class InvoiceRepository
 
     Public Function FilterInvoice(query As InvoiceQuery) As IEnumerable(Of InvoiceDetail) Implements IInvoiceRepository.FilterInvoice
         Dim data As String = JsonConvert.SerializeObject(query)
-        Console.WriteLine(data)
+        'Console.WriteLine(data)
         Dim res As String = ConnectDatabase.ExecPost($"{My.Settings.API}/invoices/getInvoice", data, "application/json")
         Return JsonConvert.DeserializeObject(Of List(Of InvoiceDetail))(res)
     End Function

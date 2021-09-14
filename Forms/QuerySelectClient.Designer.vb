@@ -29,16 +29,16 @@ Partial Class QuerySelectClient
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnSelectClient = New System.Windows.Forms.Button()
         Me.DataGridClients = New System.Windows.Forms.DataGridView()
-        Me.PnlTitle = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ClientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClientIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PnlTitle = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridClients, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PnlTitle.SuspendLayout()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlTitle.SuspendLayout()
         Me.SuspendLayout()
         '
         'GrpSearch
@@ -116,32 +116,6 @@ Partial Class QuerySelectClient
         Me.DataGridClients.Size = New System.Drawing.Size(560, 193)
         Me.DataGridClients.TabIndex = 11
         '
-        'PnlTitle
-        '
-        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
-        Me.PnlTitle.Controls.Add(Me.Label3)
-        Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
-        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
-        Me.PnlTitle.Name = "PnlTitle"
-        Me.PnlTitle.Size = New System.Drawing.Size(586, 80)
-        Me.PnlTitle.TabIndex = 10
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(63, 9)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(456, 55)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Seleccionar Cliente"
-        '
-        'ClientBindingSource
-        '
-        Me.ClientBindingSource.DataSource = GetType(vb_net_desktop_app_1.Client)
-        '
         'ClientIdDataGridViewTextBoxColumn
         '
         Me.ClientIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -168,6 +142,32 @@ Partial Class QuerySelectClient
         Me.NitDataGridViewTextBoxColumn.ReadOnly = True
         Me.NitDataGridViewTextBoxColumn.Width = 51
         '
+        'ClientBindingSource
+        '
+        Me.ClientBindingSource.DataSource = GetType(vb_net_desktop_app_1.Client)
+        '
+        'PnlTitle
+        '
+        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
+        Me.PnlTitle.Controls.Add(Me.Label3)
+        Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
+        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
+        Me.PnlTitle.Name = "PnlTitle"
+        Me.PnlTitle.Size = New System.Drawing.Size(586, 80)
+        Me.PnlTitle.TabIndex = 10
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(63, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(456, 55)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Seleccionar Cliente"
+        '
         'QuerySelectClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -181,13 +181,14 @@ Partial Class QuerySelectClient
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "QuerySelectClient"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "QuerySelectClient"
         Me.GrpSearch.ResumeLayout(False)
         Me.GrpSearch.PerformLayout()
         CType(Me.DataGridClients, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
-        CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

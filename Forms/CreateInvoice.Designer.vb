@@ -50,12 +50,12 @@ Partial Class CreateInvoice
         Me.BtnAddProduct = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtBoxTotalInvoice = New System.Windows.Forms.TextBox()
+        Me.ProductDetailInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductDetailInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataGridProductDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpInvoiceClient.SuspendLayout()
         Me.PnlTitle.SuspendLayout()
@@ -393,9 +393,13 @@ Partial Class CreateInvoice
         Me.TxtBoxTotalInvoice.Size = New System.Drawing.Size(108, 24)
         Me.TxtBoxTotalInvoice.TabIndex = 7
         '
+        'ProductDetailInvoiceBindingSource
+        '
+        Me.ProductDetailInvoiceBindingSource.DataSource = GetType(vb_net_desktop_app_1.ProductDetailInvoice)
+        '
         'CodeDataGridViewTextBoxColumn
         '
-        Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.CodeDataGridViewTextBoxColumn.DataPropertyName = "Code"
         Me.CodeDataGridViewTextBoxColumn.HeaderText = "Codigo del Producto"
         Me.CodeDataGridViewTextBoxColumn.Name = "CodeDataGridViewTextBoxColumn"
@@ -412,7 +416,7 @@ Partial Class CreateInvoice
         '
         'QuantityDataGridViewTextBoxColumn
         '
-        Me.QuantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.QuantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.QuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity"
         Me.QuantityDataGridViewTextBoxColumn.HeaderText = "Cantidad"
         Me.QuantityDataGridViewTextBoxColumn.Name = "QuantityDataGridViewTextBoxColumn"
@@ -421,7 +425,7 @@ Partial Class CreateInvoice
         '
         'PriceDataGridViewTextBoxColumn
         '
-        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
         Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio Unitario"
         Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
@@ -430,16 +434,12 @@ Partial Class CreateInvoice
         '
         'TotalDataGridViewTextBoxColumn
         '
-        Me.TotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.TotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
         Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
         Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
         Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
         Me.TotalDataGridViewTextBoxColumn.Width = 66
-        '
-        'ProductDetailInvoiceBindingSource
-        '
-        Me.ProductDetailInvoiceBindingSource.DataSource = GetType(vb_net_desktop_app_1.ProductDetailInvoice)
         '
         'CreateInvoice
         '
@@ -506,11 +506,11 @@ Partial Class CreateInvoice
     Friend WithEvents BtnDeleteProduct As Button
     Friend WithEvents BtnAddProduct As Button
     Friend WithEvents ProductDetailInvoiceBindingSource As BindingSource
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TxtBoxTotalInvoice As TextBox
     Friend WithEvents CodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Label8 As Label
-    Friend WithEvents TxtBoxTotalInvoice As TextBox
 End Class

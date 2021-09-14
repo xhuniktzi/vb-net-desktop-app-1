@@ -29,17 +29,17 @@ Partial Class QuerySelectProduct
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnSelectProduct = New System.Windows.Forms.Button()
         Me.DataGridProducts = New System.Windows.Forms.DataGridView()
-        Me.PnlTitle = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.ProductIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PnlTitle = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PnlTitle.SuspendLayout()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlTitle.SuspendLayout()
         Me.SuspendLayout()
         '
         'GrpSearch
@@ -117,28 +117,6 @@ Partial Class QuerySelectProduct
         Me.DataGridProducts.Size = New System.Drawing.Size(560, 193)
         Me.DataGridProducts.TabIndex = 15
         '
-        'PnlTitle
-        '
-        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
-        Me.PnlTitle.Controls.Add(Me.Label3)
-        Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
-        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
-        Me.PnlTitle.Name = "PnlTitle"
-        Me.PnlTitle.Size = New System.Drawing.Size(585, 80)
-        Me.PnlTitle.TabIndex = 14
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(40, 9)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(501, 55)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Seleccionar Producto"
-        '
         'ProductIdDataGridViewTextBoxColumn
         '
         Me.ProductIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -178,10 +156,33 @@ Partial Class QuerySelectProduct
         '
         Me.ProductBindingSource.DataSource = GetType(vb_net_desktop_app_1.Product)
         '
+        'PnlTitle
+        '
+        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
+        Me.PnlTitle.Controls.Add(Me.Label3)
+        Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
+        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
+        Me.PnlTitle.Name = "PnlTitle"
+        Me.PnlTitle.Size = New System.Drawing.Size(585, 80)
+        Me.PnlTitle.TabIndex = 14
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(40, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(501, 55)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Seleccionar Producto"
+        '
         'QuerySelectProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(585, 364)
         Me.Controls.Add(Me.GrpSearch)
         Me.Controls.Add(Me.BtnSelectProduct)
@@ -190,13 +191,14 @@ Partial Class QuerySelectProduct
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "QuerySelectProduct"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "QuerySelectProduct"
         Me.GrpSearch.ResumeLayout(False)
         Me.GrpSearch.PerformLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
