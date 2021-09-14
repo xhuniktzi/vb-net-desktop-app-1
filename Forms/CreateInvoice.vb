@@ -49,6 +49,7 @@ Public Class CreateInvoice
         NumBoxInvoiceNumber.Value = Nothing
 
         ProductDetailInvoiceBindingSource.Clear()
+        CalculateTotal()
     End Sub
 
     Public Sub AddProductToDetail(product As ProductDetailInvoice)
@@ -61,6 +62,7 @@ Public Class CreateInvoice
         Else
             ProductDetailInvoiceBindingSource.Add(product)
         End If
+        CalculateTotal()
     End Sub
 
     Private Sub BtnCreateInvoice_Click(sender As Object, e As EventArgs) Handles BtnCreateInvoice.Click
@@ -94,5 +96,20 @@ Public Class CreateInvoice
 
     Private Sub BtnDeleteProduct_Click(sender As Object, e As EventArgs) Handles BtnDeleteProduct.Click
         ProductDetailInvoiceBindingSource.Remove(ProductDetailInvoiceBindingSource.Current)
+        CalculateTotal()
+    End Sub
+
+    Private Sub BtnViewInvoice_Click(sender As Object, e As EventArgs) Handles BtnViewInvoice.Click
+        Dim frm As QueryInvoicesForm = New QueryInvoicesForm()
+        AddOwnedForm(frm)
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub CalculateTotal()
+        Dim total As Double = 0
+        For Each pd In ProductDetailInvoiceBindingSource
+            total += pd.Total
+        Next
+        TxtBoxTotalInvoice.Text = total
     End Sub
 End Class

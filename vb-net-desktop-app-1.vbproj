@@ -79,6 +79,7 @@
     <Compile Include="Common\Branch.vb" />
     <Compile Include="Common\Client.vb" />
     <Compile Include="Common\Invoice.vb" />
+    <Compile Include="Common\InvoiceDetail.vb" />
     <Compile Include="Common\ProductDetailInvoice.vb" />
     <Compile Include="Contracts\IBranchRepository.vb" />
     <Compile Include="Contracts\IClientRepository.vb" />
@@ -126,6 +127,12 @@
       <DependentUpon>ProductForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QueryInvoicesForm.Designer.vb">
+      <DependentUpon>QueryInvoicesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QueryInvoicesForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SelectBranchForm.Designer.vb">
@@ -191,6 +198,9 @@
     <EmbeddedResource Include="Forms\ProductForm.resx">
       <DependentUpon>ProductForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QueryInvoicesForm.resx">
+      <DependentUpon>QueryInvoicesForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectBranchForm.resx">
       <DependentUpon>SelectBranchForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +217,7 @@
   <ItemGroup>
     <None Include="Branch.datasource" />
     <None Include="Client.datasource" />
+    <None Include="InvoiceDetail.datasource" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

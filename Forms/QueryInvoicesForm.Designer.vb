@@ -1,0 +1,539 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class QueryInvoicesForm
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.PnlTitle = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GrpInvoiceQueryInfo = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.BtnSelectBranch = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BtnSelectProduct = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.BtnSelectClient = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DateTimeEnd = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DateTimeStart = New System.Windows.Forms.DateTimePicker()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.OrderIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SerialNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoiceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientDirectionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientNitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BranchIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BranchNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BranchDirectionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OrderDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductCodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BtnQuery = New System.Windows.Forms.Button()
+        Me.PnlTitle.SuspendLayout()
+        Me.GrpInvoiceQueryInfo.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InvoiceDetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'PnlTitle
+        '
+        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
+        Me.PnlTitle.Controls.Add(Me.Label3)
+        Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
+        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
+        Me.PnlTitle.Name = "PnlTitle"
+        Me.PnlTitle.Size = New System.Drawing.Size(912, 80)
+        Me.PnlTitle.TabIndex = 11
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(252, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(448, 55)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Consultar Facturas"
+        '
+        'GrpInvoiceQueryInfo
+        '
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.NumericUpDown1)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label8)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox4)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label7)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.BtnSelectBranch)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox3)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label6)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.BtnSelectProduct)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox2)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label5)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.BtnSelectClient)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.TextBox1)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label4)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label2)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.DateTimeEnd)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label1)
+        Me.GrpInvoiceQueryInfo.Controls.Add(Me.DateTimeStart)
+        Me.GrpInvoiceQueryInfo.Location = New System.Drawing.Point(13, 88)
+        Me.GrpInvoiceQueryInfo.Name = "GrpInvoiceQueryInfo"
+        Me.GrpInvoiceQueryInfo.Size = New System.Drawing.Size(887, 237)
+        Me.GrpInvoiceQueryInfo.TabIndex = 12
+        Me.GrpInvoiceQueryInfo.TabStop = False
+        Me.GrpInvoiceQueryInfo.Text = "Información de la Consulta"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(639, 202)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(242, 24)
+        Me.NumericUpDown1.TabIndex = 21
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(464, 201)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(168, 20)
+        Me.Label8.TabIndex = 20
+        Me.Label8.Text = "Numero de Factura:"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(202, 199)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(221, 24)
+        Me.TextBox4.TabIndex = 19
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(7, 201)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(148, 20)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Numero de Serie:"
+        '
+        'BtnSelectBranch
+        '
+        Me.BtnSelectBranch.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSelectBranch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSelectBranch.FlatAppearance.BorderSize = 0
+        Me.BtnSelectBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSelectBranch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSelectBranch.ForeColor = System.Drawing.Color.White
+        Me.BtnSelectBranch.Location = New System.Drawing.Point(693, 160)
+        Me.BtnSelectBranch.Name = "BtnSelectBranch"
+        Me.BtnSelectBranch.Size = New System.Drawing.Size(188, 27)
+        Me.BtnSelectBranch.TabIndex = 17
+        Me.BtnSelectBranch.Text = "Seleccionar Sucursal"
+        Me.BtnSelectBranch.UseVisualStyleBackColor = False
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Location = New System.Drawing.Point(202, 161)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(485, 24)
+        Me.TextBox3.TabIndex = 16
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(7, 163)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(84, 20)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "Sucursal:"
+        '
+        'BtnSelectProduct
+        '
+        Me.BtnSelectProduct.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSelectProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSelectProduct.FlatAppearance.BorderSize = 0
+        Me.BtnSelectProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSelectProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSelectProduct.ForeColor = System.Drawing.Color.White
+        Me.BtnSelectProduct.Location = New System.Drawing.Point(693, 124)
+        Me.BtnSelectProduct.Name = "BtnSelectProduct"
+        Me.BtnSelectProduct.Size = New System.Drawing.Size(188, 27)
+        Me.BtnSelectProduct.TabIndex = 14
+        Me.BtnSelectProduct.Text = "Seleccionar Producto"
+        Me.BtnSelectProduct.UseVisualStyleBackColor = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(202, 125)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(485, 24)
+        Me.TextBox2.TabIndex = 13
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(7, 127)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(86, 20)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Producto:"
+        '
+        'BtnSelectClient
+        '
+        Me.BtnSelectClient.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSelectClient.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSelectClient.FlatAppearance.BorderSize = 0
+        Me.BtnSelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSelectClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSelectClient.ForeColor = System.Drawing.Color.White
+        Me.BtnSelectClient.Location = New System.Drawing.Point(693, 88)
+        Me.BtnSelectClient.Name = "BtnSelectClient"
+        Me.BtnSelectClient.Size = New System.Drawing.Size(188, 27)
+        Me.BtnSelectClient.TabIndex = 11
+        Me.BtnSelectClient.Text = "Seleccionar Cliente"
+        Me.BtnSelectClient.UseVisualStyleBackColor = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(202, 89)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(485, 24)
+        Me.TextBox1.TabIndex = 5
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(7, 91)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(70, 20)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Cliente:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(7, 56)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(189, 20)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Fecha de Finalización:"
+        '
+        'DateTimeEnd
+        '
+        Me.DateTimeEnd.Location = New System.Drawing.Point(202, 52)
+        Me.DateTimeEnd.Name = "DateTimeEnd"
+        Me.DateTimeEnd.Size = New System.Drawing.Size(679, 24)
+        Me.DateTimeEnd.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(7, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(137, 20)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Fecha de Inicio:"
+        '
+        'DateTimeStart
+        '
+        Me.DateTimeStart.Location = New System.Drawing.Point(202, 20)
+        Me.DateTimeStart.Name = "DateTimeStart"
+        Me.DateTimeStart.Size = New System.Drawing.Size(679, 24)
+        Me.DateTimeStart.TabIndex = 0
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderIdDataGridViewTextBoxColumn, Me.SerialNumberDataGridViewTextBoxColumn, Me.InvoiceNumberDataGridViewTextBoxColumn, Me.ClientNameDataGridViewTextBoxColumn, Me.ClientDirectionDataGridViewTextBoxColumn, Me.ClientNitDataGridViewTextBoxColumn, Me.BranchIdDataGridViewTextBoxColumn, Me.BranchNameDataGridViewTextBoxColumn, Me.BranchDirectionDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.ProductIdDataGridViewTextBoxColumn, Me.ProductCodeDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.InvoiceDetailBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 332)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(887, 150)
+        Me.DataGridView1.TabIndex = 13
+        '
+        'OrderIdDataGridViewTextBoxColumn
+        '
+        Me.OrderIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.OrderIdDataGridViewTextBoxColumn.DataPropertyName = "Order_Id"
+        Me.OrderIdDataGridViewTextBoxColumn.HeaderText = "ID Pedido"
+        Me.OrderIdDataGridViewTextBoxColumn.Name = "OrderIdDataGridViewTextBoxColumn"
+        Me.OrderIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.OrderIdDataGridViewTextBoxColumn.Width = 89
+        '
+        'SerialNumberDataGridViewTextBoxColumn
+        '
+        Me.SerialNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.SerialNumberDataGridViewTextBoxColumn.DataPropertyName = "Serial_Number"
+        Me.SerialNumberDataGridViewTextBoxColumn.HeaderText = "Numero de Serie"
+        Me.SerialNumberDataGridViewTextBoxColumn.Name = "SerialNumberDataGridViewTextBoxColumn"
+        Me.SerialNumberDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SerialNumberDataGridViewTextBoxColumn.Width = 102
+        '
+        'InvoiceNumberDataGridViewTextBoxColumn
+        '
+        Me.InvoiceNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.InvoiceNumberDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Number"
+        Me.InvoiceNumberDataGridViewTextBoxColumn.HeaderText = "Numero de Factura"
+        Me.InvoiceNumberDataGridViewTextBoxColumn.Name = "InvoiceNumberDataGridViewTextBoxColumn"
+        Me.InvoiceNumberDataGridViewTextBoxColumn.ReadOnly = True
+        Me.InvoiceNumberDataGridViewTextBoxColumn.Width = 147
+        '
+        'ClientNameDataGridViewTextBoxColumn
+        '
+        Me.ClientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.ClientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name"
+        Me.ClientNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Cliente"
+        Me.ClientNameDataGridViewTextBoxColumn.Name = "ClientNameDataGridViewTextBoxColumn"
+        Me.ClientNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClientNameDataGridViewTextBoxColumn.Width = 105
+        '
+        'ClientDirectionDataGridViewTextBoxColumn
+        '
+        Me.ClientDirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.ClientDirectionDataGridViewTextBoxColumn.DataPropertyName = "Client_Direction"
+        Me.ClientDirectionDataGridViewTextBoxColumn.HeaderText = "Descripción del Cliente"
+        Me.ClientDirectionDataGridViewTextBoxColumn.Name = "ClientDirectionDataGridViewTextBoxColumn"
+        Me.ClientDirectionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClientDirectionDataGridViewTextBoxColumn.Width = 127
+        '
+        'ClientNitDataGridViewTextBoxColumn
+        '
+        Me.ClientNitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.ClientNitDataGridViewTextBoxColumn.DataPropertyName = "Client_Nit"
+        Me.ClientNitDataGridViewTextBoxColumn.HeaderText = "Nit"
+        Me.ClientNitDataGridViewTextBoxColumn.Name = "ClientNitDataGridViewTextBoxColumn"
+        Me.ClientNitDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClientNitDataGridViewTextBoxColumn.Width = 51
+        '
+        'BranchIdDataGridViewTextBoxColumn
+        '
+        Me.BranchIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.BranchIdDataGridViewTextBoxColumn.DataPropertyName = "Branch_Id"
+        Me.BranchIdDataGridViewTextBoxColumn.HeaderText = "ID Sucursal"
+        Me.BranchIdDataGridViewTextBoxColumn.Name = "BranchIdDataGridViewTextBoxColumn"
+        Me.BranchIdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BranchNameDataGridViewTextBoxColumn
+        '
+        Me.BranchNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.BranchNameDataGridViewTextBoxColumn.DataPropertyName = "Branch_Name"
+        Me.BranchNameDataGridViewTextBoxColumn.HeaderText = "Sucursal"
+        Me.BranchNameDataGridViewTextBoxColumn.Name = "BranchNameDataGridViewTextBoxColumn"
+        Me.BranchNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.BranchNameDataGridViewTextBoxColumn.Width = 91
+        '
+        'BranchDirectionDataGridViewTextBoxColumn
+        '
+        Me.BranchDirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.BranchDirectionDataGridViewTextBoxColumn.DataPropertyName = "Branch_Direction"
+        Me.BranchDirectionDataGridViewTextBoxColumn.HeaderText = "Dirección de la Sucursal"
+        Me.BranchDirectionDataGridViewTextBoxColumn.Name = "BranchDirectionDataGridViewTextBoxColumn"
+        Me.BranchDirectionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.BranchDirectionDataGridViewTextBoxColumn.Width = 123
+        '
+        'OrderDateDataGridViewTextBoxColumn
+        '
+        Me.OrderDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.OrderDateDataGridViewTextBoxColumn.DataPropertyName = "Order_Date"
+        Me.OrderDateDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.OrderDateDataGridViewTextBoxColumn.Name = "OrderDateDataGridViewTextBoxColumn"
+        Me.OrderDateDataGridViewTextBoxColumn.ReadOnly = True
+        Me.OrderDateDataGridViewTextBoxColumn.Width = 74
+        '
+        'ProductIdDataGridViewTextBoxColumn
+        '
+        Me.ProductIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.ProductIdDataGridViewTextBoxColumn.DataPropertyName = "Product_Id"
+        Me.ProductIdDataGridViewTextBoxColumn.HeaderText = "ID Producto"
+        Me.ProductIdDataGridViewTextBoxColumn.Name = "ProductIdDataGridViewTextBoxColumn"
+        Me.ProductIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductIdDataGridViewTextBoxColumn.Width = 103
+        '
+        'ProductCodeDataGridViewTextBoxColumn
+        '
+        Me.ProductCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.ProductCodeDataGridViewTextBoxColumn.DataPropertyName = "Product_Code"
+        Me.ProductCodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
+        Me.ProductCodeDataGridViewTextBoxColumn.Name = "ProductCodeDataGridViewTextBoxColumn"
+        Me.ProductCodeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductCodeDataGridViewTextBoxColumn.Width = 81
+        '
+        'ProductNameDataGridViewTextBoxColumn
+        '
+        Me.ProductNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name"
+        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Producto"
+        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
+        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductNameDataGridViewTextBoxColumn.Width = 94
+        '
+        'ProductDescriptionDataGridViewTextBoxColumn
+        '
+        Me.ProductDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Descripción del Producto"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Width = 127
+        '
+        'QuantityDataGridViewTextBoxColumn
+        '
+        Me.QuantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.QuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity"
+        Me.QuantityDataGridViewTextBoxColumn.HeaderText = "Cantidad"
+        Me.QuantityDataGridViewTextBoxColumn.Name = "QuantityDataGridViewTextBoxColumn"
+        Me.QuantityDataGridViewTextBoxColumn.ReadOnly = True
+        Me.QuantityDataGridViewTextBoxColumn.Width = 91
+        '
+        'PriceDataGridViewTextBoxColumn
+        '
+        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PriceDataGridViewTextBoxColumn.Width = 76
+        '
+        'TotalDataGridViewTextBoxColumn
+        '
+        Me.TotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
+        Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
+        Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
+        Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TotalDataGridViewTextBoxColumn.Width = 66
+        '
+        'InvoiceDetailBindingSource
+        '
+        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
+        '
+        'BtnQuery
+        '
+        Me.BtnQuery.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnQuery.FlatAppearance.BorderSize = 0
+        Me.BtnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnQuery.ForeColor = System.Drawing.Color.White
+        Me.BtnQuery.Location = New System.Drawing.Point(825, 488)
+        Me.BtnQuery.Name = "BtnQuery"
+        Me.BtnQuery.Size = New System.Drawing.Size(75, 27)
+        Me.BtnQuery.TabIndex = 22
+        Me.BtnQuery.Text = "Buscar"
+        Me.BtnQuery.UseVisualStyleBackColor = False
+        '
+        'QueryInvoicesForm
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(912, 523)
+        Me.Controls.Add(Me.BtnQuery)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.GrpInvoiceQueryInfo)
+        Me.Controls.Add(Me.PnlTitle)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Name = "QueryInvoicesForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "QueryInvoicesForm"
+        Me.PnlTitle.ResumeLayout(False)
+        Me.PnlTitle.PerformLayout()
+        Me.GrpInvoiceQueryInfo.ResumeLayout(False)
+        Me.GrpInvoiceQueryInfo.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InvoiceDetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    Friend WithEvents PnlTitle As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents GrpInvoiceQueryInfo As GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents DateTimeStart As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents DateTimeEnd As DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents BtnSelectClient As Button
+    Friend WithEvents BtnSelectProduct As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents BtnSelectBranch As Button
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents OrderIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SerialNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoiceNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClientNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClientDirectionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClientNitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BranchIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BranchNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BranchDirectionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents OrderDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductCodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoiceDetailBindingSource As BindingSource
+    Friend WithEvents BtnQuery As Button
+End Class

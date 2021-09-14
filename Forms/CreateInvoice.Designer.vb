@@ -48,6 +48,8 @@ Partial Class CreateInvoice
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BtnDeleteProduct = New System.Windows.Forms.Button()
         Me.BtnAddProduct = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TxtBoxTotalInvoice = New System.Windows.Forms.TextBox()
         Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -87,7 +89,7 @@ Partial Class CreateInvoice
         Me.BtnCreateInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCreateInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCreateInvoice.ForeColor = System.Drawing.Color.White
-        Me.BtnCreateInvoice.Location = New System.Drawing.Point(751, 554)
+        Me.BtnCreateInvoice.Location = New System.Drawing.Point(751, 585)
         Me.BtnCreateInvoice.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnCreateInvoice.Name = "BtnCreateInvoice"
         Me.BtnCreateInvoice.Size = New System.Drawing.Size(134, 29)
@@ -103,7 +105,7 @@ Partial Class CreateInvoice
         Me.BtnClearInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClearInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClearInvoice.ForeColor = System.Drawing.Color.White
-        Me.BtnClearInvoice.Location = New System.Drawing.Point(599, 554)
+        Me.BtnClearInvoice.Location = New System.Drawing.Point(599, 585)
         Me.BtnClearInvoice.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnClearInvoice.Name = "BtnClearInvoice"
         Me.BtnClearInvoice.Size = New System.Drawing.Size(144, 29)
@@ -119,7 +121,7 @@ Partial Class CreateInvoice
         Me.BtnViewInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnViewInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnViewInvoice.ForeColor = System.Drawing.Color.White
-        Me.BtnViewInvoice.Location = New System.Drawing.Point(16, 554)
+        Me.BtnViewInvoice.Location = New System.Drawing.Point(16, 585)
         Me.BtnViewInvoice.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnViewInvoice.Name = "BtnViewInvoice"
         Me.BtnViewInvoice.Size = New System.Drawing.Size(190, 29)
@@ -372,6 +374,25 @@ Partial Class CreateInvoice
         Me.BtnAddProduct.Text = "Agregar Producto"
         Me.BtnAddProduct.UseVisualStyleBackColor = False
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(701, 558)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(54, 20)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Total:"
+        '
+        'TxtBoxTotalInvoice
+        '
+        Me.TxtBoxTotalInvoice.BackColor = System.Drawing.Color.White
+        Me.TxtBoxTotalInvoice.Enabled = False
+        Me.TxtBoxTotalInvoice.Location = New System.Drawing.Point(777, 554)
+        Me.TxtBoxTotalInvoice.Name = "TxtBoxTotalInvoice"
+        Me.TxtBoxTotalInvoice.Size = New System.Drawing.Size(108, 24)
+        Me.TxtBoxTotalInvoice.TabIndex = 7
+        '
         'CodeDataGridViewTextBoxColumn
         '
         Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -425,7 +446,9 @@ Partial Class CreateInvoice
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(897, 591)
+        Me.ClientSize = New System.Drawing.Size(897, 621)
+        Me.Controls.Add(Me.TxtBoxTotalInvoice)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.BtnAddProduct)
         Me.Controls.Add(Me.BtnDeleteProduct)
         Me.Controls.Add(Me.GroupBox2)
@@ -453,6 +476,7 @@ Partial Class CreateInvoice
         CType(Me.NumBoxInvoiceNumber, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductDetailInvoiceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -487,4 +511,6 @@ Partial Class CreateInvoice
     Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TxtBoxTotalInvoice As TextBox
 End Class
