@@ -1,6 +1,4 @@
 ﻿Imports Newtonsoft.Json
-Imports vb_net_desktop_app_1
-
 Public Class ProductRepository
     Implements IProductRepository
 
@@ -22,6 +20,12 @@ Public Class ProductRepository
     Public Function FindProductByCode(code As String) As Product Implements IProductRepository.FindProductByCode
         Dim res As String = ConnectDatabase.ExecGet($"{My.Settings.API}/products/{code}")
         Return JsonConvert.DeserializeObject(Of Product)(res)
+    End Function
+
+    Public Function FindProductByName(name As String) As IEnumerable(Of Product) Implements IProductRepository.FindProductByName
+        Console.WriteLine($"{My.Settings.API}/products/findByName/{Uri.EscapeDataString(name)}")
+        Dim res As String = ConnectDatabase.ExecGet($"{My.Settings.API}/products/findByName/{Uri.EscapeDataString(name)}")
+        Return JsonConvert.DeserializeObject(Of List(Of Product))(res)
     End Function
 
     Public Function GetAllProducts() As IEnumerable(Of Product) Implements IProductRepository.GetAllProducts

@@ -11,6 +11,8 @@ Public Class QueryInvoicesForm
 
         ' Add any initialization after the InitializeComponent() call.
         _invoiceRepo = New InvoiceRepository()
+        DateTimeStart.Value = Today
+        DateTimeEnd.Value = Today
     End Sub
 
     Private Sub BtnQuery_Click(sender As Object, e As EventArgs) Handles BtnQuery.Click

@@ -51,4 +51,15 @@ Public Class AddProductsForm
             Me.Close()
         End If
     End Sub
+
+    Private Sub BtnSearchProductByName_Click(sender As Object, e As EventArgs) Handles BtnSearchProductByName.Click
+        Try
+            ProductBindingSource.Clear()
+            For Each product In _productRepo.FindProductByName(TxtBoxProductName.Text)
+                ProductBindingSource.Add(product)
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

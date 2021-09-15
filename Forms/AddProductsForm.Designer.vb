@@ -29,31 +29,37 @@ Partial Class AddProductsForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnSelectProduct = New System.Windows.Forms.Button()
         Me.DataGridProducts = New System.Windows.Forms.DataGridView()
+        Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpInfoProduct = New System.Windows.Forms.GroupBox()
         Me.NumBoxProductQuantity = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtBoxProductName = New System.Windows.Forms.TextBox()
+        Me.BtnSearchProductByName = New System.Windows.Forms.Button()
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlTitle.SuspendLayout()
         Me.GrpInfoProduct.SuspendLayout()
         CType(Me.NumBoxProductQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GrpSearch
         '
+        Me.GrpSearch.Controls.Add(Me.BtnSearchProductByName)
+        Me.GrpSearch.Controls.Add(Me.TxtBoxProductName)
+        Me.GrpSearch.Controls.Add(Me.Label4)
         Me.GrpSearch.Controls.Add(Me.TxtBoxProductCode)
         Me.GrpSearch.Controls.Add(Me.BtnSearchProduct)
         Me.GrpSearch.Controls.Add(Me.Label1)
         Me.GrpSearch.Location = New System.Drawing.Point(13, 94)
         Me.GrpSearch.Name = "GrpSearch"
-        Me.GrpSearch.Size = New System.Drawing.Size(553, 62)
+        Me.GrpSearch.Size = New System.Drawing.Size(559, 98)
         Me.GrpSearch.TabIndex = 13
         Me.GrpSearch.TabStop = False
         Me.GrpSearch.Text = "Busqueda"
@@ -114,64 +120,12 @@ Partial Class AddProductsForm
         Me.DataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridProducts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodeDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn})
         Me.DataGridProducts.DataSource = Me.ProductBindingSource
-        Me.DataGridProducts.Location = New System.Drawing.Point(12, 162)
+        Me.DataGridProducts.Location = New System.Drawing.Point(12, 198)
         Me.DataGridProducts.Name = "DataGridProducts"
         Me.DataGridProducts.ReadOnly = True
         Me.DataGridProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridProducts.Size = New System.Drawing.Size(560, 193)
         Me.DataGridProducts.TabIndex = 11
-        '
-        'PnlTitle
-        '
-        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
-        Me.PnlTitle.Controls.Add(Me.Label3)
-        Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
-        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
-        Me.PnlTitle.Name = "PnlTitle"
-        Me.PnlTitle.Size = New System.Drawing.Size(584, 80)
-        Me.PnlTitle.TabIndex = 10
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(83, 9)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(418, 55)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Agregar Producto"
-        '
-        'GrpInfoProduct
-        '
-        Me.GrpInfoProduct.Controls.Add(Me.NumBoxProductQuantity)
-        Me.GrpInfoProduct.Controls.Add(Me.Label2)
-        Me.GrpInfoProduct.Controls.Add(Me.BtnSelectProduct)
-        Me.GrpInfoProduct.Location = New System.Drawing.Point(12, 362)
-        Me.GrpInfoProduct.Name = "GrpInfoProduct"
-        Me.GrpInfoProduct.Size = New System.Drawing.Size(560, 51)
-        Me.GrpInfoProduct.TabIndex = 14
-        Me.GrpInfoProduct.TabStop = False
-        Me.GrpInfoProduct.Text = "Información del Producto"
-        '
-        'NumBoxProductQuantity
-        '
-        Me.NumBoxProductQuantity.Location = New System.Drawing.Point(101, 20)
-        Me.NumBoxProductQuantity.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
-        Me.NumBoxProductQuantity.Name = "NumBoxProductQuantity"
-        Me.NumBoxProductQuantity.Size = New System.Drawing.Size(120, 24)
-        Me.NumBoxProductQuantity.TabIndex = 13
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 20)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "Cantidad:"
         '
         'CodeDataGridViewTextBoxColumn
         '
@@ -203,12 +157,97 @@ Partial Class AddProductsForm
         '
         Me.ProductBindingSource.DataSource = GetType(vb_net_desktop_app_1.Product)
         '
+        'PnlTitle
+        '
+        Me.PnlTitle.BackColor = System.Drawing.Color.Orange
+        Me.PnlTitle.Controls.Add(Me.Label3)
+        Me.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
+        Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
+        Me.PnlTitle.Name = "PnlTitle"
+        Me.PnlTitle.Size = New System.Drawing.Size(584, 80)
+        Me.PnlTitle.TabIndex = 10
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(83, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(418, 55)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Agregar Producto"
+        '
+        'GrpInfoProduct
+        '
+        Me.GrpInfoProduct.Controls.Add(Me.NumBoxProductQuantity)
+        Me.GrpInfoProduct.Controls.Add(Me.Label2)
+        Me.GrpInfoProduct.Controls.Add(Me.BtnSelectProduct)
+        Me.GrpInfoProduct.Location = New System.Drawing.Point(12, 397)
+        Me.GrpInfoProduct.Name = "GrpInfoProduct"
+        Me.GrpInfoProduct.Size = New System.Drawing.Size(560, 51)
+        Me.GrpInfoProduct.TabIndex = 14
+        Me.GrpInfoProduct.TabStop = False
+        Me.GrpInfoProduct.Text = "Información del Producto"
+        '
+        'NumBoxProductQuantity
+        '
+        Me.NumBoxProductQuantity.Location = New System.Drawing.Point(101, 20)
+        Me.NumBoxProductQuantity.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        Me.NumBoxProductQuantity.Name = "NumBoxProductQuantity"
+        Me.NumBoxProductQuantity.Size = New System.Drawing.Size(120, 24)
+        Me.NumBoxProductQuantity.TabIndex = 13
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(8, 21)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(86, 20)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Cantidad:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 61)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(168, 20)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Buscar por Nombre:"
+        '
+        'TxtBoxProductName
+        '
+        Me.TxtBoxProductName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBoxProductName.Location = New System.Drawing.Point(175, 58)
+        Me.TxtBoxProductName.Name = "TxtBoxProductName"
+        Me.TxtBoxProductName.Size = New System.Drawing.Size(254, 26)
+        Me.TxtBoxProductName.TabIndex = 13
+        '
+        'BtnSearchProductByName
+        '
+        Me.BtnSearchProductByName.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSearchProductByName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSearchProductByName.FlatAppearance.BorderSize = 0
+        Me.BtnSearchProductByName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSearchProductByName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSearchProductByName.ForeColor = System.Drawing.Color.White
+        Me.BtnSearchProductByName.Location = New System.Drawing.Point(435, 58)
+        Me.BtnSearchProductByName.Name = "BtnSearchProductByName"
+        Me.BtnSearchProductByName.Size = New System.Drawing.Size(112, 27)
+        Me.BtnSearchProductByName.TabIndex = 14
+        Me.BtnSearchProductByName.Text = "Buscar"
+        Me.BtnSearchProductByName.UseVisualStyleBackColor = False
+        '
         'AddProductsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(584, 425)
+        Me.ClientSize = New System.Drawing.Size(584, 460)
         Me.Controls.Add(Me.GrpInfoProduct)
         Me.Controls.Add(Me.GrpSearch)
         Me.Controls.Add(Me.DataGridProducts)
@@ -221,12 +260,12 @@ Partial Class AddProductsForm
         Me.GrpSearch.ResumeLayout(False)
         Me.GrpSearch.PerformLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         Me.GrpInfoProduct.ResumeLayout(False)
         Me.GrpInfoProduct.PerformLayout()
         CType(Me.NumBoxProductQuantity, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -246,4 +285,7 @@ Partial Class AddProductsForm
     Friend WithEvents GrpInfoProduct As GroupBox
     Friend WithEvents NumBoxProductQuantity As NumericUpDown
     Friend WithEvents Label2 As Label
+    Friend WithEvents BtnSearchProductByName As Button
+    Friend WithEvents TxtBoxProductName As TextBox
+    Friend WithEvents Label4 As Label
 End Class
