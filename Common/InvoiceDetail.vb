@@ -16,5 +16,6 @@
     Public Property Quantity As Integer
     Public Property Price As Double
     Public Property Total As Double
+    Public Property Order_Total As Double
 End Class
 

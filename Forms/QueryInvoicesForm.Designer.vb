@@ -46,6 +46,7 @@ Partial Class QueryInvoicesForm
         Me.DataGridInvoiceDetail = New System.Windows.Forms.DataGridView()
         Me.BtnQuery = New System.Windows.Forms.Button()
         Me.BtnClearQuery = New System.Windows.Forms.Button()
+        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OrderIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SerialNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,7 +62,7 @@ Partial Class QueryInvoicesForm
         Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Order_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PnlTitle.SuspendLayout()
         Me.GrpInvoiceQueryInfo.SuspendLayout()
         CType(Me.DataGridInvoiceDetail, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -307,9 +308,9 @@ Partial Class QueryInvoicesForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridInvoiceDetail.AutoGenerateColumns = False
         Me.DataGridInvoiceDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridInvoiceDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderIdDataGridViewTextBoxColumn, Me.SerialNumberDataGridViewTextBoxColumn, Me.InvoiceNumberDataGridViewTextBoxColumn, Me.ClientNameDataGridViewTextBoxColumn, Me.ClientDirectionDataGridViewTextBoxColumn, Me.ClientNitDataGridViewTextBoxColumn, Me.BranchNameDataGridViewTextBoxColumn, Me.BranchDirectionDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.ProductCodeDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
+        Me.DataGridInvoiceDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderIdDataGridViewTextBoxColumn, Me.SerialNumberDataGridViewTextBoxColumn, Me.InvoiceNumberDataGridViewTextBoxColumn, Me.ClientNameDataGridViewTextBoxColumn, Me.ClientDirectionDataGridViewTextBoxColumn, Me.ClientNitDataGridViewTextBoxColumn, Me.BranchNameDataGridViewTextBoxColumn, Me.BranchDirectionDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.ProductCodeDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn, Me.Order_Total})
         Me.DataGridInvoiceDetail.DataSource = Me.InvoiceDetailBindingSource
-        Me.DataGridInvoiceDetail.Location = New System.Drawing.Point(13, 332)
+        Me.DataGridInvoiceDetail.Location = New System.Drawing.Point(13, 331)
         Me.DataGridInvoiceDetail.Name = "DataGridInvoiceDetail"
         Me.DataGridInvoiceDetail.ReadOnly = True
         Me.DataGridInvoiceDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -348,23 +349,27 @@ Partial Class QueryInvoicesForm
         Me.BtnClearQuery.Text = "Limpiar Consulta"
         Me.BtnClearQuery.UseVisualStyleBackColor = False
         '
+        'InvoiceDetailBindingSource
+        '
+        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
+        '
         'OrderIdDataGridViewTextBoxColumn
         '
         Me.OrderIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.OrderIdDataGridViewTextBoxColumn.DataPropertyName = "Order_Id"
-        Me.OrderIdDataGridViewTextBoxColumn.HeaderText = "ID Pedido"
+        Me.OrderIdDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.OrderIdDataGridViewTextBoxColumn.Name = "OrderIdDataGridViewTextBoxColumn"
         Me.OrderIdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OrderIdDataGridViewTextBoxColumn.Width = 89
+        Me.OrderIdDataGridViewTextBoxColumn.Width = 47
         '
         'SerialNumberDataGridViewTextBoxColumn
         '
         Me.SerialNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.SerialNumberDataGridViewTextBoxColumn.DataPropertyName = "Serial_Number"
-        Me.SerialNumberDataGridViewTextBoxColumn.HeaderText = "Numero de Serie"
+        Me.SerialNumberDataGridViewTextBoxColumn.HeaderText = "Serie"
         Me.SerialNumberDataGridViewTextBoxColumn.Name = "SerialNumberDataGridViewTextBoxColumn"
         Me.SerialNumberDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SerialNumberDataGridViewTextBoxColumn.Width = 102
+        Me.SerialNumberDataGridViewTextBoxColumn.Width = 67
         '
         'InvoiceNumberDataGridViewTextBoxColumn
         '
@@ -379,10 +384,10 @@ Partial Class QueryInvoicesForm
         '
         Me.ClientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.ClientNameDataGridViewTextBoxColumn.DataPropertyName = "Client_Name"
-        Me.ClientNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Cliente"
+        Me.ClientNameDataGridViewTextBoxColumn.HeaderText = "Cliente"
         Me.ClientNameDataGridViewTextBoxColumn.Name = "ClientNameDataGridViewTextBoxColumn"
         Me.ClientNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ClientNameDataGridViewTextBoxColumn.Width = 105
+        Me.ClientNameDataGridViewTextBoxColumn.Width = 78
         '
         'ClientDirectionDataGridViewTextBoxColumn
         '
@@ -451,10 +456,10 @@ Partial Class QueryInvoicesForm
         '
         Me.ProductDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Descripción del Producto"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Descripción"
         Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
         Me.ProductDescriptionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProductDescriptionDataGridViewTextBoxColumn.Width = 127
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Width = 112
         '
         'QuantityDataGridViewTextBoxColumn
         '
@@ -483,9 +488,14 @@ Partial Class QueryInvoicesForm
         Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
         Me.TotalDataGridViewTextBoxColumn.Width = 66
         '
-        'InvoiceDetailBindingSource
+        'Order_Total
         '
-        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
+        Me.Order_Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Order_Total.DataPropertyName = "Order_Total"
+        Me.Order_Total.HeaderText = "Total de la Factura"
+        Me.Order_Total.Name = "Order_Total"
+        Me.Order_Total.ReadOnly = True
+        Me.Order_Total.Width = 141
         '
         'QueryInvoicesForm
         '
@@ -553,4 +563,5 @@ Partial Class QueryInvoicesForm
     Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Order_Total As DataGridViewTextBoxColumn
 End Class
