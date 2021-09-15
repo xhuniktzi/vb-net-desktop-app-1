@@ -16,31 +16,36 @@ Public Class QueryInvoicesForm
     Private Sub BtnQuery_Click(sender As Object, e As EventArgs) Handles BtnQuery.Click
         Try
             Dim query As InvoiceQuery = New InvoiceQuery()
-            query.Start_Date = DateTimeStart.Value.ToString("yyyy-MM-dd")
-            query.End_Date = DateTimeEnd.Value.ToString("yyyy-MM-dd")
-            If Not TxtBoxSerialNumber.Text.IsNotNullOrEmptyOrWhiteSpace() Then
-                query.Serial_Number = TxtBoxSerialNumber.Text
-            End If
-            If Not TxtBoxInvoiceNumber.Text.IsNotNullOrEmptyOrWhiteSpace() Then
-                query.Invoice_Number = CType(TxtBoxInvoiceNumber.Text, Integer)
-            End If
-            If Not CurrentClient Is Nothing Then
-                query.Client_Id = CurrentClient.Client_Id
-            End If
+            If DateTimeStart.Value <= DateTimeEnd.Value Then
+                query.Start_Date = DateTimeStart.Value.ToString("yyyy-MM-dd")
+                query.End_Date = DateTimeEnd.Value.ToString("yyyy-MM-dd")
 
-            If Not CurrentProduct Is Nothing Then
-                query.Product_Id = CurrentProduct.Product_Id
-            End If
+                If Not TxtBoxSerialNumber.Text.IsNotNullOrEmptyOrWhiteSpace() Then
+                    query.Serial_Number = TxtBoxSerialNumber.Text
+                End If
+                If Not TxtBoxInvoiceNumber.Text.IsNotNullOrEmptyOrWhiteSpace() Then
+                    query.Invoice_Number = CType(TxtBoxInvoiceNumber.Text, Integer)
+                End If
+                If Not CurrentClient Is Nothing Then
+                    query.Client_Id = CurrentClient.Client_Id
+                End If
 
-            If Not CurrentBranch Is Nothing Then
-                query.Branch_Id = CurrentBranch.Branch_Id
-            End If
+                If Not CurrentProduct Is Nothing Then
+                    query.Product_Id = CurrentProduct.Product_Id
+                End If
 
-            Dim res = _invoiceRepo.FilterInvoice(query)
-            InvoiceDetailBindingSource.Clear()
-            For Each detail In res
-                InvoiceDetailBindingSource.Add(detail)
-            Next
+                If Not CurrentBranch Is Nothing Then
+                    query.Branch_Id = CurrentBranch.Branch_Id
+                End If
+
+                Dim res = _invoiceRepo.FilterInvoice(query)
+                InvoiceDetailBindingSource.Clear()
+                For Each detail In res
+                    InvoiceDetailBindingSource.Add(detail)
+                Next
+            Else
+                MessageBox.Show("Rango de Fechas Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         Catch ex As InvalidCastException
             MessageBox.Show("Numero de Factura invalido: ingrese un numero entero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

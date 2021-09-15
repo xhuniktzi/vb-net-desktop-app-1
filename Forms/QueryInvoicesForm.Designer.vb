@@ -43,21 +43,19 @@ Partial Class QueryInvoicesForm
         Me.DateTimeEnd = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimeStart = New System.Windows.Forms.DateTimePicker()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridInvoiceDetail = New System.Windows.Forms.DataGridView()
         Me.BtnQuery = New System.Windows.Forms.Button()
         Me.BtnClearQuery = New System.Windows.Forms.Button()
+        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OrderIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SerialNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClientNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClientDirectionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClientNitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BranchIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BranchNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BranchDirectionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrderDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductCodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,7 +64,7 @@ Partial Class QueryInvoicesForm
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PnlTitle.SuspendLayout()
         Me.GrpInvoiceQueryInfo.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridInvoiceDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InvoiceDetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,14 +76,14 @@ Partial Class QueryInvoicesForm
         Me.PnlTitle.Location = New System.Drawing.Point(0, 0)
         Me.PnlTitle.Margin = New System.Windows.Forms.Padding(4)
         Me.PnlTitle.Name = "PnlTitle"
-        Me.PnlTitle.Size = New System.Drawing.Size(912, 80)
+        Me.PnlTitle.Size = New System.Drawing.Size(1008, 80)
         Me.PnlTitle.TabIndex = 11
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(252, 9)
+        Me.Label3.Location = New System.Drawing.Point(287, 9)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(448, 55)
@@ -94,6 +92,8 @@ Partial Class QueryInvoicesForm
         '
         'GrpInvoiceQueryInfo
         '
+        Me.GrpInvoiceQueryInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.TxtBoxInvoiceNumber)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.Label8)
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.TxtBoxSerialNumber)
@@ -113,16 +113,18 @@ Partial Class QueryInvoicesForm
         Me.GrpInvoiceQueryInfo.Controls.Add(Me.DateTimeStart)
         Me.GrpInvoiceQueryInfo.Location = New System.Drawing.Point(13, 88)
         Me.GrpInvoiceQueryInfo.Name = "GrpInvoiceQueryInfo"
-        Me.GrpInvoiceQueryInfo.Size = New System.Drawing.Size(887, 237)
+        Me.GrpInvoiceQueryInfo.Size = New System.Drawing.Size(983, 237)
         Me.GrpInvoiceQueryInfo.TabIndex = 12
         Me.GrpInvoiceQueryInfo.TabStop = False
         Me.GrpInvoiceQueryInfo.Text = "Información de la Consulta"
         '
         'TxtBoxInvoiceNumber
         '
+        Me.TxtBoxInvoiceNumber.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtBoxInvoiceNumber.Location = New System.Drawing.Point(638, 199)
         Me.TxtBoxInvoiceNumber.Name = "TxtBoxInvoiceNumber"
-        Me.TxtBoxInvoiceNumber.Size = New System.Drawing.Size(243, 24)
+        Me.TxtBoxInvoiceNumber.Size = New System.Drawing.Size(339, 24)
         Me.TxtBoxInvoiceNumber.TabIndex = 21
         '
         'Label8
@@ -154,6 +156,8 @@ Partial Class QueryInvoicesForm
         '
         'BtnSelectBranch
         '
+        Me.BtnSelectBranch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSelectBranch.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnSelectBranch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnSelectBranch.FlatAppearance.BorderSize = 0
@@ -162,7 +166,7 @@ Partial Class QueryInvoicesForm
         Me.BtnSelectBranch.ForeColor = System.Drawing.Color.White
         Me.BtnSelectBranch.Location = New System.Drawing.Point(693, 160)
         Me.BtnSelectBranch.Name = "BtnSelectBranch"
-        Me.BtnSelectBranch.Size = New System.Drawing.Size(188, 27)
+        Me.BtnSelectBranch.Size = New System.Drawing.Size(284, 27)
         Me.BtnSelectBranch.TabIndex = 17
         Me.BtnSelectBranch.Text = "Seleccionar Sucursal"
         Me.BtnSelectBranch.UseVisualStyleBackColor = False
@@ -187,6 +191,8 @@ Partial Class QueryInvoicesForm
         '
         'BtnSelectProduct
         '
+        Me.BtnSelectProduct.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSelectProduct.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnSelectProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnSelectProduct.FlatAppearance.BorderSize = 0
@@ -195,7 +201,7 @@ Partial Class QueryInvoicesForm
         Me.BtnSelectProduct.ForeColor = System.Drawing.Color.White
         Me.BtnSelectProduct.Location = New System.Drawing.Point(693, 124)
         Me.BtnSelectProduct.Name = "BtnSelectProduct"
-        Me.BtnSelectProduct.Size = New System.Drawing.Size(188, 27)
+        Me.BtnSelectProduct.Size = New System.Drawing.Size(284, 27)
         Me.BtnSelectProduct.TabIndex = 14
         Me.BtnSelectProduct.Text = "Seleccionar Producto"
         Me.BtnSelectProduct.UseVisualStyleBackColor = False
@@ -220,6 +226,8 @@ Partial Class QueryInvoicesForm
         '
         'BtnSelectClient
         '
+        Me.BtnSelectClient.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSelectClient.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnSelectClient.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnSelectClient.FlatAppearance.BorderSize = 0
@@ -228,7 +236,7 @@ Partial Class QueryInvoicesForm
         Me.BtnSelectClient.ForeColor = System.Drawing.Color.White
         Me.BtnSelectClient.Location = New System.Drawing.Point(693, 88)
         Me.BtnSelectClient.Name = "BtnSelectClient"
-        Me.BtnSelectClient.Size = New System.Drawing.Size(188, 27)
+        Me.BtnSelectClient.Size = New System.Drawing.Size(284, 27)
         Me.BtnSelectClient.TabIndex = 11
         Me.BtnSelectClient.Text = "Seleccionar Cliente"
         Me.BtnSelectClient.UseVisualStyleBackColor = False
@@ -263,9 +271,12 @@ Partial Class QueryInvoicesForm
         '
         'DateTimeEnd
         '
+        Me.DateTimeEnd.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTimeEnd.Location = New System.Drawing.Point(202, 52)
         Me.DateTimeEnd.Name = "DateTimeEnd"
-        Me.DateTimeEnd.Size = New System.Drawing.Size(679, 24)
+        Me.DateTimeEnd.Size = New System.Drawing.Size(775, 24)
         Me.DateTimeEnd.TabIndex = 2
         '
         'Label1
@@ -280,58 +291,65 @@ Partial Class QueryInvoicesForm
         '
         'DateTimeStart
         '
+        Me.DateTimeStart.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTimeStart.Location = New System.Drawing.Point(202, 20)
         Me.DateTimeStart.Name = "DateTimeStart"
-        Me.DateTimeStart.Size = New System.Drawing.Size(679, 24)
+        Me.DateTimeStart.Size = New System.Drawing.Size(775, 24)
         Me.DateTimeStart.TabIndex = 0
         '
-        'DataGridView1
+        'DataGridInvoiceDetail
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderIdDataGridViewTextBoxColumn, Me.SerialNumberDataGridViewTextBoxColumn, Me.InvoiceNumberDataGridViewTextBoxColumn, Me.ClientNameDataGridViewTextBoxColumn, Me.ClientDirectionDataGridViewTextBoxColumn, Me.ClientNitDataGridViewTextBoxColumn, Me.BranchIdDataGridViewTextBoxColumn, Me.BranchNameDataGridViewTextBoxColumn, Me.BranchDirectionDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.ProductIdDataGridViewTextBoxColumn, Me.ProductCodeDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.InvoiceDetailBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 332)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(887, 150)
-        Me.DataGridView1.TabIndex = 13
-        '
-        'InvoiceDetailBindingSource
-        '
-        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
+        Me.DataGridInvoiceDetail.AllowUserToAddRows = False
+        Me.DataGridInvoiceDetail.AllowUserToDeleteRows = False
+        Me.DataGridInvoiceDetail.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridInvoiceDetail.AutoGenerateColumns = False
+        Me.DataGridInvoiceDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridInvoiceDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OrderIdDataGridViewTextBoxColumn, Me.SerialNumberDataGridViewTextBoxColumn, Me.InvoiceNumberDataGridViewTextBoxColumn, Me.ClientNameDataGridViewTextBoxColumn, Me.ClientDirectionDataGridViewTextBoxColumn, Me.ClientNitDataGridViewTextBoxColumn, Me.BranchNameDataGridViewTextBoxColumn, Me.BranchDirectionDataGridViewTextBoxColumn, Me.OrderDateDataGridViewTextBoxColumn, Me.ProductCodeDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
+        Me.DataGridInvoiceDetail.DataSource = Me.InvoiceDetailBindingSource
+        Me.DataGridInvoiceDetail.Location = New System.Drawing.Point(13, 332)
+        Me.DataGridInvoiceDetail.Name = "DataGridInvoiceDetail"
+        Me.DataGridInvoiceDetail.ReadOnly = True
+        Me.DataGridInvoiceDetail.Size = New System.Drawing.Size(983, 228)
+        Me.DataGridInvoiceDetail.TabIndex = 13
         '
         'BtnQuery
         '
+        Me.BtnQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnQuery.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnQuery.FlatAppearance.BorderSize = 0
         Me.BtnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnQuery.ForeColor = System.Drawing.Color.White
-        Me.BtnQuery.Location = New System.Drawing.Point(825, 488)
+        Me.BtnQuery.Location = New System.Drawing.Point(825, 626)
         Me.BtnQuery.Name = "BtnQuery"
-        Me.BtnQuery.Size = New System.Drawing.Size(75, 27)
+        Me.BtnQuery.Size = New System.Drawing.Size(171, 27)
         Me.BtnQuery.TabIndex = 22
         Me.BtnQuery.Text = "Buscar"
         Me.BtnQuery.UseVisualStyleBackColor = False
         '
         'BtnClearQuery
         '
+        Me.BtnClearQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.BtnClearQuery.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnClearQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnClearQuery.FlatAppearance.BorderSize = 0
         Me.BtnClearQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClearQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClearQuery.ForeColor = System.Drawing.Color.White
-        Me.BtnClearQuery.Location = New System.Drawing.Point(13, 488)
+        Me.BtnClearQuery.Location = New System.Drawing.Point(13, 626)
         Me.BtnClearQuery.Name = "BtnClearQuery"
         Me.BtnClearQuery.Size = New System.Drawing.Size(155, 27)
         Me.BtnClearQuery.TabIndex = 23
         Me.BtnClearQuery.Text = "Limpiar Consulta"
         Me.BtnClearQuery.UseVisualStyleBackColor = False
+        '
+        'InvoiceDetailBindingSource
+        '
+        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
         '
         'OrderIdDataGridViewTextBoxColumn
         '
@@ -387,14 +405,6 @@ Partial Class QueryInvoicesForm
         Me.ClientNitDataGridViewTextBoxColumn.ReadOnly = True
         Me.ClientNitDataGridViewTextBoxColumn.Width = 51
         '
-        'BranchIdDataGridViewTextBoxColumn
-        '
-        Me.BranchIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.BranchIdDataGridViewTextBoxColumn.DataPropertyName = "Branch_Id"
-        Me.BranchIdDataGridViewTextBoxColumn.HeaderText = "ID Sucursal"
-        Me.BranchIdDataGridViewTextBoxColumn.Name = "BranchIdDataGridViewTextBoxColumn"
-        Me.BranchIdDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'BranchNameDataGridViewTextBoxColumn
         '
         Me.BranchNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -421,15 +431,6 @@ Partial Class QueryInvoicesForm
         Me.OrderDateDataGridViewTextBoxColumn.Name = "OrderDateDataGridViewTextBoxColumn"
         Me.OrderDateDataGridViewTextBoxColumn.ReadOnly = True
         Me.OrderDateDataGridViewTextBoxColumn.Width = 74
-        '
-        'ProductIdDataGridViewTextBoxColumn
-        '
-        Me.ProductIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.ProductIdDataGridViewTextBoxColumn.DataPropertyName = "Product_Id"
-        Me.ProductIdDataGridViewTextBoxColumn.HeaderText = "ID Producto"
-        Me.ProductIdDataGridViewTextBoxColumn.Name = "ProductIdDataGridViewTextBoxColumn"
-        Me.ProductIdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ProductIdDataGridViewTextBoxColumn.Width = 103
         '
         'ProductCodeDataGridViewTextBoxColumn
         '
@@ -490,10 +491,10 @@ Partial Class QueryInvoicesForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(912, 523)
+        Me.ClientSize = New System.Drawing.Size(1008, 661)
         Me.Controls.Add(Me.BtnClearQuery)
         Me.Controls.Add(Me.BtnQuery)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridInvoiceDetail)
         Me.Controls.Add(Me.GrpInvoiceQueryInfo)
         Me.Controls.Add(Me.PnlTitle)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -501,11 +502,12 @@ Partial Class QueryInvoicesForm
         Me.Name = "QueryInvoicesForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "QueryInvoicesForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         Me.GrpInvoiceQueryInfo.ResumeLayout(False)
         Me.GrpInvoiceQueryInfo.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridInvoiceDetail, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InvoiceDetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -530,7 +532,7 @@ Partial Class QueryInvoicesForm
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtBoxSerialNumber As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridInvoiceDetail As DataGridView
     Friend WithEvents InvoiceDetailBindingSource As BindingSource
     Friend WithEvents BtnQuery As Button
     Friend WithEvents TxtBoxInvoiceNumber As TextBox
@@ -541,11 +543,9 @@ Partial Class QueryInvoicesForm
     Friend WithEvents ClientNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ClientDirectionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ClientNitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BranchIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BranchNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BranchDirectionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents OrderDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ProductIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductCodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
