@@ -42,4 +42,15 @@ Public Class SelectBranchForm
             Me.Close()
         End If
     End Sub
+
+    Private Sub BtnSearchBranchByName_Click(sender As Object, e As EventArgs) Handles BtnSearchBranchByName.Click
+        Try
+            BranchBindingSource.Clear()
+            For Each branch In _branchRepo.FindBranchByName(TxtBoxBranchName.Text)
+                BranchBindingSource.Add(branch)
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Error: Sucursal no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

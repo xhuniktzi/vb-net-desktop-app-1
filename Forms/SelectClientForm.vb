@@ -40,4 +40,26 @@ Public Class SelectClientForm
             Me.Close()
         End If
     End Sub
+
+    Private Sub BtnSearchClientByName_Click(sender As Object, e As EventArgs) Handles BtnSearchClientByName.Click
+        Try
+            ClientBindingSource.Clear()
+            For Each product In _clientRepo.FindClientByName(TxtBoxClientName.Text)
+                ClientBindingSource.Add(product)
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub BtnSearchClientByNit_Click(sender As Object, e As EventArgs) Handles BtnSearchClientByNit.Click
+        Try
+            ClientBindingSource.Clear()
+            For Each product In _clientRepo.FindClientByNit(TxtBoxClientNit.Text)
+                ClientBindingSource.Add(product)
+            Next
+        Catch ex As Exception
+            MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

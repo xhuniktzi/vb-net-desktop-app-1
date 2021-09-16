@@ -24,6 +24,16 @@ Public Class ClientRepository
         Return JsonConvert.DeserializeObject(Of Client)(res)
     End Function
 
+    Public Function FindClientByName(name As String) As IEnumerable(Of Client) Implements IClientRepository.FindClientByName
+        Dim res As String = ConnectDatabase.ExecGet($"{My.Settings.API}/clients/findByName/{Uri.EscapeDataString(name)}")
+        Return JsonConvert.DeserializeObject(Of List(Of Client))(res)
+    End Function
+
+    Public Function FindClientByNit(name As String) As IEnumerable(Of Client) Implements IClientRepository.FindClientByNit
+        Dim res As String = ConnectDatabase.ExecGet($"{My.Settings.API}/clients/findByNit/{Uri.EscapeDataString(name)}")
+        Return JsonConvert.DeserializeObject(Of List(Of Client))(res)
+    End Function
+
     Public Function GetAllClients() As IEnumerable(Of Client) Implements IClientRepository.GetAllClients
         Dim res As String = ConnectDatabase.ExecGet($"{My.Settings.API}/clients")
         Return JsonConvert.DeserializeObject(Of List(Of Client))(res)

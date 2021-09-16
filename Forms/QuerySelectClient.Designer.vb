@@ -35,6 +35,12 @@ Partial Class QuerySelectClient
         Me.ClientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtBoxClientNit = New System.Windows.Forms.TextBox()
+        Me.BtnSearchClientByNit = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtBoxClientName = New System.Windows.Forms.TextBox()
+        Me.BtnSearchClientByName = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridClients, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,12 +49,18 @@ Partial Class QuerySelectClient
         '
         'GrpSearch
         '
+        Me.GrpSearch.Controls.Add(Me.TxtBoxClientNit)
+        Me.GrpSearch.Controls.Add(Me.BtnSearchClientByNit)
+        Me.GrpSearch.Controls.Add(Me.Label4)
+        Me.GrpSearch.Controls.Add(Me.TxtBoxClientName)
+        Me.GrpSearch.Controls.Add(Me.BtnSearchClientByName)
+        Me.GrpSearch.Controls.Add(Me.Label2)
         Me.GrpSearch.Controls.Add(Me.TxtBoxClientID)
         Me.GrpSearch.Controls.Add(Me.BtnSearchClient)
         Me.GrpSearch.Controls.Add(Me.Label1)
         Me.GrpSearch.Location = New System.Drawing.Point(12, 87)
         Me.GrpSearch.Name = "GrpSearch"
-        Me.GrpSearch.Size = New System.Drawing.Size(425, 62)
+        Me.GrpSearch.Size = New System.Drawing.Size(441, 142)
         Me.GrpSearch.TabIndex = 13
         Me.GrpSearch.TabStop = False
         Me.GrpSearch.Text = "Busqueda"
@@ -56,9 +68,9 @@ Partial Class QuerySelectClient
         'TxtBoxClientID
         '
         Me.TxtBoxClientID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBoxClientID.Location = New System.Drawing.Point(138, 22)
+        Me.TxtBoxClientID.Location = New System.Drawing.Point(173, 22)
         Me.TxtBoxClientID.Name = "TxtBoxClientID"
-        Me.TxtBoxClientID.Size = New System.Drawing.Size(120, 26)
+        Me.TxtBoxClientID.Size = New System.Drawing.Size(141, 26)
         Me.TxtBoxClientID.TabIndex = 11
         '
         'BtnSearchClient
@@ -69,7 +81,7 @@ Partial Class QuerySelectClient
         Me.BtnSearchClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSearchClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearchClient.ForeColor = System.Drawing.Color.White
-        Me.BtnSearchClient.Location = New System.Drawing.Point(285, 21)
+        Me.BtnSearchClient.Location = New System.Drawing.Point(320, 21)
         Me.BtnSearchClient.Name = "BtnSearchClient"
         Me.BtnSearchClient.Size = New System.Drawing.Size(112, 27)
         Me.BtnSearchClient.TabIndex = 10
@@ -94,7 +106,7 @@ Partial Class QuerySelectClient
         Me.BtnSelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSelectClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSelectClient.ForeColor = System.Drawing.Color.White
-        Me.BtnSelectClient.Location = New System.Drawing.Point(459, 108)
+        Me.BtnSelectClient.Location = New System.Drawing.Point(462, 145)
         Me.BtnSelectClient.Name = "BtnSelectClient"
         Me.BtnSelectClient.Size = New System.Drawing.Size(112, 27)
         Me.BtnSelectClient.TabIndex = 12
@@ -109,7 +121,7 @@ Partial Class QuerySelectClient
         Me.DataGridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridClients.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClientIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.NitDataGridViewTextBoxColumn})
         Me.DataGridClients.DataSource = Me.ClientBindingSource
-        Me.DataGridClients.Location = New System.Drawing.Point(12, 155)
+        Me.DataGridClients.Location = New System.Drawing.Point(12, 235)
         Me.DataGridClients.Name = "DataGridClients"
         Me.DataGridClients.ReadOnly = True
         Me.DataGridClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -168,12 +180,78 @@ Partial Class QuerySelectClient
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Seleccionar Cliente"
         '
+        'TxtBoxClientNit
+        '
+        Me.TxtBoxClientNit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBoxClientNit.Location = New System.Drawing.Point(173, 97)
+        Me.TxtBoxClientNit.Name = "TxtBoxClientNit"
+        Me.TxtBoxClientNit.Size = New System.Drawing.Size(141, 26)
+        Me.TxtBoxClientNit.TabIndex = 23
+        '
+        'BtnSearchClientByNit
+        '
+        Me.BtnSearchClientByNit.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSearchClientByNit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSearchClientByNit.FlatAppearance.BorderSize = 0
+        Me.BtnSearchClientByNit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSearchClientByNit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSearchClientByNit.ForeColor = System.Drawing.Color.White
+        Me.BtnSearchClientByNit.Location = New System.Drawing.Point(320, 97)
+        Me.BtnSearchClientByNit.Name = "BtnSearchClientByNit"
+        Me.BtnSearchClientByNit.Size = New System.Drawing.Size(112, 27)
+        Me.BtnSearchClientByNit.TabIndex = 22
+        Me.BtnSearchClientByNit.Text = "Buscar"
+        Me.BtnSearchClientByNit.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(7, 99)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(128, 20)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Buscar por Nit:"
+        '
+        'TxtBoxClientName
+        '
+        Me.TxtBoxClientName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBoxClientName.Location = New System.Drawing.Point(173, 58)
+        Me.TxtBoxClientName.Name = "TxtBoxClientName"
+        Me.TxtBoxClientName.Size = New System.Drawing.Size(141, 26)
+        Me.TxtBoxClientName.TabIndex = 20
+        '
+        'BtnSearchClientByName
+        '
+        Me.BtnSearchClientByName.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSearchClientByName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSearchClientByName.FlatAppearance.BorderSize = 0
+        Me.BtnSearchClientByName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSearchClientByName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSearchClientByName.ForeColor = System.Drawing.Color.White
+        Me.BtnSearchClientByName.Location = New System.Drawing.Point(320, 58)
+        Me.BtnSearchClientByName.Name = "BtnSearchClientByName"
+        Me.BtnSearchClientByName.Size = New System.Drawing.Size(112, 27)
+        Me.BtnSearchClientByName.TabIndex = 19
+        Me.BtnSearchClientByName.Text = "Buscar"
+        Me.BtnSearchClientByName.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(7, 60)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(168, 20)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "Buscar por Nombre:"
+        '
         'QuerySelectClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(586, 364)
+        Me.ClientSize = New System.Drawing.Size(586, 440)
         Me.Controls.Add(Me.GrpSearch)
         Me.Controls.Add(Me.BtnSelectClient)
         Me.Controls.Add(Me.DataGridClients)
@@ -205,4 +283,10 @@ Partial Class QuerySelectClient
     Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ClientBindingSource As BindingSource
+    Friend WithEvents TxtBoxClientNit As TextBox
+    Friend WithEvents BtnSearchClientByNit As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtBoxClientName As TextBox
+    Friend WithEvents BtnSearchClientByName As Button
+    Friend WithEvents Label2 As Label
 End Class

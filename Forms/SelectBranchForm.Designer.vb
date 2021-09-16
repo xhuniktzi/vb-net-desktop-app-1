@@ -24,6 +24,9 @@ Partial Class SelectBranchForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GrpSearch = New System.Windows.Forms.GroupBox()
+        Me.TxtBoxBranchName = New System.Windows.Forms.TextBox()
+        Me.BtnSearchBranchByName = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtBoxBranchID = New System.Windows.Forms.TextBox()
         Me.BtnSearchBranch = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -43,20 +46,56 @@ Partial Class SelectBranchForm
         '
         'GrpSearch
         '
+        Me.GrpSearch.Controls.Add(Me.TxtBoxBranchName)
+        Me.GrpSearch.Controls.Add(Me.BtnSearchBranchByName)
+        Me.GrpSearch.Controls.Add(Me.Label2)
         Me.GrpSearch.Controls.Add(Me.TxtBoxBranchID)
         Me.GrpSearch.Controls.Add(Me.BtnSearchBranch)
         Me.GrpSearch.Controls.Add(Me.Label1)
         Me.GrpSearch.Location = New System.Drawing.Point(13, 94)
         Me.GrpSearch.Name = "GrpSearch"
-        Me.GrpSearch.Size = New System.Drawing.Size(425, 62)
+        Me.GrpSearch.Size = New System.Drawing.Size(425, 100)
         Me.GrpSearch.TabIndex = 13
         Me.GrpSearch.TabStop = False
         Me.GrpSearch.Text = "Busqueda"
         '
+        'TxtBoxBranchName
+        '
+        Me.TxtBoxBranchName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBoxBranchName.Location = New System.Drawing.Point(181, 58)
+        Me.TxtBoxBranchName.Name = "TxtBoxBranchName"
+        Me.TxtBoxBranchName.Size = New System.Drawing.Size(120, 26)
+        Me.TxtBoxBranchName.TabIndex = 14
+        '
+        'BtnSearchBranchByName
+        '
+        Me.BtnSearchBranchByName.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSearchBranchByName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSearchBranchByName.FlatAppearance.BorderSize = 0
+        Me.BtnSearchBranchByName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSearchBranchByName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSearchBranchByName.ForeColor = System.Drawing.Color.White
+        Me.BtnSearchBranchByName.Location = New System.Drawing.Point(307, 57)
+        Me.BtnSearchBranchByName.Name = "BtnSearchBranchByName"
+        Me.BtnSearchBranchByName.Size = New System.Drawing.Size(112, 27)
+        Me.BtnSearchBranchByName.TabIndex = 13
+        Me.BtnSearchBranchByName.Text = "Buscar"
+        Me.BtnSearchBranchByName.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(7, 59)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(168, 20)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Buscar por Nombre:"
+        '
         'TxtBoxBranchID
         '
         Me.TxtBoxBranchID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBoxBranchID.Location = New System.Drawing.Point(138, 22)
+        Me.TxtBoxBranchID.Location = New System.Drawing.Point(181, 22)
         Me.TxtBoxBranchID.Name = "TxtBoxBranchID"
         Me.TxtBoxBranchID.Size = New System.Drawing.Size(120, 26)
         Me.TxtBoxBranchID.TabIndex = 11
@@ -69,7 +108,7 @@ Partial Class SelectBranchForm
         Me.BtnSearchBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSearchBranch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearchBranch.ForeColor = System.Drawing.Color.White
-        Me.BtnSearchBranch.Location = New System.Drawing.Point(285, 21)
+        Me.BtnSearchBranch.Location = New System.Drawing.Point(307, 21)
         Me.BtnSearchBranch.Name = "BtnSearchBranch"
         Me.BtnSearchBranch.Size = New System.Drawing.Size(112, 27)
         Me.BtnSearchBranch.TabIndex = 10
@@ -109,7 +148,7 @@ Partial Class SelectBranchForm
         Me.DataGridBranches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridBranches.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BranchIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DirectionDataGridViewTextBoxColumn})
         Me.DataGridBranches.DataSource = Me.BranchBindingSource
-        Me.DataGridBranches.Location = New System.Drawing.Point(12, 162)
+        Me.DataGridBranches.Location = New System.Drawing.Point(12, 200)
         Me.DataGridBranches.Name = "DataGridBranches"
         Me.DataGridBranches.ReadOnly = True
         Me.DataGridBranches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -173,7 +212,7 @@ Partial Class SelectBranchForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(584, 361)
+        Me.ClientSize = New System.Drawing.Size(584, 408)
         Me.Controls.Add(Me.GrpSearch)
         Me.Controls.Add(Me.BtnSelectBranch)
         Me.Controls.Add(Me.DataGridBranches)
@@ -205,4 +244,7 @@ Partial Class SelectBranchForm
     Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DirectionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BranchBindingSource As BindingSource
+    Friend WithEvents TxtBoxBranchName As TextBox
+    Friend WithEvents BtnSearchBranchByName As Button
+    Friend WithEvents Label2 As Label
 End Class
