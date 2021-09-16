@@ -23,6 +23,7 @@ Partial Class QuerySelectProduct
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GrpSearch = New System.Windows.Forms.GroupBox()
         Me.TxtBoxProductName = New System.Windows.Forms.TextBox()
         Me.BtnSearchProductByName = New System.Windows.Forms.Button()
@@ -32,12 +33,12 @@ Partial Class QuerySelectProduct
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnSelectProduct = New System.Windows.Forms.Button()
         Me.DataGridProducts = New System.Windows.Forms.DataGridView()
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PnlTitle = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PnlTitle = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,6 +156,35 @@ Partial Class QuerySelectProduct
         Me.DataGridProducts.Size = New System.Drawing.Size(560, 193)
         Me.DataGridProducts.TabIndex = 15
         '
+        'CodeDataGridViewTextBoxColumn
+        '
+        Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.CodeDataGridViewTextBoxColumn.DataPropertyName = "Code"
+        Me.CodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
+        Me.CodeDataGridViewTextBoxColumn.Name = "CodeDataGridViewTextBoxColumn"
+        Me.CodeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CodeDataGridViewTextBoxColumn.Width = 81
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PriceDataGridViewTextBoxColumn
+        '
+        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        DataGridViewCellStyle1.Format = "C2"
+        DataGridViewCellStyle1.NullValue = "0"
+        Me.PriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PriceDataGridViewTextBoxColumn.Width = 76
+        '
         'ProductBindingSource
         '
         Me.ProductBindingSource.DataSource = GetType(vb_net_desktop_app_1.Product)
@@ -180,32 +210,6 @@ Partial Class QuerySelectProduct
         Me.Label3.Size = New System.Drawing.Size(501, 55)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Seleccionar Producto"
-        '
-        'CodeDataGridViewTextBoxColumn
-        '
-        Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.CodeDataGridViewTextBoxColumn.DataPropertyName = "Code"
-        Me.CodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
-        Me.CodeDataGridViewTextBoxColumn.Name = "CodeDataGridViewTextBoxColumn"
-        Me.CodeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CodeDataGridViewTextBoxColumn.Width = 81
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PriceDataGridViewTextBoxColumn
-        '
-        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
-        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
-        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
-        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PriceDataGridViewTextBoxColumn.Width = 76
         '
         'QuerySelectProduct
         '

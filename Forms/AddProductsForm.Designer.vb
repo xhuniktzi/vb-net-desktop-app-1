@@ -23,30 +23,31 @@ Partial Class AddProductsForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GrpSearch = New System.Windows.Forms.GroupBox()
+        Me.BtnSearchProductByName = New System.Windows.Forms.Button()
+        Me.TxtBoxProductName = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtBoxProductCode = New System.Windows.Forms.TextBox()
         Me.BtnSearchProduct = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnSelectProduct = New System.Windows.Forms.Button()
         Me.DataGridProducts = New System.Windows.Forms.DataGridView()
-        Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpInfoProduct = New System.Windows.Forms.GroupBox()
         Me.NumBoxProductQuantity = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtBoxProductName = New System.Windows.Forms.TextBox()
-        Me.BtnSearchProductByName = New System.Windows.Forms.Button()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlTitle.SuspendLayout()
         Me.GrpInfoProduct.SuspendLayout()
         CType(Me.NumBoxProductQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GrpSearch
@@ -63,6 +64,39 @@ Partial Class AddProductsForm
         Me.GrpSearch.TabIndex = 13
         Me.GrpSearch.TabStop = False
         Me.GrpSearch.Text = "Busqueda"
+        '
+        'BtnSearchProductByName
+        '
+        Me.BtnSearchProductByName.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnSearchProductByName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnSearchProductByName.FlatAppearance.BorderSize = 0
+        Me.BtnSearchProductByName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSearchProductByName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSearchProductByName.ForeColor = System.Drawing.Color.White
+        Me.BtnSearchProductByName.Location = New System.Drawing.Point(435, 58)
+        Me.BtnSearchProductByName.Name = "BtnSearchProductByName"
+        Me.BtnSearchProductByName.Size = New System.Drawing.Size(112, 27)
+        Me.BtnSearchProductByName.TabIndex = 14
+        Me.BtnSearchProductByName.Text = "Buscar"
+        Me.BtnSearchProductByName.UseVisualStyleBackColor = False
+        '
+        'TxtBoxProductName
+        '
+        Me.TxtBoxProductName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBoxProductName.Location = New System.Drawing.Point(175, 58)
+        Me.TxtBoxProductName.Name = "TxtBoxProductName"
+        Me.TxtBoxProductName.Size = New System.Drawing.Size(254, 26)
+        Me.TxtBoxProductName.TabIndex = 13
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 61)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(168, 20)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Buscar por Nombre:"
         '
         'TxtBoxProductCode
         '
@@ -127,36 +161,6 @@ Partial Class AddProductsForm
         Me.DataGridProducts.Size = New System.Drawing.Size(560, 193)
         Me.DataGridProducts.TabIndex = 11
         '
-        'CodeDataGridViewTextBoxColumn
-        '
-        Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.CodeDataGridViewTextBoxColumn.DataPropertyName = "Code"
-        Me.CodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
-        Me.CodeDataGridViewTextBoxColumn.Name = "CodeDataGridViewTextBoxColumn"
-        Me.CodeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CodeDataGridViewTextBoxColumn.Width = 81
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PriceDataGridViewTextBoxColumn
-        '
-        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
-        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
-        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
-        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PriceDataGridViewTextBoxColumn.Width = 76
-        '
-        'ProductBindingSource
-        '
-        Me.ProductBindingSource.DataSource = GetType(vb_net_desktop_app_1.Product)
-        '
         'PnlTitle
         '
         Me.PnlTitle.BackColor = System.Drawing.Color.Orange
@@ -209,38 +213,38 @@ Partial Class AddProductsForm
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Cantidad:"
         '
-        'Label4
+        'ProductBindingSource
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 61)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(168, 20)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Buscar por Nombre:"
+        Me.ProductBindingSource.DataSource = GetType(vb_net_desktop_app_1.Product)
         '
-        'TxtBoxProductName
+        'CodeDataGridViewTextBoxColumn
         '
-        Me.TxtBoxProductName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBoxProductName.Location = New System.Drawing.Point(175, 58)
-        Me.TxtBoxProductName.Name = "TxtBoxProductName"
-        Me.TxtBoxProductName.Size = New System.Drawing.Size(254, 26)
-        Me.TxtBoxProductName.TabIndex = 13
+        Me.CodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.CodeDataGridViewTextBoxColumn.DataPropertyName = "Code"
+        Me.CodeDataGridViewTextBoxColumn.HeaderText = "Codigo"
+        Me.CodeDataGridViewTextBoxColumn.Name = "CodeDataGridViewTextBoxColumn"
+        Me.CodeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CodeDataGridViewTextBoxColumn.Width = 81
         '
-        'BtnSearchProductByName
+        'NameDataGridViewTextBoxColumn
         '
-        Me.BtnSearchProductByName.BackColor = System.Drawing.Color.MidnightBlue
-        Me.BtnSearchProductByName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnSearchProductByName.FlatAppearance.BorderSize = 0
-        Me.BtnSearchProductByName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSearchProductByName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSearchProductByName.ForeColor = System.Drawing.Color.White
-        Me.BtnSearchProductByName.Location = New System.Drawing.Point(435, 58)
-        Me.BtnSearchProductByName.Name = "BtnSearchProductByName"
-        Me.BtnSearchProductByName.Size = New System.Drawing.Size(112, 27)
-        Me.BtnSearchProductByName.TabIndex = 14
-        Me.BtnSearchProductByName.Text = "Buscar"
-        Me.BtnSearchProductByName.UseVisualStyleBackColor = False
+        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PriceDataGridViewTextBoxColumn
+        '
+        Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        DataGridViewCellStyle1.Format = "C2"
+        DataGridViewCellStyle1.NullValue = "0"
+        Me.PriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PriceDataGridViewTextBoxColumn.Width = 76
         '
         'AddProductsForm
         '
@@ -260,12 +264,12 @@ Partial Class AddProductsForm
         Me.GrpSearch.ResumeLayout(False)
         Me.GrpSearch.PerformLayout()
         CType(Me.DataGridProducts, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         Me.GrpInfoProduct.ResumeLayout(False)
         Me.GrpInfoProduct.PerformLayout()
         CType(Me.NumBoxProductQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -279,13 +283,13 @@ Partial Class AddProductsForm
     Friend WithEvents PnlTitle As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents ProductBindingSource As BindingSource
-    Friend WithEvents CodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GrpInfoProduct As GroupBox
     Friend WithEvents NumBoxProductQuantity As NumericUpDown
     Friend WithEvents Label2 As Label
     Friend WithEvents BtnSearchProductByName As Button
     Friend WithEvents TxtBoxProductName As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents CodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

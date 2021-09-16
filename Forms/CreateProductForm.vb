@@ -2,10 +2,12 @@
 Imports System.Net
 
 Public Class CreateProductForm
+
     Public Delegate Sub operar()
     Public cargar As operar
     Private Sub BtnCreateProduct_Click(sender As Object, e As EventArgs) Handles BtnCreateProduct.Click
         Dim repo As IProductRepository = New ProductRepository()
+        Dim pdRepo As IProductDetailRepository = New ProductDetailRepository()
         Dim product As Product = New Product()
         product.Code = TxtBoxProductCode.Text
         product.Name = TxtBoxProductName.Text
@@ -13,7 +15,8 @@ Public Class CreateProductForm
         product.Price = NumBoxProductPrice.Value
         product.Min_Quantity = NumBoxProductMinQuantity.Value
         Try
-            repo.CreateProduct(product)
+            Dim productRes As Product = repo.CreateProduct(product)
+            pdRepo.CreateProductInAllBranches(productRes)
             Dim res As DialogResult = MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
             If res = DialogResult.OK Then
                 cargar.Invoke()

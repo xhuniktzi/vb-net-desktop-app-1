@@ -23,6 +23,9 @@ Partial Class QueryInvoicesForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpInvoiceQueryInfo = New System.Windows.Forms.GroupBox()
@@ -44,6 +47,9 @@ Partial Class QueryInvoicesForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimeStart = New System.Windows.Forms.DateTimePicker()
         Me.DataGridInvoiceDetail = New System.Windows.Forms.DataGridView()
+        Me.BtnQuery = New System.Windows.Forms.Button()
+        Me.BtnClearQuery = New System.Windows.Forms.Button()
+        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OrderIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SerialNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,9 +66,6 @@ Partial Class QueryInvoicesForm
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Order_Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InvoiceDetailBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BtnQuery = New System.Windows.Forms.Button()
-        Me.BtnClearQuery = New System.Windows.Forms.Button()
         Me.PnlTitle.SuspendLayout()
         Me.GrpInvoiceQueryInfo.SuspendLayout()
         CType(Me.DataGridInvoiceDetail, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -318,6 +321,42 @@ Partial Class QueryInvoicesForm
         Me.DataGridInvoiceDetail.Size = New System.Drawing.Size(983, 228)
         Me.DataGridInvoiceDetail.TabIndex = 13
         '
+        'BtnQuery
+        '
+        Me.BtnQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnQuery.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnQuery.FlatAppearance.BorderSize = 0
+        Me.BtnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnQuery.ForeColor = System.Drawing.Color.White
+        Me.BtnQuery.Location = New System.Drawing.Point(825, 626)
+        Me.BtnQuery.Name = "BtnQuery"
+        Me.BtnQuery.Size = New System.Drawing.Size(171, 27)
+        Me.BtnQuery.TabIndex = 22
+        Me.BtnQuery.Text = "Buscar"
+        Me.BtnQuery.UseVisualStyleBackColor = False
+        '
+        'BtnClearQuery
+        '
+        Me.BtnClearQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnClearQuery.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnClearQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnClearQuery.FlatAppearance.BorderSize = 0
+        Me.BtnClearQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnClearQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClearQuery.ForeColor = System.Drawing.Color.White
+        Me.BtnClearQuery.Location = New System.Drawing.Point(13, 626)
+        Me.BtnClearQuery.Name = "BtnClearQuery"
+        Me.BtnClearQuery.Size = New System.Drawing.Size(155, 27)
+        Me.BtnClearQuery.TabIndex = 23
+        Me.BtnClearQuery.Text = "Limpiar Consulta"
+        Me.BtnClearQuery.UseVisualStyleBackColor = False
+        '
+        'InvoiceDetailBindingSource
+        '
+        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
+        '
         'OrderIdDataGridViewTextBoxColumn
         '
         Me.OrderIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -439,6 +478,9 @@ Partial Class QueryInvoicesForm
         '
         Me.PriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        DataGridViewCellStyle1.Format = "C2"
+        DataGridViewCellStyle1.NullValue = "0"
+        Me.PriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
         Me.PriceDataGridViewTextBoxColumn.HeaderText = "Precio"
         Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
         Me.PriceDataGridViewTextBoxColumn.ReadOnly = True
@@ -448,6 +490,9 @@ Partial Class QueryInvoicesForm
         '
         Me.TotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = "0"
+        Me.TotalDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
         Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
         Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
         Me.TotalDataGridViewTextBoxColumn.ReadOnly = True
@@ -457,46 +502,13 @@ Partial Class QueryInvoicesForm
         '
         Me.Order_Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Order_Total.DataPropertyName = "Order_Total"
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = "0"
+        Me.Order_Total.DefaultCellStyle = DataGridViewCellStyle3
         Me.Order_Total.HeaderText = "Total de la Factura"
         Me.Order_Total.Name = "Order_Total"
         Me.Order_Total.ReadOnly = True
         Me.Order_Total.Width = 141
-        '
-        'InvoiceDetailBindingSource
-        '
-        Me.InvoiceDetailBindingSource.DataSource = GetType(vb_net_desktop_app_1.InvoiceDetail)
-        '
-        'BtnQuery
-        '
-        Me.BtnQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnQuery.BackColor = System.Drawing.Color.MidnightBlue
-        Me.BtnQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnQuery.FlatAppearance.BorderSize = 0
-        Me.BtnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnQuery.ForeColor = System.Drawing.Color.White
-        Me.BtnQuery.Location = New System.Drawing.Point(825, 626)
-        Me.BtnQuery.Name = "BtnQuery"
-        Me.BtnQuery.Size = New System.Drawing.Size(171, 27)
-        Me.BtnQuery.TabIndex = 22
-        Me.BtnQuery.Text = "Buscar"
-        Me.BtnQuery.UseVisualStyleBackColor = False
-        '
-        'BtnClearQuery
-        '
-        Me.BtnClearQuery.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.BtnClearQuery.BackColor = System.Drawing.Color.MidnightBlue
-        Me.BtnClearQuery.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnClearQuery.FlatAppearance.BorderSize = 0
-        Me.BtnClearQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnClearQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClearQuery.ForeColor = System.Drawing.Color.White
-        Me.BtnClearQuery.Location = New System.Drawing.Point(13, 626)
-        Me.BtnClearQuery.Name = "BtnClearQuery"
-        Me.BtnClearQuery.Size = New System.Drawing.Size(155, 27)
-        Me.BtnClearQuery.TabIndex = 23
-        Me.BtnClearQuery.Text = "Limpiar Consulta"
-        Me.BtnClearQuery.UseVisualStyleBackColor = False
         '
         'QueryInvoicesForm
         '

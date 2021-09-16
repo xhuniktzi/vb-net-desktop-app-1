@@ -81,10 +81,12 @@
     <Compile Include="Common\Invoice.vb" />
     <Compile Include="Common\InvoiceDetail.vb" />
     <Compile Include="Common\InvoiceQuery.vb" />
+    <Compile Include="Common\ProductDetail.vb" />
     <Compile Include="Common\ProductDetailInvoice.vb" />
     <Compile Include="Contracts\IBranchRepository.vb" />
     <Compile Include="Contracts\IClientRepository.vb" />
     <Compile Include="Contracts\IInvoiceRepository.vb" />
+    <Compile Include="Contracts\IProductDetailRepository.vb" />
     <Compile Include="ErrorHandling\ApiConnectException.vb" />
     <Compile Include="ErrorHandling\Respuesta.vb" />
     <Compile Include="Extensions\Extensions.vb" />
@@ -170,6 +172,7 @@
     <Compile Include="Repository\ClientRepository.vb" />
     <Compile Include="Repository\ConnectDatabase.vb" />
     <Compile Include="Repository\InvoiceRepository.vb" />
+    <Compile Include="Repository\ProductDetailRepository.vb" />
     <Compile Include="ViewModel\ClientViewModel.vb" />
     <Compile Include="ViewModel\ClientMainViewModel.vb" />
     <Compile Include="ViewModel\ProductMainViewModel.vb" />
