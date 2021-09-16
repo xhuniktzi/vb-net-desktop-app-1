@@ -14,9 +14,7 @@ Public Class QuerySelectProduct
         Try
             ProductBindingSource.Clear()
             If TxtBoxProductCode.Text.IsNotNullOrEmptyOrWhiteSpace() Then
-                For Each product In _productRepo.GetAllProducts()
-                    ProductBindingSource.Add(product)
-                Next
+                LoadAllResults()
             Else
                 Dim code As String = TxtBoxProductCode.Text
                 Dim product As Product = _productRepo.FindProductByCode(code)
@@ -26,6 +24,12 @@ Public Class QuerySelectProduct
             ProductBindingSource.Clear()
             'MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub LoadAllResults()
+        For Each product In _productRepo.GetAllProducts()
+            ProductBindingSource.Add(product)
+        Next
     End Sub
 
     Private Sub BtnSelectProduct_Click(sender As Object, e As EventArgs) Handles BtnSelectProduct.Click
@@ -44,9 +48,13 @@ Public Class QuerySelectProduct
     Private Sub BtnSearchProductByName_Click(sender As Object, e As EventArgs) Handles BtnSearchProductByName.Click
         Try
             ProductBindingSource.Clear()
-            For Each product In _productRepo.FindProductByName(TxtBoxProductName.Text)
-                ProductBindingSource.Add(product)
-            Next
+            If TxtBoxProductName.Text.IsNotNullOrEmptyOrWhiteSpace() Then
+                LoadAllResults()
+            Else
+                For Each product In _productRepo.FindProductByName(TxtBoxProductName.Text)
+                    ProductBindingSource.Add(product)
+                Next
+            End If
         Catch ex As Exception
             ProductBindingSource.Clear()
             'MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
