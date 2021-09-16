@@ -27,7 +27,8 @@ Public Class QuerySelectBranch
                 BranchBindingSource.Add(branch)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: Sucursal no encontrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            BranchBindingSource.Clear()
+            'MessageBox.Show("Error: Sucursal no encontrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -51,7 +52,8 @@ Public Class QuerySelectBranch
                 BranchBindingSource.Add(branch)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: Sucursal no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            BranchBindingSource.Clear()
+            'MessageBox.Show("Error: Sucursal no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

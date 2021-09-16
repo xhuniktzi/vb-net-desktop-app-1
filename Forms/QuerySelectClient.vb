@@ -25,7 +25,8 @@ Public Class QuerySelectClient
                 ClientBindingSource.Add(client)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ClientBindingSource.Clear()
+            'MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -47,7 +48,8 @@ Public Class QuerySelectClient
                 ClientBindingSource.Add(product)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ClientBindingSource.Clear()
+            'MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -58,7 +60,8 @@ Public Class QuerySelectClient
                 ClientBindingSource.Add(product)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ClientBindingSource.Clear()
+            'MessageBox.Show("Error: Cliente no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

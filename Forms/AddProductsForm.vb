@@ -26,7 +26,8 @@ Public Class AddProductsForm
                 ProductBindingSource.Add(product)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ProductBindingSource.Clear()
+            'MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -59,7 +60,8 @@ Public Class AddProductsForm
                 ProductBindingSource.Add(product)
             Next
         Catch ex As Exception
-            MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ProductBindingSource.Clear()
+            'MessageBox.Show("Error: Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class
