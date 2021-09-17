@@ -29,7 +29,6 @@ Partial Class SelectBranchForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnSelectBranch = New System.Windows.Forms.Button()
         Me.DataGridBranches = New System.Windows.Forms.DataGridView()
-        Me.BranchIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DirectionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BranchBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -107,7 +106,7 @@ Partial Class SelectBranchForm
         Me.DataGridBranches.AllowUserToDeleteRows = False
         Me.DataGridBranches.AutoGenerateColumns = False
         Me.DataGridBranches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridBranches.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BranchIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DirectionDataGridViewTextBoxColumn})
+        Me.DataGridBranches.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NameDataGridViewTextBoxColumn, Me.DirectionDataGridViewTextBoxColumn})
         Me.DataGridBranches.DataSource = Me.BranchBindingSource
         Me.DataGridBranches.Location = New System.Drawing.Point(12, 164)
         Me.DataGridBranches.Name = "DataGridBranches"
@@ -115,15 +114,6 @@ Partial Class SelectBranchForm
         Me.DataGridBranches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridBranches.Size = New System.Drawing.Size(560, 193)
         Me.DataGridBranches.TabIndex = 11
-        '
-        'BranchIdDataGridViewTextBoxColumn
-        '
-        Me.BranchIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.BranchIdDataGridViewTextBoxColumn.DataPropertyName = "Branch_Id"
-        Me.BranchIdDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.BranchIdDataGridViewTextBoxColumn.Name = "BranchIdDataGridViewTextBoxColumn"
-        Me.BranchIdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.BranchIdDataGridViewTextBoxColumn.Width = 47
         '
         'NameDataGridViewTextBoxColumn
         '
@@ -180,9 +170,10 @@ Partial Class SelectBranchForm
         Me.Controls.Add(Me.PnlTitle)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
         Me.Name = "SelectBranchForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SelectBranchForm"
+        Me.Text = "Seleccionar Sucursal"
         Me.GrpSearch.ResumeLayout(False)
         Me.GrpSearch.PerformLayout()
         CType(Me.DataGridBranches, System.ComponentModel.ISupportInitialize).EndInit()
@@ -198,11 +189,10 @@ Partial Class SelectBranchForm
     Friend WithEvents DataGridBranches As DataGridView
     Friend WithEvents PnlTitle As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents BranchIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DirectionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BranchBindingSource As BindingSource
     Friend WithEvents TxtBoxBranchName As TextBox
     Friend WithEvents BtnSearchBranchByName As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DirectionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

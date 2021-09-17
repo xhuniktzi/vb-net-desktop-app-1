@@ -284,9 +284,10 @@ Partial Class ClientForm
         Me.Controls.Add(Me.PnlClient)
         Me.Controls.Add(Me.PnlProductList)
         Me.Controls.Add(Me.PnlTitle)
+        Me.MaximizeBox = False
         Me.Name = "ClientForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ClientForm"
+        Me.Text = "Control de Clientes"
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         Me.PnlProductList.ResumeLayout(False)

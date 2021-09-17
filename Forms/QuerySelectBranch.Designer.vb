@@ -29,15 +29,15 @@ Partial Class QuerySelectBranch
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnSelectBranch = New System.Windows.Forms.Button()
         Me.DataGridBranches = New System.Windows.Forms.DataGridView()
-        Me.PnlTitle = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.BranchBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DirectionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BranchBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PnlTitle = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GrpSearch.SuspendLayout()
         CType(Me.DataGridBranches, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PnlTitle.SuspendLayout()
         CType(Me.BranchBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlTitle.SuspendLayout()
         Me.SuspendLayout()
         '
         'GrpSearch
@@ -115,6 +115,27 @@ Partial Class QuerySelectBranch
         Me.DataGridBranches.Size = New System.Drawing.Size(560, 193)
         Me.DataGridBranches.TabIndex = 15
         '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DirectionDataGridViewTextBoxColumn
+        '
+        Me.DirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.DirectionDataGridViewTextBoxColumn.DataPropertyName = "Direction"
+        Me.DirectionDataGridViewTextBoxColumn.HeaderText = "Dirección"
+        Me.DirectionDataGridViewTextBoxColumn.Name = "DirectionDataGridViewTextBoxColumn"
+        Me.DirectionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DirectionDataGridViewTextBoxColumn.Width = 96
+        '
+        'BranchBindingSource
+        '
+        Me.BranchBindingSource.DataSource = GetType(vb_net_desktop_app_1.Branch)
+        '
         'PnlTitle
         '
         Me.PnlTitle.BackColor = System.Drawing.Color.Orange
@@ -137,27 +158,6 @@ Partial Class QuerySelectBranch
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Seleccionar Sucursal"
         '
-        'BranchBindingSource
-        '
-        Me.BranchBindingSource.DataSource = GetType(vb_net_desktop_app_1.Branch)
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DirectionDataGridViewTextBoxColumn
-        '
-        Me.DirectionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.DirectionDataGridViewTextBoxColumn.DataPropertyName = "Direction"
-        Me.DirectionDataGridViewTextBoxColumn.HeaderText = "Dirección"
-        Me.DirectionDataGridViewTextBoxColumn.Name = "DirectionDataGridViewTextBoxColumn"
-        Me.DirectionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DirectionDataGridViewTextBoxColumn.Width = 96
-        '
         'QuerySelectBranch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -170,14 +170,15 @@ Partial Class QuerySelectBranch
         Me.Controls.Add(Me.PnlTitle)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
         Me.Name = "QuerySelectBranch"
-        Me.Text = "QuerySelectBranch"
+        Me.Text = "Seleccionar Sucursal"
         Me.GrpSearch.ResumeLayout(False)
         Me.GrpSearch.PerformLayout()
         CType(Me.DataGridBranches, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BranchBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
-        CType(Me.BranchBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

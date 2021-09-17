@@ -289,6 +289,7 @@ Partial Class ProductForm
         Me.Controls.Add(Me.PnlProduct)
         Me.Controls.Add(Me.PnlProductList)
         Me.Controls.Add(Me.PnlTitle)
+        Me.MaximizeBox = False
         Me.Name = "ProductForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ProductForm"

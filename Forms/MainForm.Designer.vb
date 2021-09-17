@@ -88,9 +88,10 @@ Partial Class MainForm
         Me.Controls.Add(Me.BtnClients)
         Me.Controls.Add(Me.PnlTitle)
         Me.Controls.Add(Me.BtnProducts)
+        Me.MaximizeBox = False
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MainForm"
+        Me.Text = "Sistema de Control"
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         Me.ResumeLayout(False)

@@ -15,7 +15,7 @@ Public Class CreateProductForm
         product.Price = NumBoxProductPrice.Value
         product.Min_Quantity = NumBoxProductMinQuantity.Value
         Try
-            Dim productRes As Product = repo.CreateProduct(product)
+            repo.CreateProduct(product)
             'pdRepo.CreateProductInAllBranches(productRes)
             Dim res As DialogResult = MessageBox.Show("Operacion finalizada con exito", "OK", MessageBoxButtons.OK)
             If res = DialogResult.OK Then

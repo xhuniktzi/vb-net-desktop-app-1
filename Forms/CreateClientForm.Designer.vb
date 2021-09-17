@@ -184,6 +184,7 @@ Partial Class CreateClientForm
         Me.Controls.Add(Me.TxtBoxClientNit)
         Me.Controls.Add(Me.BtnCreateClient)
         Me.Controls.Add(Me.PnlTitle)
+        Me.MaximizeBox = False
         Me.Name = "CreateClientForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CreateClientForm"

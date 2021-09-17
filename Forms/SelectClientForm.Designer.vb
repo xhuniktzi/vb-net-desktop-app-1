@@ -26,7 +26,6 @@ Partial Class SelectClientForm
         Me.PnlTitle = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridClients = New System.Windows.Forms.DataGridView()
-        Me.ClientIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -72,7 +71,7 @@ Partial Class SelectClientForm
         Me.DataGridClients.AllowUserToDeleteRows = False
         Me.DataGridClients.AutoGenerateColumns = False
         Me.DataGridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridClients.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClientIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.NitDataGridViewTextBoxColumn})
+        Me.DataGridClients.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NameDataGridViewTextBoxColumn, Me.NitDataGridViewTextBoxColumn})
         Me.DataGridClients.DataSource = Me.ClientBindingSource
         Me.DataGridClients.Location = New System.Drawing.Point(12, 198)
         Me.DataGridClients.Name = "DataGridClients"
@@ -80,15 +79,6 @@ Partial Class SelectClientForm
         Me.DataGridClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridClients.Size = New System.Drawing.Size(560, 193)
         Me.DataGridClients.TabIndex = 7
-        '
-        'ClientIdDataGridViewTextBoxColumn
-        '
-        Me.ClientIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.ClientIdDataGridViewTextBoxColumn.DataPropertyName = "Client_Id"
-        Me.ClientIdDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.ClientIdDataGridViewTextBoxColumn.Name = "ClientIdDataGridViewTextBoxColumn"
-        Me.ClientIdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ClientIdDataGridViewTextBoxColumn.Width = 47
         '
         'NameDataGridViewTextBoxColumn
         '
@@ -219,9 +209,10 @@ Partial Class SelectClientForm
         Me.Controls.Add(Me.PnlTitle)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximizeBox = False
         Me.Name = "SelectClientForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SelectClientForm"
+        Me.Text = "Seleccionar Cliente"
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         CType(Me.DataGridClients, System.ComponentModel.ISupportInitialize).EndInit()
@@ -237,9 +228,6 @@ Partial Class SelectClientForm
     Friend WithEvents DataGridClients As DataGridView
     Friend WithEvents BtnSelectClient As Button
     Friend WithEvents GrpSearch As GroupBox
-    Friend WithEvents ClientIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ClientBindingSource As BindingSource
     Friend WithEvents TxtBoxClientName As TextBox
     Friend WithEvents BtnSearchClientByName As Button
@@ -247,4 +235,6 @@ Partial Class SelectClientForm
     Friend WithEvents TxtBoxClientNit As TextBox
     Friend WithEvents BtnSearchClientByNit As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

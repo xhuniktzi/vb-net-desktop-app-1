@@ -197,9 +197,10 @@ Partial Class CreateProductForm
         Me.Controls.Add(Me.PnlTitle)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MaximizeBox = False
         Me.Name = "CreateProductForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CreateProductForm"
+        Me.Text = "Crear Producto"
         Me.PnlTitle.ResumeLayout(False)
         Me.PnlTitle.PerformLayout()
         CType(Me.NumBoxProductPrice, System.ComponentModel.ISupportInitialize).EndInit()
